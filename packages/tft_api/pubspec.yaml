@@ -1,7 +1,7 @@
-name: lol_api
-description: This package provides an easy way to use the League of Legends api in Dart language.
-version: 0.0.7
-homepage: https://github.com/Coaspe/riot_api
+name: tft_api
+description: This package provides an easy way to use the TFT(Teamfight Tactics) api in Dart language.
+version: 0.0.1
+repository: https://github.com/Coaspe/riot_api
 
 environment:
   sdk: '>=2.19.0 <3.0.0'

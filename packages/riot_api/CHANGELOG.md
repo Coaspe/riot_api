@@ -2,3 +2,6 @@
 
 ## 0.0.6
 Description changed
+
+## 0.0.9
+Qtype TFT added

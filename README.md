@@ -22,8 +22,12 @@ These packages provide easy ways to use the riot api in Dart language.
     - VAL-MATCH-V1 (Because of policy issue, not tested yet 😭.)
     - VAL-RANKED-V1
     - VAL-STATUS-V1
+- Teamfight Tactics
+    - TFT-LEAGUE-V1
+    - TFT-MATCH-V1
+    - TFT-STATUS-V1
+    - TFT-SUMMONER-V1
 - Legends of Runeterra (Not yet supported)
-- Teamfight Tactics(Not yet supported)
 
 ## Requirements
 
@@ -81,7 +85,8 @@ final match =
 ## pub.dev
 - [riot_api](https://pub.dev/packages/riot_api)
 - [lol_api](https://pub.dev/packages/lol_api)
-- [val_api]() (Not supported yet)
+- [val_api](https://pub.dev/packages/val_api)
+- [tft_api](https://pub.dev/packages/tft_api)
 - [lor_api]() (Not supported yet)
 
 Documentation comment will be added gradually 😀

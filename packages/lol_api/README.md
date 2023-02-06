@@ -58,7 +58,8 @@ final match =
 We provide other Riot api packages:
 
 - [riot_api](https://pub.dev/packages/riot_api)
-- val_api (Not supported yet)
+- [val_api](https://pub.dev/packages/val_api)
+- [tft_api](https://pub.dev/packages/tft_api)
 - lor_api (Not supported yet)
 
 ## How to Contribute

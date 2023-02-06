@@ -18,7 +18,7 @@ enum RegionValues {
   vn2
 }
 
-enum Qtype { lol, val, lor, riot }
+enum Qtype { lol, val, lor, riot, tft }
 
 extension PlatformValuesEx on PlatformValues {
   String get platformToUrl => "https://$name.api.riotgames.com";

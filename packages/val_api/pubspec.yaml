@@ -1,7 +1,7 @@
 name: val_api
 description: This package provides an easy way to use the Valorant api in Dart language.
-version: 0.0.1
-homepage: https://github.com/Coaspe/riot_api
+version: 0.0.2
+repository: https://github.com/Coaspe/riot_api
 
 environment:
   sdk: '>=2.19.0 <3.0.0'

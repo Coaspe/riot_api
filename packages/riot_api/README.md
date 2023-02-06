@@ -1,6 +1,6 @@
 # riot_api
 
-This package provides an easy way to use riot account api in Dart language.
+This package provides an easy way to use Riot account api in Dart language.
 
 If you want League of Legends api package visit here.
 
@@ -40,7 +40,8 @@ final user2 = await AccountV1.getAccountByRiotId(PlatformValues.asia, gameName, 
 We provide other Riot api packages:
 
 - [lol_api](https://pub.dev/packages/lol_api)
-- val_api (Not supported yet)
+- [val_api](https://pub.dev/packages/val_api)
+- [tft_api](https://pub.dev/packages/tft_api)
 - lor_api (Not supported yet)
 
 ## How to Contribute

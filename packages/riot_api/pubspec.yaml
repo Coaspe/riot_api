@@ -1,6 +1,6 @@
 name: riot_api
-description: This package provides an easy way to use riot account api in Dart language.
-version: 0.0.8
+description: This package provides an easy way to use Riot account api in Dart language.
+version: 0.0.9
 homepage: https://github.com/Coaspe/riot_api
 
 environment:
