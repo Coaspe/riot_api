@@ -1,8 +1,6 @@
 # lol_api
 
-This library provides an easy way to use the League of Legends api with Dart language.
-
-Queries using access token and RSO are not yet supported
+This package provides an easy way to use the League of Legends api with Dart language.
 
 You need your own [Riot api key](https://developer.riotgames.com/).
 
@@ -26,13 +24,13 @@ Here is what you need to use the Dart SDK:
 
 - Dart 2.19.0 or higher
 
-## Additional library
+## Additional packages
 
-We provide other Riot api libraries:
+We provide other Riot api packages:
 
 - [riot_api](https://pub.dev/packages/riot_api)
-- [val_api](Not supported yet)
-- [lor_api](Not supported yet)
+- val_api (Not supported yet)
+- lor_api (Not supported yet)
 
 ## How to Contribute
 
