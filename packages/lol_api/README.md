@@ -1,18 +1,41 @@
 # lol_api
 
-A new Flutter plugin project.
+This library provides an easy way to use the League of Legends api.
 
-## Getting Started
+Queries using access token and RSO are not yet supported
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+You need your own [Riot api key](https://developer.riotgames.com/).
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- League of Legends api
+    - CHAMPION-MASTERY-V4
+    - CHAMPION-V3
+    - CLASH-V1
+    - LEAGUE-EXP-V4
+    - LEAGUE-V4
+    - LOL-CHALLENGES-V1
+    - LOL-STATUS-V4
+    - MATCH-V5
+    - SPECTATOR-V4
+    - SUMMONER-V4
+    - TOURNAMENT-V4 (Not yet supported)
+    - TOURNAMENT-STUB-V4 (Not yet supported)
 
-The plugin project was generated without specifying the `--platforms` flag, no platforms are currently supported.
-To add platforms, run `flutter create -t plugin --platforms <platforms> .` in this directory.
-You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
+## Requirements
+
+Here is what you need to use the Dart SDK:
+
+- Dart 2.19.0 or higher
+
+## Additional library
+
+We provide other Riot api libraries:
+
+- [riot_api]()
+- [val_api](Not supported yet)
+- [lor_api](Not supported yet)
+
+## How to Contribute
+
+If you want to contribute to this repository:
+
+- [repo](https://github.com/Coaspe/riot_api/)
