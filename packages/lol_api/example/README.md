@@ -1,16 +1,18 @@
 # lol_api_example
 
-Demonstrates how to use the lol_api plugin.
+First, generate [riot api key](https://developer.riotgames.com/).
 
-## Getting Started
+Initialize RiotApi class with your api key.
+```dart
+    RiotApi.init(apiKey: 'your-api-key'))
+```
 
-This project is a starting point for a Flutter application.
+And use `APIname.queryFunction` form to call query function.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can check [available query](https://pub.dev/packages/lol_api]).
+```dart
+// Get Summoner by accountId
+const accountId = 'your-account-id';
+      final summoner =
+          await SummonerV4.getSummonerByAccountId(RegionValues.kr, accountId);
+```
