@@ -25,6 +25,7 @@ This library provides an easy way to use the riot api.
 Here is what you need to use the Dart SDK:
 
 - Dart 2.19.0 or higher
+
 ## Exmaple
 
 First, generate [riot api key](https://developer.riotgames.com/).
@@ -77,3 +78,5 @@ final match =
 - [lol_api](https://pub.dev/packages/lol_api)
 - [val_api]() (Not supported yet)
 - [lor_api]() (Not supported yet)
+
+Documentation comment will be added gradually 😀

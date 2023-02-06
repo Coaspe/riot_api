@@ -32,7 +32,7 @@ Here are what you need to use the Dart SDK:
 
 We provid individual library:
 
-- [lol_api](https://developers.kakao.com/docs/latest/getting-started/sdk-flutter)
+- [lol_api](https://pub.dev/packages/lol_api)
 
 ## How to Contribute
 

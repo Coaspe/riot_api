@@ -1,6 +1,6 @@
 name: lol_api
 description: League of Legends api.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/Coaspe/riot_api
 
 environment:
@@ -9,7 +9,7 @@ environment:
 dependencies:
   json_annotation: ^4.8.0
   plugin_platform_interface: ^2.0.2
-  riot_api: ^0.0.2
+  riot_api: ^0.0.3
 dev_dependencies:
   json_serializable: ^6.6.1
   build_runner: ^2.3.3
