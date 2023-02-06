@@ -1,6 +1,6 @@
 name: riot_api
-description: This package provides an easy way to use riot api that League of Legends, Valrorant and Legends of Luneterra have in common in Dart language.
-version: 0.0.6
+description: This package provides an easy way to use riot account api in Dart language.
+version: 0.0.7
 homepage: https://github.com/Coaspe/riot_api
 
 environment:
