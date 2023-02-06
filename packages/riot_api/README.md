@@ -1,6 +1,9 @@
 # riot_api
 
-This package provides an easy way to use the riot api with Dart language.
+This package provides an easy way to use commthe riot api that League of Legends,
+Valrorant and Legends of Luneterra have in common in Dart language.
+
+If you want League of Legends api package visit here.
 
 - Riot account api
     - ACCOUNT-V1

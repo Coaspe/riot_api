@@ -1,6 +1,6 @@
 # lol_api
 
-This package provides an easy way to use the League of Legends api with Dart language.
+This package provides an easy way to use the League of Legends api in Dart language.
 
 You need your own [Riot api key](https://developer.riotgames.com/).
 

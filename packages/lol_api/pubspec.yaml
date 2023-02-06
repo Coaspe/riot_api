@@ -1,6 +1,6 @@
 name: lol_api
-description: League of Legends api.
-version: 0.0.6
+description: This package provides an easy way to use the League of Legends api in Dart language.
+version: 0.0.7
 homepage: https://github.com/Coaspe/riot_api
 
 environment:
