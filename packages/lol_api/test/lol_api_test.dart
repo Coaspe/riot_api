@@ -13,21 +13,16 @@ import 'package:riot_api/riot_api.dart';
 
 void main() async {
   setUp(() {
-    RiotApi.init(apiKey: 'RGAPI-f7302155-74f5-4bce-acc6-972b171d1015');
+    RiotApi.init(apiKey: 'your-api-key');
   });
 
   // Test with your info
-  // const puuid = "your-puuid";
-  // const id = "your-id";
+  const puuid = "your-puuid";
+  const id = "your-id";
   // const accountId = "your-accountId";
   // const name = "your-summoner-name";
-  // const leagueId = "your-leagueId";
-  const puuid =
-      "NWiiFjQnBEq3i_w4RsnNWi-WSkTW193dqdmgF-6ZspITEKRxPj6Lbs7ZQnywUoILUaNN8Iwpp2KNJQ";
-  const id = "hTyGp_mL1YcVQwH80a3T8g57-ohX1k3tYNQ887VpasR-TA";
-  const accountId = "gS4KQBsOIKXG_rc-C1FWPKdEUuXrTovLI4JPEYlP92iM";
-  const name = "아스읖";
-  const leagueId = "446781dd-2147-3d8a-be18-f9a4f27e87bd";
+  const leagueId = "your-leagueId";
+
   group('Match-V5', () {
     test('Get a match by match id.', () async {
       try {

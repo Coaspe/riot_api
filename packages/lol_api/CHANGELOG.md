@@ -2,3 +2,6 @@
 
 ## 0.0.5
 Fix url bug.
+
+## 0.0.6
+Remove private information.

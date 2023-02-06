@@ -11,6 +11,28 @@ Here are what you need to use the Dart SDK:
 
 - Dart 2.19.0 or higher
 
+## Example
+
+First, generate [riot api key](https://developer.riotgames.com/).
+
+Initialize `RiotApi` with your api key.
+```dart
+RiotApi.init(apiKey: 'your-api-key'))
+```
+
+And use `APIname.queryFunction` form to call query function.
+
+You can check [available api](https://developer.riotgames.com/apis).
+```dart
+const puuid = 'your-puuid';
+
+// Get account information by puuid.
+final user = await AccountV1.getAccountByPuuid(PlatformValues.asia, puuid);
+
+// Get account information by gameName and tagLine.
+final user2 = await AccountV1.getAccountByRiotId(PlatformValues.asia, gameName, tagLine);
+```
+
 ## Additional packages
 
 We provide other Riot api packages:
