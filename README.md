@@ -1,6 +1,6 @@
 # riot_api
 
-This library provides an easy way to use the riot api.
+This package provides an easy way to use the riot api with Dart language.
 
 - League of Legends api
     - CHAMPION-MASTERY-V4

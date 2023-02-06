@@ -1,6 +1,6 @@
 # riot_api
 
-This library provides an easy way to use the riot api.
+This library provides an easy way to use the riot api with Dart language.
 
 Queries using access token and RSO are not yet supported
 
