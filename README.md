@@ -43,12 +43,11 @@ Initialize `RiotApi` with your api key.
 ```dart
     RiotApi.init(apiKey: 'your-api-key'))
 ```
-
-### riot_api_example
-
 Use `APIname.queryFunction` form to call query function.
 
 You can check [available api](https://developer.riotgames.com/apis).
+
+### riot_api
 
 ```dart
 const puuid = 'your-puuid';
@@ -60,9 +59,7 @@ final user = await AccountV1.getAccountByPuuid(PlatformValues.asia, puuid);
 final user2 = await AccountV1.getAccountByRiotId(PlatformValues.asia, gameName, tagLine);
 ```
 
-### lol_api_example
-
-Use `APIname.queryFunction` form to call query function.
+### lol_api
 
 You can check [available api](https://developer.riotgames.com/apis).
 ```dart
@@ -80,6 +77,35 @@ final matchIds = await MatchV5.getMatchIdsByPuuid(
 // Get Match information by match ID from query above.
 final match =
     await MatchV5.getMatchByMatchId(PlatformValues.asia, matchIds[0]);
+
+```
+### tft_api
+
+You can check [available api](https://developer.riotgames.com/apis).
+```dart
+// Get a list of match ids by PUUID.
+final match = await TFTMatchV1.getMatchListByPuuid(PlatformValues.asia, puuid, count: 1);
+
+/// Get the challenger league.
+final league = await TFTLeagueV1.getChallengerLeague(RegionValues.kr);
+
+// Get the master league queue exception.
+final topLadder = await TFTLeagueV1.getTopRatedLadderByQueue(RegionValues.kr, "RANKED_TFT");
+```
+
+### val_api
+
+```dart
+const accountId = 'your-account-id';
+
+// Get content optionally filtered by locale
+final content = await ValContentV1.getContentByLocale(RegionValues.kr);
+
+// Get platform status.
+final status = await ValStatusV1.getPlatformStatus(RegionValues.kr);
+
+// Get leaderboard
+final board = await ValRankedV1.getLeaderboard(RegionValues.kr, actId, size: 100);
 ```
 
 ## pub.dev
