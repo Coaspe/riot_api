@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'platform_data_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class PlatformDataDTO {
   const PlatformDataDTO(
       {required this.id,

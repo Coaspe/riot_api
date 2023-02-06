@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'champion_info.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ChampionInfo {
   const ChampionInfo({
     required this.maxNewPlayerLevel,

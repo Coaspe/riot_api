@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'match_timeline_info_participant_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchTimelineInfoParticipantDTO {
   const MatchTimelineInfoParticipantDTO(
       {required this.participantId, required this.puuid});

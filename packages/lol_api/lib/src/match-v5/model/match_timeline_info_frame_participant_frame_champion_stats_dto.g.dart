@@ -36,34 +36,3 @@ MatchTimelineInfoFrameParticipantFrameChampionStatsDTO
           powerRegen: json['powerRegen'] as int,
           spellVamp: json['spellVamp'] as int,
         );
-
-Map<String, dynamic>
-    _$MatchTimelineInfoFrameParticipantFrameChampionStatsDTOToJson(
-            MatchTimelineInfoFrameParticipantFrameChampionStatsDTO instance) =>
-        <String, dynamic>{
-          'abilityHaste': instance.abilityHaste,
-          'abilityPower': instance.abilityPower,
-          'armor': instance.armor,
-          'armorPen': instance.armorPen,
-          'armorPenPercent': instance.armorPenPercent,
-          'attackDamage': instance.attackDamage,
-          'attackSpeed': instance.attackSpeed,
-          'bonusArmorPenPercent': instance.bonusArmorPenPercent,
-          'bonusMagicPenPercent': instance.bonusMagicPenPercent,
-          'ccReduction': instance.ccReduction,
-          'cooldownReduction': instance.cooldownReduction,
-          'health': instance.health,
-          'healthMax': instance.healthMax,
-          'healthRegen': instance.healthRegen,
-          'lifesteal': instance.lifesteal,
-          'magicPen': instance.magicPen,
-          'magicPenPercent': instance.magicPenPercent,
-          'magicResist': instance.magicResist,
-          'movementSpeed': instance.movementSpeed,
-          'omnivamp': instance.omnivamp,
-          'physicalVamp': instance.physicalVamp,
-          'power': instance.power,
-          'powerMax': instance.powerMax,
-          'powerRegen': instance.powerRegen,
-          'spellVamp': instance.spellVamp,
-        };

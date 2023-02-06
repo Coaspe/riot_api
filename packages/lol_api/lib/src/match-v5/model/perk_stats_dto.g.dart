@@ -11,10 +11,3 @@ PerkStatsDTO _$PerkStatsDTOFromJson(Map<String, dynamic> json) => PerkStatsDTO(
       flex: json['flex'] as int,
       offense: json['offense'] as int,
     );
-
-Map<String, dynamic> _$PerkStatsDTOToJson(PerkStatsDTO instance) =>
-    <String, dynamic>{
-      'defense': instance.defense,
-      'flex': instance.flex,
-      'offense': instance.offense,
-    };

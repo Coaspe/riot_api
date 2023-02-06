@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'active_shard_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ActiveShardDTO {
   final String puuid;
   final String game;

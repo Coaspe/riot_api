@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'champion_mastery_dto.g.dart';
 
 /// This object contains single Champion Mastery information for player and champion combination.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ChampionMasteryDTO {
   const ChampionMasteryDTO(
       {required this.championPointsUntilNextLevel,

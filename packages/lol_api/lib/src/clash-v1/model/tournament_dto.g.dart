@@ -16,12 +16,3 @@ TournamentDTO _$TournamentDTOFromJson(Map<String, dynamic> json) =>
           ?.map((e) => TournamentPhaseDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$TournamentDTOToJson(TournamentDTO instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'themeId': instance.themeId,
-      'nameKey': instance.nameKey,
-      'nameKeySecondary': instance.nameKeySecondary,
-      'schedule': instance.schedule,
-    };

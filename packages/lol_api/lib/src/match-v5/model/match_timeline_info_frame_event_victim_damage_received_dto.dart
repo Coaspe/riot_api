@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'match_timeline_info_frame_event_victim_damage_received_dto.g.dart';
 
 /// type should be typed with enum but spec doesn't exists
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchTimelineInfoFrameEventVictimDamageReceivedDTO {
   const MatchTimelineInfoFrameEventVictimDamageReceivedDTO(
       {required this.basic,

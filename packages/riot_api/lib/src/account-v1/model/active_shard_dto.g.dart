@@ -12,10 +12,3 @@ ActiveShardDTO _$ActiveShardDTOFromJson(Map<String, dynamic> json) =>
       game: json['game'] as String,
       activeShard: json['activeShard'] as String,
     );
-
-Map<String, dynamic> _$ActiveShardDTOToJson(ActiveShardDTO instance) =>
-    <String, dynamic>{
-      'puuid': instance.puuid,
-      'game': instance.game,
-      'activeShard': instance.activeShard,
-    };

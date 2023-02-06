@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'account_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AccountDTO {
   const AccountDTO({required this.puuid, this.gameName, this.tagLine});
 

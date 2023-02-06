@@ -14,12 +14,3 @@ PerkStyleSelectionDTO _$PerkStyleSelectionDTOFromJson(
       var2: json['var2'] as int,
       var3: json['var3'] as int,
     );
-
-Map<String, dynamic> _$PerkStyleSelectionDTOToJson(
-        PerkStyleSelectionDTO instance) =>
-    <String, dynamic>{
-      'perk': instance.perk,
-      'var1': instance.var1,
-      'var2': instance.var2,
-      'var3': instance.var3,
-    };

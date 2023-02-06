@@ -15,15 +15,6 @@ ChallengeInfo _$ChallengeInfoFromJson(Map<String, dynamic> json) =>
       achievedTime: json['achievedTime'] as int?,
     );
 
-Map<String, dynamic> _$ChallengeInfoToJson(ChallengeInfo instance) =>
-    <String, dynamic>{
-      'challengeId': instance.challengeId,
-      'percentile': instance.percentile,
-      'level': _$LevelEnumMap[instance.level]!,
-      'value': instance.value,
-      'achievedTime': instance.achievedTime,
-    };
-
 const _$LevelEnumMap = {
   Level.none: 'NONE',
   Level.iron: 'IRON',

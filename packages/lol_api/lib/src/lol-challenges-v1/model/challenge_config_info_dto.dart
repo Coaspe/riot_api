@@ -19,7 +19,7 @@ enum Tracking {
   season
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ChallengeConfigInfoDTO {
   const ChallengeConfigInfoDTO(
       {required this.id,

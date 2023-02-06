@@ -20,17 +20,3 @@ MatchTimelineInfoFrameEventVictimDamageReceivedDTO
           trueDamage: json['trueDamage'] as int,
           type: json['type'] as String,
         );
-
-Map<String, dynamic> _$MatchTimelineInfoFrameEventVictimDamageReceivedDTOToJson(
-        MatchTimelineInfoFrameEventVictimDamageReceivedDTO instance) =>
-    <String, dynamic>{
-      'basic': instance.basic,
-      'magicDamage': instance.magicDamage,
-      'name': instance.name,
-      'participantId': instance.participantId,
-      'physicalDamage': instance.physicalDamage,
-      'sepllName': instance.sepllName,
-      'spellSlot': instance.spellSlot,
-      'trueDamage': instance.trueDamage,
-      'type': instance.type,
-    };

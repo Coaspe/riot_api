@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'perks.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Perks {
   const Perks(
       {required this.perkIds,

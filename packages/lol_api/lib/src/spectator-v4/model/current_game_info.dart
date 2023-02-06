@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'current_game_info.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class CurrentGameInfo {
   const CurrentGameInfo(
       {required this.gameId,

@@ -16,10 +16,3 @@ ChampionInfo _$ChampionInfoFromJson(Map<String, dynamic> json) => ChampionInfo(
           .map((e) => e as int)
           .toList(),
     );
-
-Map<String, dynamic> _$ChampionInfoToJson(ChampionInfo instance) =>
-    <String, dynamic>{
-      'maxNewPlayerLevel': instance.maxNewPlayerLevel,
-      'freeChampionIdsForNewPlayers': instance.freeChampionIdsForNewPlayers,
-      'freeChampionIds': instance.freeChampionIds,
-    };

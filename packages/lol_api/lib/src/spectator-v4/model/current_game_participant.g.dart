@@ -25,18 +25,3 @@ CurrentGameParticipant _$CurrentGameParticipantFromJson(
               .toList() ??
           const [],
     );
-
-Map<String, dynamic> _$CurrentGameParticipantToJson(
-        CurrentGameParticipant instance) =>
-    <String, dynamic>{
-      'championId': instance.championId,
-      'perks': instance.perks,
-      'profileIconId': instance.profileIconId,
-      'bot': instance.bot,
-      'teamId': instance.teamId,
-      'summonerName': instance.summonerName,
-      'summonerId': instance.summonerId,
-      'spell1Id': instance.spell1Id,
-      'spell2Id': instance.spell2Id,
-      'gameCustomizationObjects': instance.gameCustomizationObjects,
-    };

@@ -12,10 +12,3 @@ GameCustomizationObject _$GameCustomizationObjectFromJson(
       category: json['category'] as String,
       content: json['content'] as String,
     );
-
-Map<String, dynamic> _$GameCustomizationObjectToJson(
-        GameCustomizationObject instance) =>
-    <String, dynamic>{
-      'category': instance.category,
-      'content': instance.content,
-    };

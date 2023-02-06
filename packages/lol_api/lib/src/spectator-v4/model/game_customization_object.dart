@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'game_customization_object.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class GameCustomizationObject {
   const GameCustomizationObject(
       {required this.category, required this.content});

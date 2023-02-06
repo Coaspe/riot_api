@@ -15,10 +15,3 @@ MatchFrameDTO _$MatchFrameDTOFromJson(Map<String, dynamic> json) =>
       participantFrames: MatchTimelineInfoFrameParticipantFramesDTO.fromJson(
           json['participantFrames'] as Map<String, dynamic>),
     );
-
-Map<String, dynamic> _$MatchFrameDTOToJson(MatchFrameDTO instance) =>
-    <String, dynamic>{
-      'events': instance.events,
-      'timestamp': instance.timestamp,
-      'participantFrames': instance.participantFrames,
-    };

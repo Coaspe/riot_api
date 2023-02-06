@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'apex_player_info_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ApexPlayerInfoDTO {
   const ApexPlayerInfoDTO({
     required this.puuid,

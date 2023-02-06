@@ -19,8 +19,8 @@ void main() async {
   // Test with your info
   const puuid = "your-puuid";
   const id = "your-id";
-  const accountId = "your-accountId";
-  const name = "your-summoner-name";
+  // const accountId = "your-accountId";
+  // const name = "your-summoner-name";
   const leagueId = "your-leagueId";
 
   group('Match-V5', () {

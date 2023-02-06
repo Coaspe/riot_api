@@ -24,22 +24,3 @@ MatchTimelineInfoFrameParticipantFrameDamageStatsDTO
           trueDamageDoneToChampions: json['trueDamageDoneToChampions'] as int,
           trueDamageTaken: json['trueDamageTaken'] as int,
         );
-
-Map<String, dynamic>
-    _$MatchTimelineInfoFrameParticipantFrameDamageStatsDTOToJson(
-            MatchTimelineInfoFrameParticipantFrameDamageStatsDTO instance) =>
-        <String, dynamic>{
-          'magicDamageDone': instance.magicDamageDone,
-          'magicDamageDoneToChampions': instance.magicDamageDoneToChampions,
-          'magicDamageTaken': instance.magicDamageTaken,
-          'physicalDamageDone': instance.physicalDamageDone,
-          'physicalDamageDoneToChampions':
-              instance.physicalDamageDoneToChampions,
-          'physicalDamageTaken': instance.physicalDamageTaken,
-          'totalDamageDone': instance.totalDamageDone,
-          'totalDamageDoneToChampions': instance.totalDamageDoneToChampions,
-          'totalDamageTaken': instance.totalDamageTaken,
-          'trueDamageDone': instance.trueDamageDone,
-          'trueDamageDoneToChampions': instance.trueDamageDoneToChampions,
-          'trueDamageTaken': instance.trueDamageTaken,
-        };

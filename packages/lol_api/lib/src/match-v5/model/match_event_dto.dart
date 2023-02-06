@@ -46,7 +46,7 @@ enum TimlineEventType {
   wardPlaced,
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchEventDTO {
   const MatchEventDTO(
       {this.realTimestamp,

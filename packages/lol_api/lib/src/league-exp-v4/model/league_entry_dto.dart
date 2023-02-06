@@ -81,7 +81,7 @@ extension DivisionEx on Division {
   }
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class LeagueEntryDTO {
   const LeagueEntryDTO(
       {required this.leagueId,

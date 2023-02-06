@@ -1,7 +1,7 @@
 name: riot_api
 description: Riot games api.
-version: 0.0.1
-homepage:
+version: 0.0.2
+homepage: https://github.com/Coaspe/riot_api
 
 environment:
   sdk: '>=2.19.0 <3.0.0'

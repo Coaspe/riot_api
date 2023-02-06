@@ -18,7 +18,7 @@ enum Category {
   veterancy
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class PlayerInfoDTO {
   const PlayerInfoDTO(
       {required this.challenges,

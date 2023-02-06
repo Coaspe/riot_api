@@ -9,7 +9,3 @@ part of 'observer.dart';
 Observer _$ObserverFromJson(Map<String, dynamic> json) => Observer(
       encryptionKey: json['encryptionKey'] as String,
     );
-
-Map<String, dynamic> _$ObserverToJson(Observer instance) => <String, dynamic>{
-      'encryptionKey': instance.encryptionKey,
-    };

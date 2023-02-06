@@ -18,13 +18,6 @@ SerializableMapOfPercentile _$SerializableMapOfPercentileFromJson(
       ),
     );
 
-Map<String, dynamic> _$SerializableMapOfPercentileToJson(
-        SerializableMapOfPercentile instance) =>
-    <String, dynamic>{
-      'percentile': instance.percentile.map((k, e) =>
-          MapEntry(k, e.map((k, e) => MapEntry(_$TierEnumMap[k]!, e)))),
-    };
-
 const _$TierEnumMap = {
   Tier.challenger: 'CHALLENGER',
   Tier.grandmaster: 'GRANDMASTER',

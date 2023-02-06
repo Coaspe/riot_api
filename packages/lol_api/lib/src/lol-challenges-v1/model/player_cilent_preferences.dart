@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'player_cilent_preferences.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class PlayerCilentPreferences {
   const PlayerCilentPreferences(
       {required this.bannerAccent,

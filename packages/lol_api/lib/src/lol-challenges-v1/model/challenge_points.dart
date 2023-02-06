@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'challenge_points.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ChallengePoints {
   const ChallengePoints({
     required this.level,

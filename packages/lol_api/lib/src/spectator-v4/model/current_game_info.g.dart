@@ -28,18 +28,3 @@ CurrentGameInfo _$CurrentGameInfoFromJson(Map<String, dynamic> json) =>
               (e) => CurrentGameParticipant.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$CurrentGameInfoToJson(CurrentGameInfo instance) =>
-    <String, dynamic>{
-      'gameId': instance.gameId,
-      'gameType': instance.gameType,
-      'gameStartTime': instance.gameStartTime,
-      'mapId': instance.mapId,
-      'gameLength': instance.gameLength,
-      'platformId': instance.platformId,
-      'gameMode': instance.gameMode,
-      'bannedChampions': instance.bannedChampions,
-      'gameQueueConfigId': instance.gameQueueConfigId,
-      'observers': instance.observers,
-      'participants': instance.participants,
-    };

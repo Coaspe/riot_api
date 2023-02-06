@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'summoner_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class SummonerDTO {
   const SummonerDTO(
       {required this.id,

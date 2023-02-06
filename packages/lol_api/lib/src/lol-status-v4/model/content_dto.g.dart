@@ -10,9 +10,3 @@ ContentDTO _$ContentDTOFromJson(Map<String, dynamic> json) => ContentDTO(
       locale: json['locale'] as String?,
       content: json['content'] as String?,
     );
-
-Map<String, dynamic> _$ContentDTOToJson(ContentDTO instance) =>
-    <String, dynamic>{
-      'locale': instance.locale,
-      'content': instance.content,
-    };

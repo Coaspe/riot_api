@@ -13,10 +13,3 @@ PerkStyleDTO _$PerkStyleDTOFromJson(Map<String, dynamic> json) => PerkStyleDTO(
           .toList(),
       style: json['style'] as int,
     );
-
-Map<String, dynamic> _$PerkStyleDTOToJson(PerkStyleDTO instance) =>
-    <String, dynamic>{
-      'descriptions': instance.descriptions,
-      'selections': instance.selections,
-      'style': instance.style,
-    };

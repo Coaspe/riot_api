@@ -13,8 +13,3 @@ PerksDTO _$PerksDTOFromJson(Map<String, dynamic> json) => PerksDTO(
           .map((e) => PerkStyleDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$PerksDTOToJson(PerksDTO instance) => <String, dynamic>{
-      'statPerks': instance.statPerks,
-      'styles': instance.styles,
-    };

@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'league_item_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class LeagueItemDTO {
   const LeagueItemDTO(
       {required this.freshBlood,

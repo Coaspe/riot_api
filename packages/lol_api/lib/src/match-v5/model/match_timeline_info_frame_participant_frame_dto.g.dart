@@ -28,20 +28,3 @@ MatchTimelineInfoFrameParticipantFrameDTO
           totalGold: json['totalGold'] as int,
           xp: json['xp'] as int,
         );
-
-Map<String, dynamic> _$MatchTimelineInfoFrameParticipantFrameDTOToJson(
-        MatchTimelineInfoFrameParticipantFrameDTO instance) =>
-    <String, dynamic>{
-      'championStats': instance.championStats,
-      'currentGold': instance.currentGold,
-      'damageStats': instance.damageStats,
-      'goldPerSecond': instance.goldPerSecond,
-      'jungleMinionsKilled': instance.jungleMinionsKilled,
-      'level': instance.level,
-      'minionKilled': instance.minionKilled,
-      'participantId': instance.participantId,
-      'position': instance.position,
-      'timeEnemySpentControlled': instance.timeEnemySpentControlled,
-      'totalGold': instance.totalGold,
-      'xp': instance.xp,
-    };

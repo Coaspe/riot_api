@@ -12,10 +12,3 @@ BannedChampion _$BannedChampionFromJson(Map<String, dynamic> json) =>
       championId: json['championId'] as int,
       teamId: json['teamId'] as int,
     );
-
-Map<String, dynamic> _$BannedChampionToJson(BannedChampion instance) =>
-    <String, dynamic>{
-      'pickTurn': instance.pickTurn,
-      'championId': instance.championId,
-      'teamId': instance.teamId,
-    };

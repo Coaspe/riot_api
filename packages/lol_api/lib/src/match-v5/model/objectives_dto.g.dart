@@ -17,13 +17,3 @@ ObjectivesDTO _$ObjectivesDTOFromJson(Map<String, dynamic> json) =>
           ObjectiveDTO.fromJson(json['riftHerald'] as Map<String, dynamic>),
       tower: ObjectiveDTO.fromJson(json['tower'] as Map<String, dynamic>),
     );
-
-Map<String, dynamic> _$ObjectivesDTOToJson(ObjectivesDTO instance) =>
-    <String, dynamic>{
-      'baron': instance.baron,
-      'champion': instance.champion,
-      'dragon': instance.dragon,
-      'inhibitor': instance.inhibitor,
-      'riftHerald': instance.riftHerald,
-      'tower': instance.tower,
-    };

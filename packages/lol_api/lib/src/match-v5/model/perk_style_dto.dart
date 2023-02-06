@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'perk_style_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class PerkStyleDTO {
   const PerkStyleDTO(
       {required this.descriptions,

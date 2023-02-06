@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'status_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class StatusDTO {
   const StatusDTO(
       {required this.id,

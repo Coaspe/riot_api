@@ -12,10 +12,3 @@ MatchTimelineInfoParticipantDTO _$MatchTimelineInfoParticipantDTOFromJson(
       participantId: json['participantId'] as int,
       puuid: json['puuid'] as String,
     );
-
-Map<String, dynamic> _$MatchTimelineInfoParticipantDTOToJson(
-        MatchTimelineInfoParticipantDTO instance) =>
-    <String, dynamic>{
-      'participantId': instance.participantId,
-      'puuid': instance.puuid,
-    };

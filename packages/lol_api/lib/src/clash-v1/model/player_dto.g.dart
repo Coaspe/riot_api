@@ -12,10 +12,3 @@ PlayerDTO _$PlayerDTOFromJson(Map<String, dynamic> json) => PlayerDTO(
       position: json['position'] as String,
       role: json['role'] as String,
     );
-
-Map<String, dynamic> _$PlayerDTOToJson(PlayerDTO instance) => <String, dynamic>{
-      'summonerId': instance.summonerId,
-      'teamId': instance.teamId,
-      'position': instance.position,
-      'role': instance.role,
-    };

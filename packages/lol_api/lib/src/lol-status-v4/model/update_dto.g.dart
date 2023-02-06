@@ -19,13 +19,3 @@ UpdateDTO _$UpdateDTOFromJson(Map<String, dynamic> json) => UpdateDTO(
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
-
-Map<String, dynamic> _$UpdateDTOToJson(UpdateDTO instance) => <String, dynamic>{
-      'id': instance.id,
-      'author': instance.author,
-      'publish': instance.publish,
-      'publishLocations': instance.publishLocations,
-      'translations': instance.translations,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-    };

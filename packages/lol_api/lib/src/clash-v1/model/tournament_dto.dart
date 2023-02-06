@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'tournament_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class TournamentDTO {
   const TournamentDTO({
     required this.id,

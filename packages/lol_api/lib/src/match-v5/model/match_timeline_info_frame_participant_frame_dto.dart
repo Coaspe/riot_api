@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'match_timeline_info_frame_participant_frame_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchTimelineInfoFrameParticipantFrameDTO {
   const MatchTimelineInfoFrameParticipantFrameDTO(
       {required this.championStats,

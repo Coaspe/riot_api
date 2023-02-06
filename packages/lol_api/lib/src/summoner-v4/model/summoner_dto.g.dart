@@ -15,14 +15,3 @@ SummonerDTO _$SummonerDTOFromJson(Map<String, dynamic> json) => SummonerDTO(
       revisionDate: json['revisionDate'] as int,
       summonerLevel: json['summonerLevel'] as int,
     );
-
-Map<String, dynamic> _$SummonerDTOToJson(SummonerDTO instance) =>
-    <String, dynamic>{
-      'accountId': instance.accountId,
-      'profileIconId': instance.profileIconId,
-      'revisionDate': instance.revisionDate,
-      'name': instance.name,
-      'id': instance.id,
-      'puuid': instance.puuid,
-      'summonerLevel': instance.summonerLevel,
-    };

@@ -15,11 +15,3 @@ MatchTeamDTO _$MatchTeamDTOFromJson(Map<String, dynamic> json) => MatchTeamDTO(
       teamId: json['teamId'] as int,
       win: json['win'] as bool,
     );
-
-Map<String, dynamic> _$MatchTeamDTOToJson(MatchTeamDTO instance) =>
-    <String, dynamic>{
-      'bans': instance.bans,
-      'objectives': instance.objectives,
-      'teamId': instance.teamId,
-      'win': instance.win,
-    };

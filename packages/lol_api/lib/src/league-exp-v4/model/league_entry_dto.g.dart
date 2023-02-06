@@ -26,24 +26,6 @@ LeagueEntryDTO _$LeagueEntryDTOFromJson(Map<String, dynamic> json) =>
           : MiniSeriesDTO.fromJson(json['miniSeries'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LeagueEntryDTOToJson(LeagueEntryDTO instance) =>
-    <String, dynamic>{
-      'leagueId': instance.leagueId,
-      'summonerId': instance.summonerId,
-      'summonerName': instance.summonerName,
-      'queueType': _$QueueTypeEnumMap[instance.queueType]!,
-      'tier': _$TierEnumMap[instance.tier]!,
-      'rank': _$DivisionEnumMap[instance.rank]!,
-      'leaguePoints': instance.leaguePoints,
-      'wins': instance.wins,
-      'losses': instance.losses,
-      'hotStreak': instance.hotStreak,
-      'veteran': instance.veteran,
-      'freshBlood': instance.freshBlood,
-      'inactive': instance.inactive,
-      'miniSeries': instance.miniSeries,
-    };
-
 const _$QueueTypeEnumMap = {
   QueueType.rankedSolo_5x5: 'RANKED_SOLO_5x5',
   QueueType.rankedTFT: 'RANKED_TFT',

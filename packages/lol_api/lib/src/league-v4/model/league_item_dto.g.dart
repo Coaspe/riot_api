@@ -22,18 +22,3 @@ LeagueItemDTO _$LeagueItemDTOFromJson(Map<String, dynamic> json) =>
       losses: json['losses'] as int,
       summonerId: json['summonerId'] as String,
     );
-
-Map<String, dynamic> _$LeagueItemDTOToJson(LeagueItemDTO instance) =>
-    <String, dynamic>{
-      'freshBlood': instance.freshBlood,
-      'wins': instance.wins,
-      'summonerName': instance.summonerName,
-      'miniSeries': instance.miniSeries,
-      'inactive': instance.inactive,
-      'veteran': instance.veteran,
-      'hotStreak': instance.hotStreak,
-      'rank': instance.rank,
-      'leaguePoints': instance.leaguePoints,
-      'losses': instance.losses,
-      'summonerId': instance.summonerId,
-    };

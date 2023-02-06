@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'meta_data_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MetaDataDTO {
   const MetaDataDTO(
       {required this.dataVersion,

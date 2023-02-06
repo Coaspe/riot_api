@@ -25,17 +25,3 @@ FeaturedGameInfo _$FeaturedGameInfoFromJson(Map<String, dynamic> json) =>
           ?.map((e) => Participant.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$FeaturedGameInfoToJson(FeaturedGameInfo instance) =>
-    <String, dynamic>{
-      'gameMode': instance.gameMode,
-      'gameLength': instance.gameLength,
-      'mapId': instance.mapId,
-      'gameType': instance.gameType,
-      'bannedChampion': instance.bannedChampion,
-      'gameId': instance.gameId,
-      'observer': instance.observer,
-      'gameQueueConfigId': instance.gameQueueConfigId,
-      'gameStartTime': instance.gameStartTime,
-      'participants': instance.participants,
-    };

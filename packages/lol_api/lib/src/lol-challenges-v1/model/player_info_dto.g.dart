@@ -21,15 +21,6 @@ PlayerInfoDTO _$PlayerInfoDTOFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$PlayerInfoDTOToJson(PlayerInfoDTO instance) =>
-    <String, dynamic>{
-      'challenges': instance.challenges,
-      'preferences': instance.preferences,
-      'totalPoints': instance.totalPoints,
-      'categoryPoints': instance.categoryPoints
-          .map((k, e) => MapEntry(_$CategoryEnumMap[k]!, e)),
-    };
-
 const _$CategoryEnumMap = {
   Category.expertise: 'EXPERTISE',
   Category.teamwork: 'TEAMWORK',

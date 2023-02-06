@@ -3,7 +3,7 @@ import 'match_timeline_info_frame_participant_frame_dto.dart';
 
 part 'match_timeline_info_frame_participant_frames_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchTimelineInfoFrameParticipantFramesDTO {
   const MatchTimelineInfoFrameParticipantFramesDTO({
     required this.p1,

@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'info_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class InfoDTO {
   const InfoDTO({
     required this.gameCreation,

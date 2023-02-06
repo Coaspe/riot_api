@@ -14,11 +14,3 @@ PlayerCilentPreferences _$PlayerCilentPreferencesFromJson(
       challengeIds:
           (json['challengeIds'] as List<dynamic>).map((e) => e as int).toList(),
     );
-
-Map<String, dynamic> _$PlayerCilentPreferencesToJson(
-        PlayerCilentPreferences instance) =>
-    <String, dynamic>{
-      'bannerAccent': instance.bannerAccent,
-      'title': instance.title,
-      'challengeIds': instance.challengeIds,
-    };

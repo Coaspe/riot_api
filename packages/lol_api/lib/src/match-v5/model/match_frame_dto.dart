@@ -4,7 +4,7 @@ import 'match_event_dto.dart';
 
 part 'match_frame_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchFrameDTO {
   const MatchFrameDTO(
       {required this.events,

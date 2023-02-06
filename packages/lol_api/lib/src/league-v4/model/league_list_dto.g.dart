@@ -17,15 +17,6 @@ LeagueListDTO _$LeagueListDTOFromJson(Map<String, dynamic> json) =>
       queue: $enumDecode(_$QueueTypeEnumMap, json['queue']),
     );
 
-Map<String, dynamic> _$LeagueListDTOToJson(LeagueListDTO instance) =>
-    <String, dynamic>{
-      'leagueId': instance.leagueId,
-      'entries': instance.entries,
-      'tier': _$TierEnumMap[instance.tier]!,
-      'name': instance.name,
-      'queue': _$QueueTypeEnumMap[instance.queue]!,
-    };
-
 const _$TierEnumMap = {
   Tier.challenger: 'CHALLENGER',
   Tier.grandmaster: 'GRANDMASTER',

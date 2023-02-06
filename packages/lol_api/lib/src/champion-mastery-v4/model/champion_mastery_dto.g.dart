@@ -18,16 +18,3 @@ ChampionMasteryDTO _$ChampionMasteryDTOFromJson(Map<String, dynamic> json) =>
       championPointsSinceLastLevel: json['championPointsSinceLastLevel'] as int,
       tokensEarned: json['tokensEarned'] as int,
     );
-
-Map<String, dynamic> _$ChampionMasteryDTOToJson(ChampionMasteryDTO instance) =>
-    <String, dynamic>{
-      'championPointsUntilNextLevel': instance.championPointsUntilNextLevel,
-      'chestGranted': instance.chestGranted,
-      'championId': instance.championId,
-      'lastPlayTime': instance.lastPlayTime,
-      'championLevel': instance.championLevel,
-      'summonerId': instance.summonerId,
-      'championPoints': instance.championPoints,
-      'championPointsSinceLastLevel': instance.championPointsSinceLastLevel,
-      'tokensEarned': instance.tokensEarned,
-    };

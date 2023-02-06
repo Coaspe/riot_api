@@ -4,7 +4,7 @@ import 'package:lol_api/src/league-exp-v4/model/league_entry_dto.dart';
 part 'serializable_map_of_percentile.g.dart';
 
 /// For serializable Map<String, Map<Tier, num>> data.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class SerializableMapOfPercentile {
   const SerializableMapOfPercentile({required this.percentile});
 

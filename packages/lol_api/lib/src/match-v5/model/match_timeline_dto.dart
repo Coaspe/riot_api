@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'match_timeline_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchTimelineDTO {
   const MatchTimelineDTO({required this.metaData, required this.info});
   final MetaDataDTO metaData;

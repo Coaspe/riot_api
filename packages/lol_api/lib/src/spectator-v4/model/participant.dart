@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'participant.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Participant {
   const Participant({
     required this.bot,

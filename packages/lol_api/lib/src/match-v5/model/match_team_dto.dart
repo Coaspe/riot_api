@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'match_team_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchTeamDTO {
   const MatchTeamDTO(
       {required this.bans,

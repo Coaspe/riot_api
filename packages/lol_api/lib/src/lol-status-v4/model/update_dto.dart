@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'update_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class UpdateDTO {
   const UpdateDTO(
       {required this.id,

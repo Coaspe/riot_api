@@ -11,10 +11,3 @@ AccountDTO _$AccountDTOFromJson(Map<String, dynamic> json) => AccountDTO(
       gameName: json['gameName'] as String?,
       tagLine: json['tagLine'] as String?,
     );
-
-Map<String, dynamic> _$AccountDTOToJson(AccountDTO instance) =>
-    <String, dynamic>{
-      'puuid': instance.puuid,
-      'gameName': instance.gameName,
-      'tagLine': instance.tagLine,
-    };

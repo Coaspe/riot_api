@@ -19,12 +19,3 @@ PlatformDataDTO _$PlatformDataDTOFromJson(Map<String, dynamic> json) =>
           ?.map((e) => StatusDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$PlatformDataDTOToJson(PlatformDataDTO instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'locales': instance.locales,
-      'maintenances': instance.maintenances,
-      'incidents': instance.incidents,
-    };

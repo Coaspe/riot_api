@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'league_list_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class LeagueListDTO {
   const LeagueListDTO(
       {required this.leagueId,

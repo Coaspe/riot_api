@@ -19,17 +19,3 @@ LevelToPercentile _$LevelToPercentileFromJson(Map<String, dynamic> json) =>
       grandmaster: (json['GRANDMASTER'] as num).toDouble(),
       challenger: (json['CHALLENGER'] as num).toDouble(),
     );
-
-Map<String, dynamic> _$LevelToPercentileToJson(LevelToPercentile instance) =>
-    <String, dynamic>{
-      'NONE': instance.none,
-      'IRON': instance.iron,
-      'BRONZE': instance.bronze,
-      'SILVER': instance.silver,
-      'GOLD': instance.gold,
-      'PLATINUM': instance.platinum,
-      'DIAMOND': instance.diamond,
-      'MASTER': instance.master,
-      'GRANDMASTER': instance.grandmaster,
-      'CHALLENGER': instance.challenger,
-    };

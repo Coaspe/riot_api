@@ -13,11 +13,3 @@ MiniSeriesDTO _$MiniSeriesDTOFromJson(Map<String, dynamic> json) =>
       target: json['target'] as int?,
       wins: json['wins'] as int?,
     );
-
-Map<String, dynamic> _$MiniSeriesDTOToJson(MiniSeriesDTO instance) =>
-    <String, dynamic>{
-      'losses': instance.losses,
-      'progress': instance.progress,
-      'target': instance.target,
-      'wins': instance.wins,
-    };

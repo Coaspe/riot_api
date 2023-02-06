@@ -18,14 +18,3 @@ TeamDTO _$TeamDTOFromJson(Map<String, dynamic> json) => TeamDTO(
           .map((e) => PlayerDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$TeamDTOToJson(TeamDTO instance) => <String, dynamic>{
-      'id': instance.id,
-      'tournamentId': instance.tournamentId,
-      'name': instance.name,
-      'iconId': instance.iconId,
-      'tier': instance.tier,
-      'caption': instance.caption,
-      'abbreviation': instance.abbreviation,
-      'players': instance.players,
-    };

@@ -3,7 +3,7 @@ import 'player_dto.dart';
 
 part 'team_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class TeamDTO {
   const TeamDTO(
       {required this.id,

@@ -15,14 +15,3 @@ Participant _$ParticipantFromJson(Map<String, dynamic> json) => Participant(
       teamId: json['teamId'] as int,
       spell1Id: json['spell1Id'] as int,
     );
-
-Map<String, dynamic> _$ParticipantToJson(Participant instance) =>
-    <String, dynamic>{
-      'bot': instance.bot,
-      'spell2Id': instance.spell2Id,
-      'profileIconId': instance.profileIconId,
-      'summonerName': instance.summonerName,
-      'championId': instance.championId,
-      'teamId': instance.teamId,
-      'spell1Id': instance.spell1Id,
-    };

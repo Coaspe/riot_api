@@ -13,10 +13,3 @@ MetaDataDTO _$MetaDataDTOFromJson(Map<String, dynamic> json) => MetaDataDTO(
           .map((e) => e as String)
           .toList(),
     );
-
-Map<String, dynamic> _$MetaDataDTOToJson(MetaDataDTO instance) =>
-    <String, dynamic>{
-      'dataVersion': instance.dataVersion,
-      'matchId': instance.matchId,
-      'participants': instance.participants,
-    };

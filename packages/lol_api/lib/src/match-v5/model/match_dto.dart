@@ -4,7 +4,7 @@ import 'meta_data_dto.dart';
 
 part 'match_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MatchDTO {
   const MatchDTO({required this.metadata, required this.info});
   final MetaDataDTO metadata;

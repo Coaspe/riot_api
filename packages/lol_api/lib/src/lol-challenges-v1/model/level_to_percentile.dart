@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'level_to_percentile.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class LevelToPercentile {
   const LevelToPercentile({
     required this.none,

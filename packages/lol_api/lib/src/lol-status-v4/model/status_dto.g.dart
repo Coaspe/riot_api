@@ -23,15 +23,3 @@ StatusDTO _$StatusDTOFromJson(Map<String, dynamic> json) => StatusDTO(
           ?.map((e) => e as String)
           .toList(),
     );
-
-Map<String, dynamic> _$StatusDTOToJson(StatusDTO instance) => <String, dynamic>{
-      'id': instance.id,
-      'maintenanceStatus': instance.maintenanceStatus,
-      'incidentSeverity': instance.incidentSeverity,
-      'titles': instance.titles,
-      'updates': instance.updates,
-      'createdAt': instance.createdAt,
-      'archiveAt': instance.archiveAt,
-      'updatedAt': instance.updatedAt,
-      'platforms': instance.platforms,
-    };

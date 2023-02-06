@@ -27,21 +27,3 @@ InfoDTO _$InfoDTOFromJson(Map<String, dynamic> json) => InfoDTO(
           .toList(),
       tournamentCode: json['tournamentCode'] as String?,
     );
-
-Map<String, dynamic> _$InfoDTOToJson(InfoDTO instance) => <String, dynamic>{
-      'gameCreation': instance.gameCreation,
-      'gameDuration': instance.gameDuration,
-      'gameEndTimestamp': instance.gameEndTimestamp,
-      'gameId': instance.gameId,
-      'gameMode': instance.gameMode,
-      'gameName': instance.gameName,
-      'gameStartTimestamp': instance.gameStartTimestamp,
-      'gameType': instance.gameType,
-      'gameVersion': instance.gameVersion,
-      'mapId': instance.mapId,
-      'participants': instance.participants,
-      'platformId': instance.platformId,
-      'queueId': instance.queueId,
-      'teams': instance.teams,
-      'tournamentCode': instance.tournamentCode,
-    };

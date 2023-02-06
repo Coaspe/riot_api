@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'perks_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class PerksDTO {
   const PerksDTO({required this.statPerks, required this.styles});
   final PerkStatsDTO statPerks;

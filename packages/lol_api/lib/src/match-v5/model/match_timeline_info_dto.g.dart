@@ -19,12 +19,3 @@ MatchTimelineInfoDTO _$MatchTimelineInfoDTOFromJson(
               e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$MatchTimelineInfoDTOToJson(
-        MatchTimelineInfoDTO instance) =>
-    <String, dynamic>{
-      'frameInterval': instance.frameInterval,
-      'frames': instance.frames,
-      'gameId': instance.gameId,
-      'participants': instance.participants,
-    };

@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'observer.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Observer {
   const Observer({required this.encryptionKey});
 

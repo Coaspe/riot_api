@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'objectives_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ObjectivesDTO {
   const ObjectivesDTO({
     required this.baron,

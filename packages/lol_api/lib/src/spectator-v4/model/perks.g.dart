@@ -11,9 +11,3 @@ Perks _$PerksFromJson(Map<String, dynamic> json) => Perks(
       perkStyle: json['perkStyle'] as int,
       perkSubStyle: json['perkSubStyle'] as int,
     );
-
-Map<String, dynamic> _$PerksToJson(Perks instance) => <String, dynamic>{
-      'perkIds': instance.perkIds,
-      'perkStyle': instance.perkStyle,
-      'perkSubStyle': instance.perkSubStyle,
-    };

@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'banned_champion.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class BannedChampion {
   const BannedChampion(
       {required this.pickTurn, required this.championId, required this.teamId});

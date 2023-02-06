@@ -14,14 +14,6 @@ ChallengePoints _$ChallengePointsFromJson(Map<String, dynamic> json) =>
       percentile: (json['percentile'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$ChallengePointsToJson(ChallengePoints instance) =>
-    <String, dynamic>{
-      'level': _$LevelEnumMap[instance.level]!,
-      'current': instance.current,
-      'max': instance.max,
-      'percentile': instance.percentile,
-    };
-
 const _$LevelEnumMap = {
   Level.none: 'NONE',
   Level.iron: 'IRON',
