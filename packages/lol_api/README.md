@@ -30,7 +30,7 @@ Here is what you need to use the Dart SDK:
 
 We provide other Riot api libraries:
 
-- [riot_api]()
+- [riot_api](https://pub.dev/packages/riot_api)
 - [val_api](Not supported yet)
 - [lor_api](Not supported yet)
 
