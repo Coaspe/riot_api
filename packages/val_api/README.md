@@ -28,8 +28,9 @@ RiotApi.init(apiKey: 'your-api-key'))
 And use `APIname.queryFunction` form to call query function.
 
 You can check [available api](https://developer.riotgames.com/apis).
+
 ```dart
-const accountId = 'your-account-id';
+const actId = 'your-act-id';
 
 // Get content optionally filtered by locale
 final content = await ValContentV1.getContentByLocale(RegionValues.kr);

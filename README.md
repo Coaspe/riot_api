@@ -82,6 +82,7 @@ final match =
 ### tft_api
 
 You can check [available api](https://developer.riotgames.com/apis).
+
 ```dart
 // Get a list of match ids by PUUID.
 final match = await TFTMatchV1.getMatchListByPuuid(PlatformValues.asia, puuid, count: 1);
@@ -96,7 +97,7 @@ final topLadder = await TFTLeagueV1.getTopRatedLadderByQueue(RegionValues.kr, "R
 ### val_api
 
 ```dart
-const accountId = 'your-account-id';
+const actId = 'your-act-id';
 
 // Get content optionally filtered by locale
 final content = await ValContentV1.getContentByLocale(RegionValues.kr);
