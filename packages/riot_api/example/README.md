@@ -11,7 +11,9 @@ And use `APIname.queryFunction` form to call query function.
 
 You can check [available query](https://pub.dev/packages/riot_api).
 ```dart
-// Get account information by puuid
 const puuid = 'your-puuid';
-    final user = await AccountV1.getAccountByPuuid(PlatformValues.asia, puuid);
+// Get account information by puuid.
+final user = await AccountV1.getAccountByPuuid(PlatformValues.asia, puuid);
+// Get account information by gameName and tagLine.
+final user2 = await AccountV1.getAccountByRiotId(PlatformValues.asia, gameName, tagLine);
 ```
