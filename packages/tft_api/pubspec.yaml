@@ -1,6 +1,6 @@
 name: tft_api
 description: This package provides an easy way to use the Riot games TFT(Teamfight Tactics) api in Dart language.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/Coaspe/riot_api
 
 environment:

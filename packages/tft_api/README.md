@@ -35,7 +35,7 @@ final match = await TFTMatchV1.getMatchListByPuuid(PlatformValues.asia, puuid, c
 /// Get the challenger league.
 final league = await TFTLeagueV1.getChallengerLeague(RegionValues.kr);
 
-// Get the master league queue exception.
+// Get the top rated ladder.
 final topLadder = await TFTLeagueV1.getTopRatedLadderByQueue(RegionValues.kr, "RANKED_TFT");
 ```
 
