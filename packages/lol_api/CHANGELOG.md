@@ -7,4 +7,7 @@ Fix url bug.
 Remove private information.
 
 ## 0.0.7
-Description changed
+Description changed.
+
+## 0.0.8
+Fix fatal typo.

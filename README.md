@@ -17,8 +17,13 @@ These packages provide easy ways to use the riot api in Dart language.
     - TOURNAMENT-STUB-V4 (Not yet supported)
 - Riot account api
     - ACCOUNT-V1
-- Valrorant (Not yet supported)
+- Valrorant
+    - VAL-CONTENT-V1
+    - VAL-MATCH-V1 (Because of policy issue, not tested yet 😭.)
+    - VAL-RANKED-V1
+    - VAL-STATUS-V1
 - Legends of Runeterra (Not yet supported)
+- Teamfight Tactics(Not yet supported)
 
 ## Requirements
 

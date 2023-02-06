@@ -6,7 +6,7 @@ class ApiUtil {
   static Future<T> requestApi<T, G>(String url, Function(G json) task,
       [Map<String, String>? headers]) async {
     if (RiotApi.apiKey == null) {
-      throw Exception();
+      throw Exception("RiotApi.apiKey must not bt null");
     }
     headers ??= {};
     headers["X-Riot-Token"] = RiotApi.apiKey!;
