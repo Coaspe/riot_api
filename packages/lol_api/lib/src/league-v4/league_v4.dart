@@ -48,10 +48,9 @@ class LeagueV4 {
         "In this query, the tier must be set to diamond or less.");
     assert(queue != QueueType.rankedTFT,
         "'queue' must be one of [RANKED_SOLO_5x5, RANKED_FLEX_SR, RANKED_FLEX_TT]");
-    headers ??= {};
-    if (page != null) headers['page'] = page.toString();
-    final url =
+    String url =
         '${region.regionToUrl}/${Qtype.lol.name}/league/v4/entries/${queue.valueToString}/${tier.name.toUpperCase()}/${division.valueToString}';
+    if (page != null) url += '?page=$page';
     final leagueEntryDTOList =
         await ApiUtil.requestApi<List<LeagueEntryDTO>, List<dynamic>>(
             url,

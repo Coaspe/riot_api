@@ -8,10 +8,10 @@ class LeagueExpV4 {
       required Division division,
       int? page,
       Map<String, String>? headers}) async {
-    headers ??= {};
-    if (page != null) headers['page'] = page.toString();
-    final url =
+    String url =
         '${region.regionToUrl}/${Qtype.lol.name}/league-exp/v4/entries/${queue.valueToString}/${tier.name.toUpperCase()}/${division.valueToString}';
+    if (page != null) url += '?page=$page';
+    print(url);
     List<LeagueEntryDTO> entry =
         await ApiUtil.requestApi<List<LeagueEntryDTO>, List<dynamic>>(
             url,

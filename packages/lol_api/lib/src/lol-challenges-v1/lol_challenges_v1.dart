@@ -99,8 +99,9 @@ class LOLChallengesV1 {
             level == Level.grandmaster ||
             level == Level.master,
         "Level must be MASTER, GRANDMASTER or CHALLENGER");
-    final url =
+    String url =
         '${region.regionToUrl}/${Qtype.lol.name}/challenges/v1/challenges/$challengeId/leaderboards/by-level/${level.valueToString}';
+    if (limit != null) url += '?limit=$limit';
     final topPlayersEachLevel = await ApiUtil.requestApi<
             List<ApexPlayerInfoDTO>, List<dynamic>>(
         url,

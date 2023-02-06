@@ -33,9 +33,10 @@ class ChampionMasteryV4 {
   /// Get specified number of top champion mastery entries sorted by number of champion points descending.
   static Future<List<ChampionMasteryDTO>> getAllChampionMasteryDesc(
       RegionValues region, String encryptedSummonerId,
-      {Map<String, String>? headers}) async {
-    final url =
+      {int? count, Map<String, String>? headers}) async {
+    String url =
         '${region.regionToUrl}/${Qtype.lol.name}/champion-mastery/v4/champion-masteries/by-summoner/$encryptedSummonerId/top';
+    if (count != null) url += '?count=$count';
     List<ChampionMasteryDTO> mastery = await ApiUtil.requestApi<
             List<ChampionMasteryDTO>, List<dynamic>>(
         url,

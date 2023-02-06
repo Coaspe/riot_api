@@ -3,6 +3,7 @@ import '../utils.dart';
 import 'model/account_dto.dart';
 
 class AccountV1 {
+  /// Get account by puuid
   static Future<AccountDTO> getAccountByPuuid(
       PlatformValues platform, String puuid,
       {Map<String, String>? headers}) async {
@@ -13,6 +14,7 @@ class AccountV1 {
     return user;
   }
 
+  /// Get account by riot id
   static Future<AccountDTO> getAccountByRiotId(
       PlatformValues platform, String gameName, String tagLine,
       {Map<String, String>? headers}) async {
@@ -23,14 +25,20 @@ class AccountV1 {
     return user;
   }
 
-  // static Future<AccountDTO> getAccountByToken(PlatformValues platform,
-  //     {Map<String, String>? headers}) async {
-  //   final url =
-  //       '${platform.platformToUrl}/${Qtype.riot.name}/account/v1/accounts/me';
-  //   AccountDTO user =
-  //       await ApiUtil.requestApi(url, AccountDTO.fromJson, headers);
-  //   return user;
-  // }
+  /// Get account by access token
+  ///
+  /// [authorization] is a Bearer token
+  static Future<AccountDTO> getAccountByToken(
+      PlatformValues platform, String authorization,
+      {Map<String, String>? headers}) async {
+    headers ??= {};
+    headers['Authorization'] = authorization;
+    final url =
+        '${platform.platformToUrl}/${Qtype.riot.name}/account/v1/accounts/me';
+    AccountDTO user =
+        await ApiUtil.requestApi(url, AccountDTO.fromJson, headers);
+    return user;
+  }
 
   static Future<AccountDTO> getActiveShard(
       PlatformValues platform, String game, String puuid,

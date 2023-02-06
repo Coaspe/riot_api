@@ -45,12 +45,12 @@ class MatchV5 {
     String url =
         '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/by-puuid/$puuid/ids?';
 
-    if (startTime != null) url = "${url}queue=$startTime&";
-    if (endTime != null) url = "${url}queue=$endTime&";
-    if (queue != null) url = "${url}queue=$queue&";
-    if (type != null) url = "${url}type=${type.name}&";
-    if (start != null) url = "${url}start=$start&";
-    if (count != null) url = "${url}count=$count&";
+    if (startTime != null) url += "startTime=$startTime&";
+    if (endTime != null) url += "endTime=$endTime&";
+    if (queue != null) url += "queue=$queue&";
+    if (type != null) url += "type=${type.name}&";
+    if (start != null) url += "start=$start&";
+    if (count != null) url += "count=$count&";
 
     List<dynamic> matchIds =
         await ApiUtil.requestApi(url, (json) => json, headers);

@@ -5,16 +5,18 @@ class SummonerV4 {
   /// Get a summoner by PUUID
   ///
   /// [rosPUUID] is a RSO encrypted PUUID
-  // static Future<SummonerDTO> getSummonerByRSOPUUID(
-  //     RegionValues region, String rsoPUUID,
-  //     {Map<String, String>? headers}) async {
-  //   final url =
-  //       '${region.regionToUrl}/fulfillment/v1/summoners/by-puuid/$rsoPUUID';
-  //   SummonerDTO user =
-  //       await ApiUtil.requestApi<SummonerDTO, Map<String, dynamic>>(
-  //           url, SummonerDTO.fromJson, headers);
-  //   return user;
-  // }
+  static Future<SummonerDTO> getSummonerByRSOPUUID(
+      RegionValues region, String rsoPUUID,
+      {Map<String, String>? headers}) async {
+    headers ??= {};
+    headers['rsoPUUID'] = rsoPUUID;
+    final url =
+        '${region.regionToUrl}/fulfillment/v1/summoners/by-puuid/$rsoPUUID';
+    SummonerDTO user =
+        await ApiUtil.requestApi<SummonerDTO, Map<String, dynamic>>(
+            url, SummonerDTO.fromJson, headers);
+    return user;
+  }
 
   /// Get a summoner by account ID.
   ///

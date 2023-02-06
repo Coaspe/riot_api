@@ -13,22 +13,27 @@ import 'package:riot_api/riot_api.dart';
 
 void main() async {
   setUp(() {
-    RiotApi.init(apiKey: 'your-api-key');
+    RiotApi.init(apiKey: 'RGAPI-f7302155-74f5-4bce-acc6-972b171d1015');
   });
 
   // Test with your info
-  const puuid = "your-puuid";
-  const id = "your-id";
+  // const puuid = "your-puuid";
+  // const id = "your-id";
   // const accountId = "your-accountId";
   // const name = "your-summoner-name";
-  const leagueId = "your-leagueId";
-
+  // const leagueId = "your-leagueId";
+  const puuid =
+      "NWiiFjQnBEq3i_w4RsnNWi-WSkTW193dqdmgF-6ZspITEKRxPj6Lbs7ZQnywUoILUaNN8Iwpp2KNJQ";
+  const id = "hTyGp_mL1YcVQwH80a3T8g57-ohX1k3tYNQ887VpasR-TA";
+  const accountId = "gS4KQBsOIKXG_rc-C1FWPKdEUuXrTovLI4JPEYlP92iM";
+  const name = "아스읖";
+  const leagueId = "446781dd-2147-3d8a-be18-f9a4f27e87bd";
   group('Match-V5', () {
     test('Get a match by match id.', () async {
       try {
         final matchIds = await MatchV5.getMatchIdsByPuuid(
             PlatformValues.asia, puuid,
-            count: 1);
+            count: 3);
         final match =
             await MatchV5.getMatchByMatchId(PlatformValues.asia, matchIds[0]);
         expect(match, isA<MatchDTO>());
@@ -98,7 +103,8 @@ void main() async {
       final config = await LeagueV4.getAllLeageueEntries(RegionValues.kr,
           division: Division.one,
           tier: Tier.bronze,
-          queue: QueueType.rankedFlexSR);
+          queue: QueueType.rankedFlexSR,
+          page: 3);
       expect(config, isA<List<LeagueEntryDTO>>());
     });
     test('Get the challenger league for given queue.', () async {
@@ -126,7 +132,8 @@ void main() async {
     });
     test('Return top players for each level.', () async {
       final config = await LOLChallengesV1.getTopPlayersOfLevel(
-          RegionValues.kr, 0, Level.challenger);
+          RegionValues.kr, 0, Level.challenger,
+          limit: 1);
       expect(config, isA<List<ApexPlayerInfoDTO>>());
     });
     test('Get challenge configuration', () async {
@@ -173,7 +180,8 @@ void main() async {
         'Get specified number of top champion mastery entries sorted by number of champion points descending.',
         () async {
       final mastery = await ChampionMasteryV4.getAllChampionMasteryDesc(
-          RegionValues.kr, id);
+          RegionValues.kr, id,
+          count: 2);
       expect(mastery, isA<List<ChampionMasteryDTO>>());
     });
     test(
