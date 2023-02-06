@@ -1,0 +1,10 @@
+export 'champion-mastery-v4/model/model.dart';
+export 'champion-v3/model/model.dart';
+export 'clash-v1/model/model.dart';
+export 'league-exp-v4/model/model.dart';
+export 'league-v4/model/model.dart';
+export 'lol-challenges-v1/model/model.dart';
+export 'lol-status-v4/model/model.dart';
+export 'match-v5/model/model.dart';
+export 'spectator-v4/model/model.dart';
+export 'summoner-v4/model/model.dart';

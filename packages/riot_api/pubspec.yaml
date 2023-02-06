@@ -1,0 +1,20 @@
+name: riot_api
+description: Riot games api.
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=2.19.0 <3.0.0'
+
+dependencies:
+  http: ^0.13.5
+  json_annotation: ^4.8.0
+  plugin_platform_interface: ^2.0.2
+  lol_api:
+    path: ../lol_api
+
+dev_dependencies:
+  json_serializable: ^6.6.1
+  build_runner: ^2.3.3
+  lints: ^2.0.0
+  test: ^1.21.0

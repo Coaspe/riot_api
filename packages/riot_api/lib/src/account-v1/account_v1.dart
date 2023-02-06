@@ -1,0 +1,44 @@
+import '../riot_api.dart';
+import '../utils.dart';
+import 'model/account_dto.dart';
+
+class AccountV1 {
+  static Future<AccountDTO> getAccountByPuuid(
+      PlatformValues platform, String puuid,
+      {Map<String, String>? headers}) async {
+    final url =
+        '${platform.platformToUrl}/${Qtype.riot.name}/account/v1/accounts/by-puuid/$puuid';
+    AccountDTO user =
+        await ApiUtil.requestApi(url, AccountDTO.fromJson, headers);
+    return user;
+  }
+
+  static Future<AccountDTO> getAccountByRiotId(
+      PlatformValues platform, String gameName, String tagLine,
+      {Map<String, String>? headers}) async {
+    final url =
+        '${platform.platformToUrl}/${Qtype.riot.name}/account/v1/accounts/by-riot-id/$gameName/$tagLine';
+    AccountDTO user =
+        await ApiUtil.requestApi(url, AccountDTO.fromJson, headers);
+    return user;
+  }
+
+  // static Future<AccountDTO> getAccountByToken(PlatformValues platform,
+  //     {Map<String, String>? headers}) async {
+  //   final url =
+  //       '${platform.platformToUrl}/${Qtype.riot.name}/account/v1/accounts/me';
+  //   AccountDTO user =
+  //       await ApiUtil.requestApi(url, AccountDTO.fromJson, headers);
+  //   return user;
+  // }
+
+  static Future<AccountDTO> getActiveShard(
+      PlatformValues platform, String game, String puuid,
+      {Map<String, String>? headers}) async {
+    final url =
+        '${platform.platformToUrl}/${Qtype.riot.name}/account/v1/active-shards/by-game/$game/by-puuid/$puuid';
+    AccountDTO user =
+        await ApiUtil.requestApi(url, AccountDTO.fromJson, headers);
+    return user;
+  }
+}
