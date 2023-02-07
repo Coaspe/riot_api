@@ -41,7 +41,7 @@ First, generate [riot api key](https://developer.riotgames.com/).
 
 Initialize `RiotApi` with your api key.
 ```dart
-    RiotApi.init(apiKey: 'your-api-key'))
+RiotApi.init(apiKey: 'your-api-key'))
 ```
 Use `APIname.queryFunction` form to call query function.
 
