@@ -40,7 +40,7 @@ class ValMatchV1 {
     String url =
         '${region.regionToUrl}/${Qtype.val.name}/match/v1/recent-matches/by-queue/$queue';
     RecentMatchesDTO match =
-        await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);
+        await ApiUtil.requestApi(url, RecentMatchesDTO.fromJson, headers);
     return match;
   }
 }

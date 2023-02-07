@@ -19,8 +19,8 @@ void main() async {
   // Test with your info
   const puuid = "your-puuid";
   const id = "your-id";
-  // const accountId = "your-accountId";
-  // const name = "your-summoner-name";
+  const accountId = "your-accountId";
+  const summonerName = "your-summoner-name";
   const leagueId = "your-leagueId";
 
   group('Match-V5', () {
@@ -189,14 +189,13 @@ void main() async {
   });
   group("Summoner-V4", () {
     test('Summoner-V4 query test - Get a summoner by account Id.', () async {
-      const accountId = 'gS4KQBsOIKXG_rc-C1FWPKdEUuXrTovLI4JPEYlP92iM';
       final summoner =
           await SummonerV4.getSummonerByAccountId(RegionValues.kr, accountId);
       expect(summoner, isA<SummonerDTO>());
     });
     test('Summoner-V4 query test - Get a summoner by name.', () async {
-      final summoner =
-          await SummonerV4.getSummonerBySummonerName(RegionValues.kr, "아스읖");
+      final summoner = await SummonerV4.getSummonerBySummonerName(
+          RegionValues.kr, summonerName);
       expect(summoner, isA<SummonerDTO>());
     });
     test('Summoner-V4 query test - Get a summoner by puuid.', () async {
@@ -205,8 +204,8 @@ void main() async {
       expect(summoner, isA<SummonerDTO>());
     });
     test('Summoner-V4 query test - Get a summoner by summoner id.', () async {
-      final summoner =
-          await SummonerV4.getSummonerBySummonerName(RegionValues.kr, "아스읖");
+      final summoner = await SummonerV4.getSummonerBySummonerName(
+          RegionValues.kr, summonerName);
       final user = await SummonerV4.getSummonerBySummonerId(
           RegionValues.kr, summoner.id);
       expect(user, isA<SummonerDTO>());

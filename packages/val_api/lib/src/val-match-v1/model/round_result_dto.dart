@@ -39,7 +39,7 @@ class RoundResultDTO {
   final List<PlayerLocationDTO> defusePlayerLocations;
   final LocationDTO defuseLocation;
   final List<PlayerRoundStatsDTO> playerStats;
-  final String? roundResultCode;
+  final String roundResultCode;
   factory RoundResultDTO.fromJson(Map<String, dynamic> json) =>
       _$RoundResultDTOFromJson(json);
 }

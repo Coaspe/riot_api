@@ -30,5 +30,5 @@ RoundResultDTO _$RoundResultDTOFromJson(Map<String, dynamic> json) =>
       playerStats: (json['playerStats'] as List<dynamic>)
           .map((e) => PlayerRoundStatsDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
-      roundResultCode: json['roundResultCode'] as String?,
+      roundResultCode: json['roundResultCode'] as String,
     );

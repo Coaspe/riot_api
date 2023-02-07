@@ -7,9 +7,8 @@ part of 'kill_dto.dart';
 // **************************************************************************
 
 KillDTO _$KillDTOFromJson(Map<String, dynamic> json) => KillDTO(
-      gameTime: json['gameTime'] as int,
-      roundTime: json['roundTime'] as int,
-      round: json['round'] as int,
+      timeSinceGameStartMillis: json['timeSinceGameStartMillis'] as int,
+      timeSinceRoundStartMillis: json['timeSinceRoundStartMillis'] as int,
       killer: json['killer'] as String,
       victim: json['victim'] as String,
       victimLocation:

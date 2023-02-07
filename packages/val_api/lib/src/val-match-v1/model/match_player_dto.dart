@@ -5,17 +5,18 @@ part 'match_player_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MatchPlayerDTO {
-  const MatchPlayerDTO(
-      {required this.puuid,
-      required this.gameName,
-      required this.tagLine,
-      required this.teamId,
-      required this.partyId,
-      required this.characterId,
-      required this.stats,
-      required this.competitiveTier,
-      required this.playerCard,
-      required this.playerTitle});
+  const MatchPlayerDTO({
+    required this.puuid,
+    required this.gameName,
+    required this.tagLine,
+    required this.teamId,
+    required this.partyId,
+    required this.characterId,
+    required this.stats,
+    required this.competitiveTier,
+    required this.playerCard,
+    required this.playerTitle,
+  });
   final String puuid;
   final String gameName;
   final String tagLine;

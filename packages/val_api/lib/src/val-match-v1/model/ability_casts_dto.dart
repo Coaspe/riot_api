@@ -5,11 +5,11 @@ part 'ability_casts_dto.g.dart';
 class AbilityCastsDTO {
   const AbilityCastsDTO(
       {required this.grenadeCasts,
-      required this.abilityCasts,
+      required this.ability1Casts,
       required this.ability2Casts,
       required this.ultimateCasts});
   final int grenadeCasts;
-  final int abilityCasts;
+  final int ability1Casts;
   final int ability2Casts;
   final int ultimateCasts;
   factory AbilityCastsDTO.fromJson(Map<String, dynamic> json) =>

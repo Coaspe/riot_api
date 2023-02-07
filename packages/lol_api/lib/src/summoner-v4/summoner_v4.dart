@@ -8,13 +8,10 @@ class SummonerV4 {
   static Future<SummonerDTO> getSummonerByRSOPUUID(
       RegionValues region, String rsoPUUID,
       {Map<String, String>? headers}) async {
-    headers ??= {};
-    headers['rsoPUUID'] = rsoPUUID;
     final url =
         '${region.regionToUrl}/fulfillment/v1/summoners/by-puuid/$rsoPUUID';
     SummonerDTO user =
-        await ApiUtil.requestApi<SummonerDTO, Map<String, dynamic>>(
-            url, SummonerDTO.fromJson, headers);
+        await ApiUtil.requestApi(url, SummonerDTO.fromJson, headers);
     return user;
   }
 
@@ -48,6 +45,21 @@ class SummonerV4 {
       {Map<String, String>? headers}) async {
     final url =
         '${region.regionToUrl}/${Qtype.lol.name}/summoner/v4/summoners/by-puuid/$encryptedPUUId';
+    SummonerDTO user =
+        await ApiUtil.requestApi(url, SummonerDTO.fromJson, headers);
+    return user;
+  }
+
+  /// Get a summoner by access token
+  ///
+  /// [authorization] is a Bearer token
+  static Future<SummonerDTO> getSummonerByAccessToken(
+      RegionValues region, String authorization,
+      {Map<String, String>? headers}) async {
+    headers ??= {};
+    headers['Authorization'] = authorization;
+    final url =
+        '${region.regionToUrl}/${Qtype.lol.name}/summoner/v4/summoners/me';
     SummonerDTO user =
         await ApiUtil.requestApi(url, SummonerDTO.fromJson, headers);
     return user;

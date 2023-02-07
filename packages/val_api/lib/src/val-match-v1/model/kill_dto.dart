@@ -8,9 +8,8 @@ part 'kill_dto.g.dart';
 @JsonSerializable(createToJson: false)
 class KillDTO {
   KillDTO({
-    required this.gameTime,
-    required this.roundTime,
-    required this.round,
+    required this.timeSinceGameStartMillis,
+    required this.timeSinceRoundStartMillis,
     required this.killer,
     required this.victim,
     required this.victimLocation,
@@ -19,9 +18,8 @@ class KillDTO {
     required this.finishingDamage,
   });
 
-  final int gameTime;
-  final int roundTime;
-  final int round;
+  final int timeSinceGameStartMillis;
+  final int timeSinceRoundStartMillis;
   final String killer;
   final String victim;
   final LocationDTO victimLocation;

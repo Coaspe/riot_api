@@ -35,6 +35,7 @@ class ClashV1 {
       RegionValues region,
       {Map<String, String>? headers}) async {
     final url = '${region.regionToUrl}/${Qtype.lol.name}/clash/v1/tournaments';
+
     final team = await ApiUtil.requestApi<List<TournamentDTO>, List<dynamic>>(
         url,
         (json) => json

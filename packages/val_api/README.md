@@ -30,13 +30,13 @@ And use `APIname.queryFunction` form to call query function.
 You can check [available api](https://developer.riotgames.com/apis).
 
 ```dart
-const actId = 'your-act-id';
-
 // Get content optionally filtered by locale
 final content = await ValContentV1.getContentByLocale(RegionValues.kr);
 
 // Get platform status.
 final status = await ValStatusV1.getPlatformStatus(RegionValues.kr);
+
+const actId = 'your-act-id';
 
 // Get leaderboard
 final board = await ValRankedV1.getLeaderboard(RegionValues.kr, actId, size: 100);
@@ -48,7 +48,7 @@ We provide other Riot api packages:
 
 - [riot_api](https://pub.dev/packages/riot_api) (Riot account api)
 - [lol_api](https://pub.dev/packages/lol_api) (League of Legends api)
-- tft_api (Not supported yet)
+- [tft_api](https://pub.dev/packages/tft_api) (Teamfight Tactics api)
 - lor_api (Not supported yet)
 
 ## How to Contribute
