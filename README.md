@@ -1,10 +1,12 @@
 # riot_api
 <p align="center">
-<img width="800px" src="https://user-images.githubusercontent.com/76432686/218413089-f6ed76ca-b2d9-4ffe-8169-e3a0b8d72feb.png" />
+<img width="800px" src="https://user-images.githubusercontent.com/76432686/218414683-134c8dac-a596-419f-8f94-a254d5e30d6b.png" />
 </p>
 
 
 An unofficial packages provide easy ways to use the riot api in Dart language.
+
+These pacakages aren't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
 
 - League of Legends api
     - CHAMPION-MASTERY-V4
