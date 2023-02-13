@@ -43,9 +43,9 @@ Here is what you need to use the Dart SDK:
 
 ## Exmaple
 
-First, generate [riot api key](https://developer.riotgames.com/).
+First, generate [Riot API key](https://developer.riotgames.com/).
 
-Initialize `RiotApi` with your api key.
+Initialize `RiotApi` with your API key.
 ```dart
 RiotApi.init(apiKey: 'your-api-key'))
 ```
@@ -67,7 +67,6 @@ final user2 = await AccountV1.getAccountByRiotId(PlatformValues.asia, gameName, 
 
 ### lol_api
 
-You can check [available api](https://developer.riotgames.com/apis).
 ```dart
 const accountId = 'your-account-id';
 
@@ -86,8 +85,6 @@ final match =
 
 ```
 ### tft_api
-
-You can check [available api](https://developer.riotgames.com/apis).
 
 ```dart
 // Get a list of match ids by PUUID.
