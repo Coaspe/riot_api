@@ -7,9 +7,9 @@ environment:
   sdk: '>=2.19.0 <3.0.0'
 
 dependencies:
+  riot_api: ^0.0.9
   json_annotation: ^4.8.0
   plugin_platform_interface: ^2.0.2
-  riot_api: ^0.0.9
 dev_dependencies:
   json_serializable: ^6.6.1
   build_runner: ^2.3.3
