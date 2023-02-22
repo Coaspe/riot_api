@@ -6,8 +6,6 @@ body:
     attributes:
       label: Source
       placeholder: "Example: champion_v3.dart"
-      validations:
-        required: true
   - type: textarea
     id: problem
     attributes:
