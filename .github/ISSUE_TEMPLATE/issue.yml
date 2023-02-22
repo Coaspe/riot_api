@@ -1,5 +1,5 @@
 name: Issue
-description: Help improve a this repo
+description: Help improve this repo
 body:
   - type: input
     id: Source
