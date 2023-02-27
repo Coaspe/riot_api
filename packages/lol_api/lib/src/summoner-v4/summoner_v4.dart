@@ -4,7 +4,7 @@ import 'model/summoner_dto.dart';
 class SummonerV4 {
   /// Get a summoner by PUUID
   ///
-  /// [rosPUUID] is a RSO encrypted PUUID
+  /// [rsoPUUID] is a RSO encrypted PUUID
   static Future<SummonerDTO> getSummonerByRSOPUUID(
       RegionValues region, String rsoPUUID,
       {Map<String, String>? headers}) async {

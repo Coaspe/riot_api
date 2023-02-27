@@ -65,8 +65,6 @@ class LOLChallengesV1 {
   }
 
   /// Map of level to percentile of players who have achieved it
-  ///
-  /// keys: ChallengeId -> Season -> Level -> percentile of players who achieved it
   static Future<SerializableMapOfPercentile> getMapOfLevelToPercentiles(
       RegionValues region,
       {Map<String, String>? headers}) async {

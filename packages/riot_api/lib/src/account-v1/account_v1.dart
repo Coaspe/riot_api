@@ -40,6 +40,7 @@ class AccountV1 {
     return user;
   }
 
+  /// Get active shard for a player.
   static Future<AccountDTO> getActiveShard(
       PlatformValues platform, String game, String puuid,
       {Map<String, String>? headers}) async {

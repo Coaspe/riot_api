@@ -4,6 +4,7 @@ import 'model/current_game_info.dart';
 import 'model/featured_game_info.dart';
 
 class SpectatorV4 {
+  /// Get current game information for the given summoner ID.
   static Future<CurrentGameInfo> getCurrentGameInfoBySummonerId(
       RegionValues region, String encryptedSummonerId,
       {Map<String, String>? headers}) async {
@@ -15,6 +16,7 @@ class SpectatorV4 {
     return gameInfo;
   }
 
+  /// Get list of featured games.
   static Future<FeaturedGameInfo> getFeaturedGames(RegionValues region,
       {Map<String, String>? headers}) async {
     final url =

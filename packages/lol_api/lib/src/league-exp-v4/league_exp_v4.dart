@@ -2,6 +2,7 @@ import 'model/league_entry_dto.dart';
 import 'package:riot_api/riot_api.dart';
 
 class LeagueExpV4 {
+  /// Get all the league entries
   static Future<List<LeagueEntryDTO>> getLeagueEntry(RegionValues region,
       {required QueueType queue,
       required Tier tier,
