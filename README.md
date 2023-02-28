@@ -1,38 +1,45 @@
 # riot_api
+
 <p align="center">
 <img width="800px" src="https://user-images.githubusercontent.com/76432686/218414683-134c8dac-a596-419f-8f94-a254d5e30d6b.png" />
 </p>
 
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
+[![Pub Version][pub_version_badge]][pub_package_link]
+[![Pub Points][pub_points_badge]][pub_points_link]
+[![License: MIT][license_badge]][license_link]
+
+---
 
 Unofficial packages provide easy ways to use the Riot API in Dart language.
 
 These pacakages aren't endorsed by Riot Games and don't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
 
 - League of Legends api
-    - CHAMPION-MASTERY-V4
-    - CHAMPION-V3
-    - CLASH-V1
-    - LEAGUE-EXP-V4
-    - LEAGUE-V4
-    - LOL-CHALLENGES-V1
-    - LOL-STATUS-V4
-    - MATCH-V5
-    - SPECTATOR-V4
-    - SUMMONER-V4
-    - TOURNAMENT-V4 (Not yet supported)
-    - TOURNAMENT-STUB-V4 (Not yet supported)
+  - CHAMPION-MASTERY-V4
+  - CHAMPION-V3
+  - CLASH-V1
+  - LEAGUE-EXP-V4
+  - LEAGUE-V4
+  - LOL-CHALLENGES-V1
+  - LOL-STATUS-V4
+  - MATCH-V5
+  - SPECTATOR-V4
+  - SUMMONER-V4
+  - TOURNAMENT-V4 (Not yet supported)
+  - TOURNAMENT-STUB-V4 (Not yet supported)
 - Riot account api
-    - ACCOUNT-V1
+  - ACCOUNT-V1
 - Valrorant
-    - VAL-CONTENT-V1
-    - VAL-MATCH-V1 (Because of policy issue, not tested yet 😭.)
-    - VAL-RANKED-V1
-    - VAL-STATUS-V1
+  - VAL-CONTENT-V1
+  - VAL-MATCH-V1 (Because of policy issue, not tested yet 😭.)
+  - VAL-RANKED-V1
+  - VAL-STATUS-V1
 - Teamfight Tactics
-    - TFT-LEAGUE-V1
-    - TFT-MATCH-V1
-    - TFT-STATUS-V1
-    - TFT-SUMMONER-V1
+  - TFT-LEAGUE-V1
+  - TFT-MATCH-V1
+  - TFT-STATUS-V1
+  - TFT-SUMMONER-V1
 - Legends of Runeterra (Not yet supported)
 
 ## Requirements
@@ -46,9 +53,11 @@ Here is what you need to use the Dart SDK:
 First, generate [Riot API key](https://developer.riotgames.com/).
 
 Initialize `RiotApi` with your API key.
+
 ```dart
 RiotApi.init(apiKey: 'your-api-key'))
 ```
+
 Use `APIname.queryFunction` form to call query function.
 
 You can check [available api](https://developer.riotgames.com/apis).
@@ -84,6 +93,7 @@ final match =
     await MatchV5.getMatchByMatchId(PlatformValues.asia, matchIds[0]);
 
 ```
+
 ### tft_api
 
 ```dart
@@ -113,6 +123,7 @@ final board = await ValRankedV1.getLeaderboard(RegionValues.kr, actId, size: 100
 ```
 
 ## pub.dev
+
 - [riot_api](https://pub.dev/packages/riot_api)
 - [lol_api](https://pub.dev/packages/lol_api)
 - [val_api](https://pub.dev/packages/val_api)
@@ -120,3 +131,12 @@ final board = await ValRankedV1.getLeaderboard(RegionValues.kr, actId, size: 100
 - [lor_api]() (Not supported yet)
 
 Documentation comment will be added gradually 😀
+
+---
+
+[license_badge]: https://img.shields.io/github/license/coaspe/riot_api
+[license_link]: https://img.shields.io/github/license/coaspe/riot_api
+[pub_points_badge]: https://img.shields.io/pub/points/riot_api
+[pub_version_badge]: https://img.shields.io/pub/v/riot_api
+[pub_package_link]: https://pub.dev/packages/riot_api
+[pub_points_link]: https://pub.dev/packages/riot_api/score
