@@ -2,7 +2,14 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../riot_api.dart';
 
+/// Singleton utill class for Restful API call.
 class ApiUtil {
+  ApiUtil._();
+
+  static final ApiUtil _instance = ApiUtil._();
+
+  factory ApiUtil() => _instance;
+
   static Future<T> requestApi<T, G>(String url, Function(G json) task,
       [Map<String, String>? headers]) async {
     if (RiotApi.apiKey == null) {

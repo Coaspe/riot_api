@@ -15,8 +15,9 @@ void main() async {
         PlatformValues.asia, gameName, tagLine);
     expect(user, isA<AccountDTO>());
   });
-  // test('Account-V1 query test - Get account by access token', () async {
-  //   final user = await AccountV1.getAccountByToken(PlatformValues.asia);
-  //   expect(user, isA<AccountDTO>());
-  // });
+  test('Account-V1 query test - Get account by access token', () async {
+    final auth = "your-auth";
+    final user = await AccountV1.getAccountByToken(PlatformValues.asia, auth);
+    expect(user, isA<AccountDTO>());
+  });
 }

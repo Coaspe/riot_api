@@ -28,8 +28,12 @@ extension RegionValuesEx on RegionValues {
   String get regionToUrl => "https://$name.api.riotgames.com";
 }
 
+/// Singleton class for Riot API key.
 class RiotApi {
   RiotApi._();
+  static final RiotApi _instance = RiotApi._();
+  factory RiotApi() => _instance;
+
   static String? _apiKey;
   static String? get apiKey => _apiKey;
   static set apiKey(newKey) => newKey;
