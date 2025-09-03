@@ -114,7 +114,7 @@ class ParticipantDTO {
   });
   final int assists;
   final int baronKills;
-  final int bountyLevel;
+  final int? bountyLevel;
   final int champExperience;
   final int champLevel;
 
