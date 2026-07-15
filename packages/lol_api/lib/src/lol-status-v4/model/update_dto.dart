@@ -5,14 +5,15 @@ part 'update_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class UpdateDTO {
-  const UpdateDTO(
-      {required this.id,
-      required this.author,
-      required this.publish,
-      this.publishLocations,
-      this.translations,
-      this.createdAt,
-      this.updatedAt});
+  const UpdateDTO({
+    required this.id,
+    required this.author,
+    required this.publish,
+    this.publishLocations,
+    this.translations,
+    this.createdAt,
+    this.updatedAt,
+  });
   final int id;
   final String author;
   final bool publish;

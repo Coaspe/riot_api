@@ -5,12 +5,13 @@ part 'platform_data_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class PlatformDataDTO {
-  const PlatformDataDTO(
-      {required this.id,
-      required this.name,
-      required this.locales,
-      required this.maintenances,
-      required this.incidents});
+  const PlatformDataDTO({
+    required this.id,
+    required this.name,
+    required this.locales,
+    required this.maintenances,
+    required this.incidents,
+  });
   final String id;
   final String name;
   final List<String> locales;

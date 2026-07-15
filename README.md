@@ -24,10 +24,10 @@ These pacakages aren't endorsed by Riot Games and don't reflect the views or opi
   - LOL-CHALLENGES-V1
   - LOL-STATUS-V4
   - MATCH-V5
-  - SPECTATOR-V4
+  - SPECTATOR-V5
   - SUMMONER-V4
-  - TOURNAMENT-V4 (Not yet supported)
-  - TOURNAMENT-STUB-V4 (Not yet supported)
+  - TOURNAMENT-V5 (Not yet supported)
+  - TOURNAMENT-STUB-V5 (Not yet supported)
 - Riot account api
   - ACCOUNT-V1
 - Valrorant
@@ -46,7 +46,7 @@ These pacakages aren't endorsed by Riot Games and don't reflect the views or opi
 
 Here is what you need to use the Dart SDK:
 
-- Dart 2.19.0 or higher
+- Dart 3.9.0 or higher
 
 ## Exmaple
 
@@ -55,7 +55,7 @@ First, generate [Riot API key](https://developer.riotgames.com/).
 Initialize `RiotApi` with your API key.
 
 ```dart
-RiotApi.init(apiKey: 'your-api-key'))
+RiotApi.init(apiKey: 'your-api-key');
 ```
 
 Use `APIname.queryFunction` form to call query function.
@@ -77,11 +77,10 @@ final user2 = await AccountV1.getAccountByRiotId(PlatformValues.asia, gameName, 
 ### lol_api
 
 ```dart
-const accountId = 'your-account-id';
+const puuid = 'your-puuid';
 
-// Get Summoner by accountId
-final summoner =
-    await SummonerV4.getSummonerByAccountId(RegionValues.kr, accountId);
+// Get Summoner by PUUID.
+final summoner = await SummonerV4.getSummonerByPuuid(RegionValues.kr, puuid);
 
 // Get Match IDs by puuid
 final matchIds = await MatchV5.getMatchIdsByPuuid(
@@ -113,13 +112,13 @@ final topLadder = await TFTLeagueV1.getTopRatedLadderByQueue(RegionValues.kr, "R
 const actId = 'your-act-id';
 
 // Get content optionally filtered by locale
-final content = await ValContentV1.getContentByLocale(RegionValues.kr);
+final content = await ValContentV1.getContentByLocale(ValRegionValues.kr);
 
 // Get platform status.
-final status = await ValStatusV1.getPlatformStatus(RegionValues.kr);
+final status = await ValStatusV1.getPlatformStatus(ValRegionValues.kr);
 
 // Get leaderboard
-final board = await ValRankedV1.getLeaderboard(RegionValues.kr, actId, size: 100);
+final board = await ValRankedV1.getLeaderboard(ValRegionValues.kr, actId, size: 100);
 ```
 
 ## pub.dev

@@ -5,18 +5,19 @@ part 'league_item_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class LeagueItemDTO {
-  const LeagueItemDTO(
-      {required this.freshBlood,
-      required this.wins,
-      required this.summonerName,
-      this.miniSeries,
-      required this.inactive,
-      required this.veteran,
-      required this.hotStreak,
-      required this.rank,
-      required this.leaguePoints,
-      required this.losses,
-      required this.summonerId});
+  const LeagueItemDTO({
+    required this.freshBlood,
+    required this.wins,
+    required this.summonerName,
+    this.miniSeries,
+    required this.inactive,
+    required this.veteran,
+    required this.hotStreak,
+    required this.rank,
+    required this.leaguePoints,
+    required this.losses,
+    required this.summonerId,
+  });
   final bool freshBlood;
   final int wins;
   final String summonerName;

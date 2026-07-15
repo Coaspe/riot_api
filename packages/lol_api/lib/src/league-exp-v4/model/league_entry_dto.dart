@@ -11,7 +11,7 @@ enum QueueType {
   @JsonValue("RANKED_FLEX_SR")
   rankedFlexSR,
   @JsonValue("RANKED_FLEX_TT")
-  rankedFlexTT
+  rankedFlexTT,
 }
 
 extension QueueTypeEx on QueueType {
@@ -25,8 +25,6 @@ extension QueueTypeEx on QueueType {
         return "RANKED_FLEX_SR";
       case QueueType.rankedFlexTT:
         return "RANKED_FLEX_TT";
-      default:
-        return "";
     }
   }
 }
@@ -49,7 +47,7 @@ enum Tier {
   @JsonValue("BRONZE")
   bronze,
   @JsonValue("IRON")
-  iron
+  iron,
 }
 
 /// Rank of the user higher than the diamond tier should be set to I.
@@ -61,7 +59,7 @@ enum Division {
   @JsonValue("III")
   three,
   @JsonValue("IV")
-  four
+  four,
 }
 
 extension DivisionEx on Division {
@@ -75,39 +73,30 @@ extension DivisionEx on Division {
         return "III";
       case Division.four:
         return "IV";
-      default:
-        return "";
     }
   }
 }
 
 @JsonSerializable(createToJson: false)
 class LeagueEntryDTO {
-  const LeagueEntryDTO(
-      {required this.leagueId,
-      required this.summonerId,
-      required this.summonerName,
-      required this.queueType,
-      required this.tier,
-      required this.rank,
-      required this.leaguePoints,
-      required this.wins,
-      required this.losses,
-      required this.hotStreak,
-      required this.veteran,
-      required this.freshBlood,
-      required this.inactive,
-      this.miniSeries})
-      : assert(
-            (!((tier == Tier.challenger ||
-                    tier == Tier.grandmaster ||
-                    tier == Tier.master) &&
-                rank != Division.one)),
-            "Rank of the user higher than the diamond tier should be set to I.");
+  const LeagueEntryDTO({
+    required this.leagueId,
+    required this.puuid,
+    required this.queueType,
+    required this.tier,
+    required this.rank,
+    required this.leaguePoints,
+    required this.wins,
+    required this.losses,
+    required this.hotStreak,
+    required this.veteran,
+    required this.freshBlood,
+    required this.inactive,
+    this.miniSeries,
+  });
 
   final String leagueId;
-  final String summonerId;
-  final String summonerName;
+  final String puuid;
   final QueueType queueType;
   final Tier tier;
   final Division rank;

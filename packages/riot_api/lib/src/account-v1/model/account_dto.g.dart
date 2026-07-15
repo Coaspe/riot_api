@@ -7,7 +7,7 @@ part of 'account_dto.dart';
 // **************************************************************************
 
 AccountDTO _$AccountDTOFromJson(Map<String, dynamic> json) => AccountDTO(
-      puuid: json['puuid'] as String,
-      gameName: json['gameName'] as String?,
-      tagLine: json['tagLine'] as String?,
-    );
+  puuid: json['puuid'] as String,
+  gameName: json['gameName'] as String?,
+  tagLine: json['tagLine'] as String?,
+);

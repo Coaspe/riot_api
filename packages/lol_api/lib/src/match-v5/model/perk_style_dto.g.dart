@@ -7,9 +7,9 @@ part of 'perk_style_dto.dart';
 // **************************************************************************
 
 PerkStyleDTO _$PerkStyleDTOFromJson(Map<String, dynamic> json) => PerkStyleDTO(
-      descriptions: json['descriptions'] as String?,
-      selections: (json['selections'] as List<dynamic>)
-          .map((e) => PerkStyleSelectionDTO.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      style: json['style'] as int,
-    );
+  descriptions: json['descriptions'] as String?,
+  selections: (json['selections'] as List<dynamic>)
+      .map((e) => PerkStyleSelectionDTO.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  style: (json['style'] as num).toInt(),
+);

@@ -5,15 +5,16 @@ part 'team_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class TeamDTO {
-  const TeamDTO(
-      {required this.id,
-      required this.tournamentId,
-      required this.name,
-      required this.iconId,
-      required this.tier,
-      this.caption,
-      this.abbreviation,
-      required this.players});
+  const TeamDTO({
+    required this.id,
+    required this.tournamentId,
+    required this.name,
+    required this.iconId,
+    required this.tier,
+    this.caption,
+    this.abbreviation,
+    required this.players,
+  });
 
   final String id;
   final String tournamentId;

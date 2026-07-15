@@ -10,7 +10,8 @@ ContentItemDTO _$ContentItemDTOFromJson(Map<String, dynamic> json) =>
     ContentItemDTO(
       name: json['name'] as String,
       localizedNames: LocalizedNamesDTO.fromJson(
-          json['localizedNames'] as Map<String, dynamic>),
+        json['localizedNames'] as Map<String, dynamic>,
+      ),
       id: json['id'] as String,
       assetName: json['assetName'] as String,
       assetPath: json['assetPath'] as String?,

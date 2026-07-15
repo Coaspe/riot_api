@@ -39,6 +39,6 @@ class MatchTimelineInfoFrameParticipantFramesDTO {
   @JsonKey(name: "10")
   final MatchTimelineInfoFrameParticipantFrameDTO p10;
   factory MatchTimelineInfoFrameParticipantFramesDTO.fromJson(
-          Map<String, dynamic> json) =>
-      _$MatchTimelineInfoFrameParticipantFramesDTOFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$MatchTimelineInfoFrameParticipantFramesDTOFromJson(json);
 }

@@ -4,10 +4,11 @@ part 'metadata_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MetadataDTO {
-  const MetadataDTO(
-      {required this.dataVersion,
-      required this.matchId,
-      required this.participants});
+  const MetadataDTO({
+    required this.dataVersion,
+    required this.matchId,
+    required this.participants,
+  });
 
   /// Match data version.
   @JsonKey(name: "data_version")

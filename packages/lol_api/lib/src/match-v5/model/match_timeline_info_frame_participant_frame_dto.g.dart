@@ -7,24 +7,24 @@ part of 'match_timeline_info_frame_participant_frame_dto.dart';
 // **************************************************************************
 
 MatchTimelineInfoFrameParticipantFrameDTO
-    _$MatchTimelineInfoFrameParticipantFrameDTOFromJson(
-            Map<String, dynamic> json) =>
-        MatchTimelineInfoFrameParticipantFrameDTO(
-          championStats:
-              MatchTimelineInfoFrameParticipantFrameChampionStatsDTO.fromJson(
-                  json['championStats'] as Map<String, dynamic>),
-          currentGold: json['currentGold'] as int,
-          damageStats:
-              MatchTimelineInfoFrameParticipantFrameDamageStatsDTO.fromJson(
-                  json['damageStats'] as Map<String, dynamic>),
-          goldPerSecond: json['goldPerSecond'] as int,
-          jungleMinionsKilled: json['jungleMinionsKilled'] as int,
-          level: json['level'] as int,
-          minionKilled: json['minionKilled'] as int,
-          participantId: json['participantId'] as int,
-          position: MatchPositionDTO.fromJson(
-              json['position'] as Map<String, dynamic>),
-          timeEnemySpentControlled: json['timeEnemySpentControlled'] as int,
-          totalGold: json['totalGold'] as int,
-          xp: json['xp'] as int,
-        );
+_$MatchTimelineInfoFrameParticipantFrameDTOFromJson(
+  Map<String, dynamic> json,
+) => MatchTimelineInfoFrameParticipantFrameDTO(
+  championStats:
+      MatchTimelineInfoFrameParticipantFrameChampionStatsDTO.fromJson(
+        json['championStats'] as Map<String, dynamic>,
+      ),
+  currentGold: (json['currentGold'] as num).toInt(),
+  damageStats: MatchTimelineInfoFrameParticipantFrameDamageStatsDTO.fromJson(
+    json['damageStats'] as Map<String, dynamic>,
+  ),
+  goldPerSecond: (json['goldPerSecond'] as num).toInt(),
+  jungleMinionsKilled: (json['jungleMinionsKilled'] as num).toInt(),
+  level: (json['level'] as num).toInt(),
+  minionKilled: (json['minionKilled'] as num).toInt(),
+  participantId: (json['participantId'] as num).toInt(),
+  position: MatchPositionDTO.fromJson(json['position'] as Map<String, dynamic>),
+  timeEnemySpentControlled: (json['timeEnemySpentControlled'] as num).toInt(),
+  totalGold: (json['totalGold'] as num).toInt(),
+  xp: (json['xp'] as num).toInt(),
+);

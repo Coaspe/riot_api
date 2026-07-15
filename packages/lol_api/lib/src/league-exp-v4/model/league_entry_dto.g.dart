@@ -9,14 +9,13 @@ part of 'league_entry_dto.dart';
 LeagueEntryDTO _$LeagueEntryDTOFromJson(Map<String, dynamic> json) =>
     LeagueEntryDTO(
       leagueId: json['leagueId'] as String,
-      summonerId: json['summonerId'] as String,
-      summonerName: json['summonerName'] as String,
+      puuid: json['puuid'] as String,
       queueType: $enumDecode(_$QueueTypeEnumMap, json['queueType']),
       tier: $enumDecode(_$TierEnumMap, json['tier']),
       rank: $enumDecode(_$DivisionEnumMap, json['rank']),
-      leaguePoints: json['leaguePoints'] as int,
-      wins: json['wins'] as int,
-      losses: json['losses'] as int,
+      leaguePoints: (json['leaguePoints'] as num).toInt(),
+      wins: (json['wins'] as num).toInt(),
+      losses: (json['losses'] as num).toInt(),
       hotStreak: json['hotStreak'] as bool,
       veteran: json['veteran'] as bool,
       freshBlood: json['freshBlood'] as bool,

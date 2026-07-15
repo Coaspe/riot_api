@@ -1,0 +1,23 @@
+name: Dart CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed packages
+      - run: dart analyze
+      - name: Run package tests
+        run: |
+          for package in riot_api lol_api tft_api val_api; do
+            dart test "packages/$package"
+          done

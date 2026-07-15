@@ -6,6 +6,5 @@ part of 'observer.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Observer _$ObserverFromJson(Map<String, dynamic> json) => Observer(
-      encryptionKey: json['encryptionKey'] as String,
-    );
+Observer _$ObserverFromJson(Map<String, dynamic> json) =>
+    Observer(encryptionKey: json['encryptionKey'] as String);

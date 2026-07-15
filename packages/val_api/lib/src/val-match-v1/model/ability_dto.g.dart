@@ -7,8 +7,8 @@ part of 'ability_dto.dart';
 // **************************************************************************
 
 AbilityDTO _$AbilityDTOFromJson(Map<String, dynamic> json) => AbilityDTO(
-      grenadeEffects: json['grenadeEffects'] as String,
-      ability1Effects: json['ability1Effects'] as String,
-      ability2Effects: json['ability2Effects'] as String,
-      ultimateEffects: json['ultimateEffects'] as String,
-    );
+  grenadeEffects: json['grenadeEffects'] as String,
+  ability1Effects: json['ability1Effects'] as String,
+  ability2Effects: json['ability2Effects'] as String,
+  ultimateEffects: json['ultimateEffects'] as String,
+);

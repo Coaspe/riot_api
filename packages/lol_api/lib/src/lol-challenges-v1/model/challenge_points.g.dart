@@ -9,8 +9,8 @@ part of 'challenge_points.dart';
 ChallengePoints _$ChallengePointsFromJson(Map<String, dynamic> json) =>
     ChallengePoints(
       level: $enumDecode(_$LevelEnumMap, json['level']),
-      current: json['current'] as int,
-      max: json['max'] as int,
+      current: (json['current'] as num).toInt(),
+      max: (json['max'] as num).toInt(),
       percentile: (json['percentile'] as num).toDouble(),
     );
 

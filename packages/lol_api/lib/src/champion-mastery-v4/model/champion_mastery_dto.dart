@@ -1,20 +1,27 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'next_season_milestones_dto.dart';
+
 part 'champion_mastery_dto.g.dart';
 
 /// This object contains single Champion Mastery information for player and champion combination.
 @JsonSerializable(createToJson: false)
 class ChampionMasteryDTO {
-  const ChampionMasteryDTO(
-      {required this.championPointsUntilNextLevel,
-      required this.chestGranted,
-      required this.championId,
-      required this.lastPlayTime,
-      required this.championLevel,
-      required this.summonerId,
-      required this.championPoints,
-      required this.championPointsSinceLastLevel,
-      required this.tokensEarned});
+  const ChampionMasteryDTO({
+    required this.championPointsUntilNextLevel,
+    required this.chestGranted,
+    required this.championId,
+    required this.lastPlayTime,
+    required this.championLevel,
+    required this.puuid,
+    required this.championPoints,
+    required this.championPointsSinceLastLevel,
+    required this.tokensEarned,
+    this.markRequiredForNextLevel,
+    this.championSeasonMilestone,
+    this.nextSeasonMilestone,
+    this.milestoneGrades = const [],
+  });
 
   /// Number of points needed to achieve next level.
   ///
@@ -33,8 +40,8 @@ class ChampionMasteryDTO {
   /// Champion level for specified player and champion combination.
   final int championLevel;
 
-  /// Summoner ID for this entry. (Encrypted)
-  final String summonerId;
+  /// PUUID for this entry. (Encrypted)
+  final String puuid;
 
   /// Total number of champion points for this player and champion combination - they are used to determine championLevel.
   final int championPoints;
@@ -46,6 +53,11 @@ class ChampionMasteryDTO {
   ///
   /// When the championLevel is advanced the tokensEarned resets to 0.
   final int tokensEarned;
+
+  final int? markRequiredForNextLevel;
+  final int? championSeasonMilestone;
+  final NextSeasonMilestonesDTO? nextSeasonMilestone;
+  final List<String> milestoneGrades;
 
   factory ChampionMasteryDTO.fromJson(Map<String, dynamic> json) =>
       _$ChampionMasteryDTOFromJson(json);

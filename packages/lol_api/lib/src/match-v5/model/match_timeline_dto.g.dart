@@ -8,6 +8,6 @@ part of 'match_timeline_dto.dart';
 
 MatchTimelineDTO _$MatchTimelineDTOFromJson(Map<String, dynamic> json) =>
     MatchTimelineDTO(
-      metaData: MetaDataDTO.fromJson(json['metaData'] as Map<String, dynamic>),
+      metadata: MetaDataDTO.fromJson(json['metadata'] as Map<String, dynamic>),
       info: MatchTimelineInfoDTO.fromJson(json['info'] as Map<String, dynamic>),
     );

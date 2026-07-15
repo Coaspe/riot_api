@@ -7,8 +7,8 @@ part of 'matchlist_dto.dart';
 // **************************************************************************
 
 MatchlistDTO _$MatchlistDTOFromJson(Map<String, dynamic> json) => MatchlistDTO(
-      puuid: json['puuid'] as String,
-      history: (json['history'] as List<dynamic>)
-          .map((e) => MatchlistEntryDTO.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  puuid: json['puuid'] as String,
+  history: (json['history'] as List<dynamic>)
+      .map((e) => MatchlistEntryDTO.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);

@@ -6,17 +6,18 @@ part 'leaderboard_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class LeaderboardDTO {
-  const LeaderboardDTO(
-      {required this.shard,
-      required this.actId,
-      required this.totalPlayers,
-      required this.players,
-      this.immortalStartingPage,
-      this.immortalStartingIndex,
-      this.topTierRRThreshold,
-      this.startIndex,
-      this.tierDetails,
-      this.query});
+  const LeaderboardDTO({
+    required this.shard,
+    required this.actId,
+    required this.totalPlayers,
+    required this.players,
+    this.immortalStartingPage,
+    this.immortalStartingIndex,
+    this.topTierRRThreshold,
+    this.startIndex,
+    this.tierDetails,
+    this.query,
+  });
 
   /// The shard for the given leaderboard.
   final String shard;

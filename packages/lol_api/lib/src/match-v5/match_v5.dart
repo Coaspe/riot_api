@@ -1,5 +1,7 @@
 import 'package:riot_api/riot_api.dart';
 import 'model/match_dto.dart';
+import 'model/match_timeline_dto.dart';
+import 'model/replay_dto.dart';
 
 enum MatchType { ranked, normal, tourney, tutorial }
 
@@ -25,57 +27,85 @@ class MatchV5 {
   ///
   /// [end] is number of match ids to return. Defaults to 20. Valid values: 0 to 100.
   static Future<List<String>> getMatchIdsByPuuid(
-      PlatformValues platform, String puuid,
-      {int? startTime,
-      int? endTime,
-      int? queue,
-      MatchType? type,
-      int? start = 0,
-      int? count = 20,
-      Map<String, String>? headers}) async {
+    PlatformValues platform,
+    String puuid, {
+    int? startTime,
+    int? endTime,
+    int? queue,
+    MatchType? type,
+    int? start = 0,
+    int? count = 20,
+    Map<String, String>? headers,
+  }) async {
     if (startTime != null && endTime != null && startTime > endTime) {
-      assert(false, "'endTime' must be greater than or equal to 'startTime'.");
+      throw ArgumentError.value(
+        endTime,
+        'endTime',
+        'must be greater than or equal to startTime',
+      );
     }
     if (count != null && (count > 100 || count < 0)) {
-      assert(false,
-          "'count' is greater than or equal to 0 and smaller than or equal to 100");
+      throw ArgumentError.value(count, 'count', 'must be between 0 and 100');
     }
 
-    headers ??= {};
-    String url =
-        '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/by-puuid/$puuid/ids?';
-
-    if (startTime != null) url += "startTime=$startTime&";
-    if (endTime != null) url += "endTime=$endTime&";
-    if (queue != null) url += "queue=$queue&";
-    if (type != null) url += "type=${type.name}&";
-    if (start != null) url += "start=$start&";
-    if (count != null) url += "count=$count&";
+    final url =
+        Uri.parse(
+              '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/by-puuid/${Uri.encodeComponent(puuid)}/ids',
+            )
+            .replace(
+              queryParameters: {
+                if (startTime != null) 'startTime': '$startTime',
+                if (endTime != null) 'endTime': '$endTime',
+                if (queue != null) 'queue': '$queue',
+                if (type != null) 'type': type.name,
+                if (start != null) 'start': '$start',
+                if (count != null) 'count': '$count',
+              },
+            )
+            .toString();
 
     List<dynamic> matchIds =
-        await ApiUtil.requestApi(url, (json) => json, headers);
+        await ApiUtil.requestApi<List<dynamic>, List<dynamic>>(
+          url,
+          (json) => json,
+          headers,
+        );
     return <String>[...matchIds];
   }
 
   /// Get a match by match id
   static Future<MatchDTO> getMatchByMatchId(
-      PlatformValues platform, String matchId,
-      {Map<String, String>? headers}) async {
-    String url =
-        '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/$matchId?';
+    PlatformValues platform,
+    String matchId, {
+    Map<String, String>? headers,
+  }) async {
+    final url =
+        '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/${Uri.encodeComponent(matchId)}';
 
     MatchDTO match = await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);
     return match;
   }
 
   /// Get a match timeline by match id
-  static Future<MatchDTO> getMatchTimelineByMatchId(
-      PlatformValues platform, String matchId,
-      {Map<String, String>? headers}) async {
-    String url =
-        '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/$matchId/timeline';
+  static Future<MatchTimelineDTO> getMatchTimelineByMatchId(
+    PlatformValues platform,
+    String matchId, {
+    Map<String, String>? headers,
+  }) async {
+    final url =
+        '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/${Uri.encodeComponent(matchId)}/timeline';
 
-    MatchDTO match = await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);
-    return match;
+    return ApiUtil.requestApi(url, MatchTimelineDTO.fromJson, headers);
+  }
+
+  /// Get replay file URLs for a player.
+  static Future<ReplayDTO> getReplaysByPuuid(
+    PlatformValues platform,
+    String puuid, {
+    Map<String, String>? headers,
+  }) {
+    final url =
+        '${platform.platformToUrl}/${Qtype.lol.name}/match/v5/matches/by-puuid/${Uri.encodeComponent(puuid)}/replays';
+    return ApiUtil.requestApi(url, ReplayDTO.fromJson, headers);
   }
 }

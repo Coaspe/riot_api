@@ -7,16 +7,16 @@ part of 'match_timeline_info_frame_event_victim_damage_received_dto.dart';
 // **************************************************************************
 
 MatchTimelineInfoFrameEventVictimDamageReceivedDTO
-    _$MatchTimelineInfoFrameEventVictimDamageReceivedDTOFromJson(
-            Map<String, dynamic> json) =>
-        MatchTimelineInfoFrameEventVictimDamageReceivedDTO(
-          basic: json['basic'] as bool,
-          magicDamage: json['magicDamage'] as int,
-          name: json['name'] as String,
-          participantId: json['participantId'] as int,
-          physicalDamage: json['physicalDamage'] as int,
-          sepllName: json['sepllName'] as String,
-          spellSlot: json['spellSlot'] as int,
-          trueDamage: json['trueDamage'] as int,
-          type: json['type'] as String,
-        );
+_$MatchTimelineInfoFrameEventVictimDamageReceivedDTOFromJson(
+  Map<String, dynamic> json,
+) => MatchTimelineInfoFrameEventVictimDamageReceivedDTO(
+  basic: json['basic'] as bool,
+  magicDamage: (json['magicDamage'] as num).toInt(),
+  name: json['name'] as String,
+  participantId: (json['participantId'] as num).toInt(),
+  physicalDamage: (json['physicalDamage'] as num).toInt(),
+  sepllName: json['sepllName'] as String,
+  spellSlot: (json['spellSlot'] as num).toInt(),
+  trueDamage: (json['trueDamage'] as num).toInt(),
+  type: json['type'] as String,
+);

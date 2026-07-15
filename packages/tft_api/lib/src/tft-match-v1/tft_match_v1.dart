@@ -10,30 +10,54 @@ class TFTMatchV1 {
   /// Any matches played before June 16th, 2021 won't be included in the results if the startTime filter is set.
   /// [count] represents number of match ids to return. defaults to 20.
   static Future<List<String>> getMatchListByPuuid(
-      PlatformValues platform, String puuid,
-      {int start = 0,
-      int? endTime,
-      int? startTime,
-      int count = 20,
-      Map<String, String>? headers}) async {
-    assert(start >= 0, "start index must be greater than 0");
-    assert(count > 0, "count must be greater than 0");
-    if (startTime != null && endTime != null && startTime > endTime) {
-      assert(false, "endTime must be greater than or equal to startTime");
+    PlatformValues platform,
+    String puuid, {
+    int start = 0,
+    int? endTime,
+    int? startTime,
+    int count = 20,
+    Map<String, String>? headers,
+  }) async {
+    if (start < 0) {
+      throw ArgumentError.value(start, 'start', 'must be non-negative');
     }
-    String url =
-        '${platform.platformToUrl}/${Qtype.tft.name}/match/v1/matches/by-puuid/$puuid/ids?count=$count&start=$start';
-    if (startTime != null) url += 'startTime=$startTime&';
-    if (endTime != null) url += 'endTime=$endTime&';
+    if (count <= 0) {
+      throw ArgumentError.value(count, 'count', 'must be greater than zero');
+    }
+    if (startTime != null && endTime != null && startTime > endTime) {
+      throw ArgumentError.value(
+        endTime,
+        'endTime',
+        'must be greater than or equal to startTime',
+      );
+    }
+    final url =
+        Uri.parse(
+              '${platform.platformToUrl}/${Qtype.tft.name}/match/v1/matches/by-puuid/${Uri.encodeComponent(puuid)}/ids',
+            )
+            .replace(
+              queryParameters: {
+                'count': '$count',
+                'start': '$start',
+                if (startTime != null) 'startTime': '$startTime',
+                if (endTime != null) 'endTime': '$endTime',
+              },
+            )
+            .toString();
     final league = await ApiUtil.requestApi<List<String>, List<dynamic>>(
-        url, (json) => <String>[...json], headers);
+      url,
+      (json) => <String>[...json],
+      headers,
+    );
     return league;
   }
 
   /// Get a match by match id
   static Future<MatchDTO> getMatchByMatchId(
-      PlatformValues platform, String matchId,
-      {Map<String, String>? headers}) async {
+    PlatformValues platform,
+    String matchId, {
+    Map<String, String>? headers,
+  }) async {
     String url =
         '${platform.platformToUrl}/${Qtype.tft.name}/match/v1/matches/$matchId';
     MatchDTO match = await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);

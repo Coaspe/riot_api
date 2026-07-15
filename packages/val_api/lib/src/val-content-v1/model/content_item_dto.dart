@@ -5,12 +5,13 @@ part 'content_item_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class ContentItemDTO {
-  const ContentItemDTO(
-      {required this.name,
-      required this.localizedNames,
-      required this.id,
-      required this.assetName,
-      this.assetPath});
+  const ContentItemDTO({
+    required this.name,
+    required this.localizedNames,
+    required this.id,
+    required this.assetName,
+    this.assetPath,
+  });
   final String name;
   final LocalizedNamesDTO localizedNames;
   final String id;

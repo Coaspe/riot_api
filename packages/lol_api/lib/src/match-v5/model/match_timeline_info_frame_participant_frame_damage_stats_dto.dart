@@ -31,6 +31,6 @@ class MatchTimelineInfoFrameParticipantFrameDamageStatsDTO {
   final int trueDamageDoneToChampions;
   final int trueDamageTaken;
   factory MatchTimelineInfoFrameParticipantFrameDamageStatsDTO.fromJson(
-          Map<String, dynamic> json) =>
-      _$MatchTimelineInfoFrameParticipantFrameDamageStatsDTOFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$MatchTimelineInfoFrameParticipantFrameDamageStatsDTOFromJson(json);
 }

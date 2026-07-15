@@ -1,3 +1,15 @@
+## 0.1.0
+
+- Require Dart 3.9 and update dependencies to their current releases.
+- Migrate Champion Mastery, Clash, League, Spectator, and Summoner APIs to
+  their current PUUID-based endpoints.
+- Replace Spectator V4 with Spectator V5 and remove the retired featured-games
+  endpoint.
+- Update Champion Mastery and Summoner response models.
+- Fix match timeline parsing and add replay lookup support.
+- Replace assertion-only input checks with runtime argument validation.
+- Replace live API tests with deterministic HTTP client tests.
+
 ## 0.0.1
 - Initial
 

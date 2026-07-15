@@ -8,7 +8,7 @@ part of 'banned_champion.dart';
 
 BannedChampion _$BannedChampionFromJson(Map<String, dynamic> json) =>
     BannedChampion(
-      pickTurn: json['pickTurn'] as int,
-      championId: json['championId'] as int,
-      teamId: json['teamId'] as int,
+      pickTurn: (json['pickTurn'] as num).toInt(),
+      championId: (json['championId'] as num).toInt(),
+      teamId: (json['teamId'] as num).toInt(),
     );

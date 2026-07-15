@@ -5,12 +5,13 @@ part 'challenge_info.g.dart';
 
 @JsonSerializable(createToJson: false)
 class ChallengeInfo {
-  const ChallengeInfo(
-      {required this.challengeId,
-      required this.percentile,
-      required this.value,
-      required this.level,
-      required this.achievedTime});
+  const ChallengeInfo({
+    required this.challengeId,
+    required this.percentile,
+    required this.value,
+    required this.level,
+    required this.achievedTime,
+  });
   final int challengeId;
   final double percentile;
   final Level level;

@@ -1,0 +1,13 @@
+name: riot_api_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+workspace:
+  - packages/riot_api
+  - packages/lol_api
+  - packages/tft_api
+  - packages/val_api
+  - packages/riot_api/example
+  - packages/lol_api/example

@@ -9,21 +9,30 @@ import 'model/recent_matches_dto.dart';
 /// I can't test this api yet. 😭
 class ValMatchV1 {
   /// Get match by id
-  static Future<MatchDTO> getMatchById(RegionValues region, String matchId,
-      {Map<String, String>? headers}) async {
+  static Future<MatchDTO> getMatchById(
+    ValRegionValues region,
+    String matchId, {
+    Map<String, String>? headers,
+  }) async {
     String url =
-        '${region.regionToUrl}/${Qtype.val.name}/match/v1/matches/$matchId';
+        '${region.regionToUrl}/${Qtype.val.name}/match/v1/matches/${Uri.encodeComponent(matchId)}';
     MatchDTO match = await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);
     return match;
   }
 
   /// Get matchlist for games played by puuid
-  static Future<MatchlistDTO> getMatchByPuuid(RegionValues region, String puuid,
-      {Map<String, String>? headers}) async {
+  static Future<MatchlistDTO> getMatchByPuuid(
+    ValRegionValues region,
+    String puuid, {
+    Map<String, String>? headers,
+  }) async {
     String url =
-        '${region.regionToUrl}/${Qtype.val.name}/match/v1/matchlists/by-puuid/$puuid';
-    MatchlistDTO match =
-        await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);
+        '${region.regionToUrl}/${Qtype.val.name}/match/v1/matchlists/by-puuid/${Uri.encodeComponent(puuid)}';
+    MatchlistDTO match = await ApiUtil.requestApi(
+      url,
+      MatchlistDTO.fromJson,
+      headers,
+    );
     return match;
   }
 
@@ -35,12 +44,17 @@ class ValMatchV1 {
   /// a combined list of matches from those three regions.
   /// Requests are load balanced so you may see some inconsistencies as matches are added/removed from the list.
   static Future<RecentMatchesDTO> getRecentMatches(
-      RegionValues region, String queue,
-      {Map<String, String>? headers}) async {
+    ValRegionValues region,
+    String queue, {
+    Map<String, String>? headers,
+  }) async {
     String url =
-        '${region.regionToUrl}/${Qtype.val.name}/match/v1/recent-matches/by-queue/$queue';
-    RecentMatchesDTO match =
-        await ApiUtil.requestApi(url, RecentMatchesDTO.fromJson, headers);
+        '${region.regionToUrl}/${Qtype.val.name}/match/v1/recent-matches/by-queue/${Uri.encodeComponent(queue)}';
+    RecentMatchesDTO match = await ApiUtil.requestApi(
+      url,
+      RecentMatchesDTO.fromJson,
+      headers,
+    );
     return match;
   }
 }

@@ -7,10 +7,12 @@ part of 'unit_dto.dart';
 // **************************************************************************
 
 UnitDTO _$UnitDTOFromJson(Map<String, dynamic> json) => UnitDTO(
-      items: (json['items'] as List<dynamic>).map((e) => e as int).toList(),
-      characterId: json['character_id'] as String,
-      chosen: json['chosen'] as String?,
-      name: json['name'] as String,
-      rarity: json['rarity'] as int,
-      tier: json['tier'] as int,
-    );
+  items: (json['items'] as List<dynamic>)
+      .map((e) => (e as num).toInt())
+      .toList(),
+  characterId: json['character_id'] as String,
+  chosen: json['chosen'] as String?,
+  name: json['name'] as String,
+  rarity: (json['rarity'] as num).toInt(),
+  tier: (json['tier'] as num).toInt(),
+);

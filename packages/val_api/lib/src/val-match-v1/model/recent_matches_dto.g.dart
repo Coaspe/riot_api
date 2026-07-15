@@ -8,7 +8,8 @@ part of 'recent_matches_dto.dart';
 
 RecentMatchesDTO _$RecentMatchesDTOFromJson(Map<String, dynamic> json) =>
     RecentMatchesDTO(
-      currentTime: json['currentTime'] as int,
-      matchIds:
-          (json['matchIds'] as List<dynamic>).map((e) => e as String).toList(),
+      currentTime: (json['currentTime'] as num).toInt(),
+      matchIds: (json['matchIds'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
     );

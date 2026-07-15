@@ -6,5 +6,5 @@ export 'league-v4/league_v4.dart';
 export 'lol-challenges-v1/lol_challenges_v1.dart';
 export 'lol-status-v4/lol_status_v4.dart';
 export 'match-v5/match_v5.dart';
-export 'spectator-v4/spectator_v4.dart';
+export 'spectator-v5/spectator_v5.dart';
 export 'summoner-v4/summoner_v4.dart';

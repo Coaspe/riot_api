@@ -19,4 +19,5 @@ export 'perk_stats_dto.dart';
 export 'perk_style_dto.dart';
 export 'perk_style_selection_dto.dart';
 export 'perks_dto.dart';
+export 'replay_dto.dart';
 export 'match_team_dto.dart';

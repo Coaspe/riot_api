@@ -8,8 +8,8 @@ part of 'tournament_dto.dart';
 
 TournamentDTO _$TournamentDTOFromJson(Map<String, dynamic> json) =>
     TournamentDTO(
-      id: json['id'] as int?,
-      themeId: json['themeId'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      themeId: (json['themeId'] as num?)?.toInt(),
       nameKey: json['nameKey'] as String?,
       nameKeySecondary: json['nameKeySecondary'] as String?,
       schedule: (json['schedule'] as List<dynamic>?)

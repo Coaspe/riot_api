@@ -8,8 +8,8 @@ part of 'mini_series_dto.dart';
 
 MiniSeriesDTO _$MiniSeriesDTOFromJson(Map<String, dynamic> json) =>
     MiniSeriesDTO(
-      losses: json['losses'] as int?,
+      losses: (json['losses'] as num?)?.toInt(),
       progress: json['progress'] as String?,
-      target: json['target'] as int?,
-      wins: json['wins'] as int?,
+      target: (json['target'] as num?)?.toInt(),
+      wins: (json['wins'] as num?)?.toInt(),
     );

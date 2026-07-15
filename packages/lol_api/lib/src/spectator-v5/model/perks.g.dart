@@ -7,7 +7,9 @@ part of 'perks.dart';
 // **************************************************************************
 
 Perks _$PerksFromJson(Map<String, dynamic> json) => Perks(
-      perkIds: (json['perkIds'] as List<dynamic>).map((e) => e as int).toList(),
-      perkStyle: json['perkStyle'] as int,
-      perkSubStyle: json['perkSubStyle'] as int,
-    );
+  perkIds: (json['perkIds'] as List<dynamic>)
+      .map((e) => (e as num).toInt())
+      .toList(),
+  perkStyle: (json['perkStyle'] as num).toInt(),
+  perkSubStyle: (json['perkSubStyle'] as num).toInt(),
+);

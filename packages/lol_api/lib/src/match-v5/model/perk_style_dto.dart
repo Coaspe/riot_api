@@ -5,10 +5,11 @@ part 'perk_style_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class PerkStyleDTO {
-  const PerkStyleDTO(
-      {required this.descriptions,
-      required this.selections,
-      required this.style});
+  const PerkStyleDTO({
+    required this.descriptions,
+    required this.selections,
+    required this.style,
+  });
   final String? descriptions;
   final List<PerkStyleSelectionDTO> selections;
   final int style;

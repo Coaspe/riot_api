@@ -5,13 +5,14 @@ part 'act_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class ActDTO {
-  const ActDTO(
-      {required this.name,
-      required this.localizedNames,
-      required this.id,
-      required this.isActive,
-      this.parentId,
-      this.type});
+  const ActDTO({
+    required this.name,
+    required this.localizedNames,
+    required this.id,
+    required this.isActive,
+    this.parentId,
+    this.type,
+  });
   final String name;
   final LocalizedNamesDTO localizedNames;
   final String id;

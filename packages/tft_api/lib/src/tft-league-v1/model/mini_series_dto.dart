@@ -4,11 +4,12 @@ part 'mini_series_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MiniSeriesDTO {
-  const MiniSeriesDTO(
-      {required this.losses,
-      required this.progress,
-      required this.target,
-      required this.wins});
+  const MiniSeriesDTO({
+    required this.losses,
+    required this.progress,
+    required this.target,
+    required this.wins,
+  });
   final int losses;
   final String progress;
   final int target;

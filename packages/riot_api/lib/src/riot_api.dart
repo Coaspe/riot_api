@@ -1,4 +1,6 @@
-enum PlatformValues { americas, asia, esports, europe }
+import 'package:http/http.dart' as http;
+
+enum PlatformValues { americas, asia, esports, esportseu, europe, sea }
 
 enum RegionValues {
   br1,
@@ -8,15 +10,18 @@ enum RegionValues {
   kr,
   la1,
   la2,
+  me1,
   na1,
   oc1,
+  pbe1,
+  sg2,
   tr1,
   ru,
-  ph2,
-  th2,
   tw2,
-  vn2
+  vn2,
 }
+
+enum ValRegionValues { ap, br, esports, eu, kr, latam, na }
 
 enum Qtype { lol, val, lor, riot, tft }
 
@@ -28,17 +33,27 @@ extension RegionValuesEx on RegionValues {
   String get regionToUrl => "https://$name.api.riotgames.com";
 }
 
+extension ValRegionValuesEx on ValRegionValues {
+  String get regionToUrl => "https://$name.api.riotgames.com";
+}
+
 /// Singleton class for Riot API key.
 class RiotApi {
   RiotApi._();
   static final RiotApi _instance = RiotApi._();
   factory RiotApi() => _instance;
 
-  static String? _apiKey;
-  static String? get apiKey => _apiKey;
-  static set apiKey(newKey) => newKey;
+  static String? apiKey;
 
-  static void init({required String apiKey}) {
-    _apiKey = apiKey;
+  static http.Client _client = http.Client();
+  static http.Client get client => _client;
+
+  static void init({String? apiKey, http.Client? client}) {
+    RiotApi.apiKey = apiKey;
+    if (client != null) {
+      _client = client;
+    }
   }
+
+  static void close() => _client.close();
 }

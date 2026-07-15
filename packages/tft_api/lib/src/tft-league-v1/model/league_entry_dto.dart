@@ -14,7 +14,7 @@ enum RatedTier {
   @JsonValue("GREEN")
   green,
   @JsonValue("GRAY")
-  gray
+  gray,
 }
 
 enum Tier {
@@ -35,7 +35,7 @@ enum Tier {
   @JsonValue("BRONZE")
   bronze,
   @JsonValue("IRON")
-  iron
+  iron,
 }
 
 enum Division {
@@ -46,7 +46,7 @@ enum Division {
   @JsonValue("III")
   three,
   @JsonValue("IV")
-  four
+  four,
 }
 
 extension DivisionEx on Division {
@@ -60,8 +60,6 @@ extension DivisionEx on Division {
         return "III";
       case Division.four:
         return "IV";
-      default:
-        return "";
     }
   }
 }
@@ -70,8 +68,7 @@ extension DivisionEx on Division {
 class LeagueEntryDTO {
   const LeagueEntryDTO({
     this.leagueId,
-    required this.summonerId,
-    required this.summonerName,
+    required this.puuid,
     required this.queueType,
     this.ratedTier,
     this.ratedRating,
@@ -90,9 +87,8 @@ class LeagueEntryDTO {
   /// Not included for the RANKED_TFT_TURBO queueType.
   final String? leagueId;
 
-  /// Player's encrypted summonerId.
-  final String summonerId;
-  final String summonerName;
+  /// Player's encrypted PUUID.
+  final String puuid;
   final String queueType;
 
   /// Only included for the RANKED_TFT_TURBO queueType.

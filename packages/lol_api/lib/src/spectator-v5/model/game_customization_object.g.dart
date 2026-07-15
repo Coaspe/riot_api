@@ -7,8 +7,8 @@ part of 'game_customization_object.dart';
 // **************************************************************************
 
 GameCustomizationObject _$GameCustomizationObjectFromJson(
-        Map<String, dynamic> json) =>
-    GameCustomizationObject(
-      category: json['category'] as String,
-      content: json['content'] as String,
-    );
+  Map<String, dynamic> json,
+) => GameCustomizationObject(
+  category: json['category'] as String,
+  content: json['content'] as String,
+);

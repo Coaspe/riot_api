@@ -7,20 +7,22 @@ part of 'match_timeline_info_frame_participant_frame_damage_stats_dto.dart';
 // **************************************************************************
 
 MatchTimelineInfoFrameParticipantFrameDamageStatsDTO
-    _$MatchTimelineInfoFrameParticipantFrameDamageStatsDTOFromJson(
-            Map<String, dynamic> json) =>
-        MatchTimelineInfoFrameParticipantFrameDamageStatsDTO(
-          magicDamageDone: json['magicDamageDone'] as int,
-          magicDamageDoneToChampions: json['magicDamageDoneToChampions'] as int,
-          magicDamageTaken: json['magicDamageTaken'] as int,
-          physicalDamageDone: json['physicalDamageDone'] as int,
-          physicalDamageDoneToChampions:
-              json['physicalDamageDoneToChampions'] as int,
-          physicalDamageTaken: json['physicalDamageTaken'] as int,
-          totalDamageDone: json['totalDamageDone'] as int,
-          totalDamageDoneToChampions: json['totalDamageDoneToChampions'] as int,
-          totalDamageTaken: json['totalDamageTaken'] as int,
-          trueDamageDone: json['trueDamageDone'] as int,
-          trueDamageDoneToChampions: json['trueDamageDoneToChampions'] as int,
-          trueDamageTaken: json['trueDamageTaken'] as int,
-        );
+_$MatchTimelineInfoFrameParticipantFrameDamageStatsDTOFromJson(
+  Map<String, dynamic> json,
+) => MatchTimelineInfoFrameParticipantFrameDamageStatsDTO(
+  magicDamageDone: (json['magicDamageDone'] as num).toInt(),
+  magicDamageDoneToChampions: (json['magicDamageDoneToChampions'] as num)
+      .toInt(),
+  magicDamageTaken: (json['magicDamageTaken'] as num).toInt(),
+  physicalDamageDone: (json['physicalDamageDone'] as num).toInt(),
+  physicalDamageDoneToChampions: (json['physicalDamageDoneToChampions'] as num)
+      .toInt(),
+  physicalDamageTaken: (json['physicalDamageTaken'] as num).toInt(),
+  totalDamageDone: (json['totalDamageDone'] as num).toInt(),
+  totalDamageDoneToChampions: (json['totalDamageDoneToChampions'] as num)
+      .toInt(),
+  totalDamageTaken: (json['totalDamageTaken'] as num).toInt(),
+  trueDamageDone: (json['trueDamageDone'] as num).toInt(),
+  trueDamageDoneToChampions: (json['trueDamageDoneToChampions'] as num).toInt(),
+  trueDamageTaken: (json['trueDamageTaken'] as num).toInt(),
+);

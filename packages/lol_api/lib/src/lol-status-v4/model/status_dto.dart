@@ -6,16 +6,17 @@ part 'status_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class StatusDTO {
-  const StatusDTO(
-      {required this.id,
-      this.maintenanceStatus,
-      this.incidentSeverity,
-      this.titles,
-      this.updates,
-      this.createdAt,
-      this.archiveAt,
-      this.updatedAt,
-      this.platforms});
+  const StatusDTO({
+    required this.id,
+    this.maintenanceStatus,
+    this.incidentSeverity,
+    this.titles,
+    this.updates,
+    this.createdAt,
+    this.archiveAt,
+    this.updatedAt,
+    this.platforms,
+  });
   final int id;
   final String? maintenanceStatus;
   final String? incidentSeverity;

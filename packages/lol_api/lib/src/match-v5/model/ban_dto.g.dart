@@ -7,6 +7,6 @@ part of 'ban_dto.dart';
 // **************************************************************************
 
 BanDTO _$BanDTOFromJson(Map<String, dynamic> json) => BanDTO(
-      championId: json['championId'] as int,
-      pickTurn: json['pickTurn'] as int,
-    );
+  championId: (json['championId'] as num).toInt(),
+  pickTurn: (json['pickTurn'] as num).toInt(),
+);

@@ -4,8 +4,11 @@ part 'perk_stats_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class PerkStatsDTO {
-  const PerkStatsDTO(
-      {required this.defense, required this.flex, required this.offense});
+  const PerkStatsDTO({
+    required this.defense,
+    required this.flex,
+    required this.offense,
+  });
   final int defense;
   final int flex;
   final int offense;

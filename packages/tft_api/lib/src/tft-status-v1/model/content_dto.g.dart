@@ -7,6 +7,6 @@ part of 'content_dto.dart';
 // **************************************************************************
 
 ContentDTO _$ContentDTOFromJson(Map<String, dynamic> json) => ContentDTO(
-      locale: json['locale'] as String,
-      content: json['content'] as String,
-    );
+  locale: json['locale'] as String,
+  content: json['content'] as String,
+);

@@ -5,14 +5,15 @@ part 'info_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class InfoDTO {
-  const InfoDTO(
-      {required this.gameDatatime,
-      required this.gameLength,
-      this.gameVariation,
-      required this.gameVersion,
-      required this.participants,
-      required this.queueId,
-      required this.tftSetNumber});
+  const InfoDTO({
+    required this.gameDatatime,
+    required this.gameLength,
+    this.gameVariation,
+    required this.gameVersion,
+    required this.participants,
+    required this.queueId,
+    required this.tftSetNumber,
+  });
 
   /// Unix timestamp.
   @JsonKey(name: "game_datetime")

@@ -8,8 +8,8 @@ part of 'ability_casts_dto.dart';
 
 AbilityCastsDTO _$AbilityCastsDTOFromJson(Map<String, dynamic> json) =>
     AbilityCastsDTO(
-      grenadeCasts: json['grenadeCasts'] as int,
-      ability1Casts: json['ability1Casts'] as int,
-      ability2Casts: json['ability2Casts'] as int,
-      ultimateCasts: json['ultimateCasts'] as int,
+      grenadeCasts: (json['grenadeCasts'] as num).toInt(),
+      ability1Casts: (json['ability1Casts'] as num).toInt(),
+      ability2Casts: (json['ability2Casts'] as num).toInt(),
+      ultimateCasts: (json['ultimateCasts'] as num).toInt(),
     );

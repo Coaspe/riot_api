@@ -9,27 +9,28 @@ enum State {
   @JsonValue("HIDDEN")
   hidden,
   @JsonValue("ARCHIVED")
-  archived
+  archived,
 }
 
 enum Tracking {
   @JsonValue("LIFETIME")
   lifetime,
   @JsonValue("SEASON")
-  season
+  season,
 }
 
 @JsonSerializable(createToJson: false)
 class ChallengeConfigInfoDTO {
-  const ChallengeConfigInfoDTO(
-      {required this.id,
-      required this.localizedNames,
-      this.state,
-      this.tracking,
-      this.startTimestamp,
-      this.endTimestamp,
-      this.leaderboard,
-      this.thresholds});
+  const ChallengeConfigInfoDTO({
+    required this.id,
+    required this.localizedNames,
+    this.state,
+    this.tracking,
+    this.startTimestamp,
+    this.endTimestamp,
+    this.leaderboard,
+    this.thresholds,
+  });
   final int id;
   final Map<String, Map<String, String>> localizedNames;
   final State? state;

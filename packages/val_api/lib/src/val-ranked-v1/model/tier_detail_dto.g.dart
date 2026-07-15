@@ -8,7 +8,7 @@ part of 'tier_detail_dto.dart';
 
 TierDetailDTO _$TierDetailDTOFromJson(Map<String, dynamic> json) =>
     TierDetailDTO(
-      rankedRatingThreshold: json['rankedRatingThreshold'] as int,
-      startingPage: json['startingPage'] as int,
-      startingIndex: json['startingIndex'] as int,
+      rankedRatingThreshold: (json['rankedRatingThreshold'] as num).toInt(),
+      startingPage: (json['startingPage'] as num).toInt(),
+      startingIndex: (json['startingIndex'] as num).toInt(),
     );

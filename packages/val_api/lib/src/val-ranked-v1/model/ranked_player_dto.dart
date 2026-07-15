@@ -3,13 +3,14 @@ part 'ranked_player_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class RankedPlayerDTO {
-  const RankedPlayerDTO(
-      {this.puuid,
-      this.gameName,
-      this.tagLine,
-      required this.leaderboardRank,
-      required this.rankedRating,
-      required this.numberOfWins});
+  const RankedPlayerDTO({
+    this.puuid,
+    this.gameName,
+    this.tagLine,
+    required this.leaderboardRank,
+    required this.rankedRating,
+    required this.numberOfWins,
+  });
   final String? puuid;
   final String? gameName;
   final String? tagLine;

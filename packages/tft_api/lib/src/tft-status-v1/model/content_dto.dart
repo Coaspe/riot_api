@@ -4,10 +4,7 @@ part 'content_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class ContentDTO {
-  const ContentDTO({
-    required this.locale,
-    required this.content,
-  });
+  const ContentDTO({required this.locale, required this.content});
   final String locale;
   final String content;
 

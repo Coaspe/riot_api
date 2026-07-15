@@ -1,111 +1,74 @@
-import 'package:riot_api/riot_api.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:http/testing.dart';
 import 'package:test/test.dart';
-import 'package:tft_api/src/api.dart';
-import 'package:tft_api/src/model.dart';
+import 'package:tft_api/tft_api.dart';
 
 void main() {
-  setUp(() => RiotApi.init(apiKey: 'your-api-key'));
+  test(
+    'match list builds a complete query without concatenation errors',
+    () async {
+      final client = MockClient((request) async {
+        expect(
+          request.url.path,
+          '/tft/match/v1/matches/by-puuid/player%2Fone/ids',
+        );
+        expect(request.url.queryParameters, {
+          'count': '5',
+          'start': '2',
+          'startTime': '10',
+          'endTime': '20',
+        });
+        return http.Response(jsonEncode(['KR_1']), 200);
+      });
+      RiotApi.init(apiKey: 'test-key', client: client);
 
-  final accountId = "your-accountId";
-  final summonerName = 'your-summonerName';
-  final puuid = 'your-puuid';
-  final summonerId = "your-summonerId";
-
-  group('TFT-MATCH-V1', () {
-    test('Get a list of match ids by PUUID', () async {
-      final match = await TFTMatchV1.getMatchListByPuuid(
-          PlatformValues.asia, puuid,
-          count: 1);
-      expect(match, isA<List<String>>());
-    });
-    test('Get a match by match id', () async {
-      final matchId = "your-matchId";
-      final match = await TFTMatchV1.getMatchByMatchId(
+      final matches = await TFTMatchV1.getMatchListByPuuid(
         PlatformValues.asia,
-        matchId,
+        'player/one',
+        count: 5,
+        start: 2,
+        startTime: 10,
+        endTime: 20,
       );
-      expect(match, isA<MatchDTO>());
+
+      expect(matches, ['KR_1']);
+    },
+  );
+
+  test('TFT summoner uses the current PUUID-only route and schema', () async {
+    final client = MockClient((request) async {
+      expect(request.url.path, '/tft/summoner/v1/summoners/by-puuid/player');
+      return http.Response(
+        jsonEncode({
+          'puuid': 'player',
+          'profileIconId': 1,
+          'revisionDate': 2,
+          'summonerLevel': 3,
+        }),
+        200,
+      );
     });
+    RiotApi.init(apiKey: 'test-key', client: client);
+
+    final summoner = await TFTSummonerV1.getSummonerByPuuid(
+      RegionValues.kr,
+      'player',
+    );
+
+    expect(summoner.puuid, 'player');
   });
-  group('TFT-LEAGUE-V1', () {
-    test('Get the challenger league.', () async {
-      final league = await TFTLeagueV1.getChallengerLeague(RegionValues.kr);
-      expect(league, isA<LeagueListDTO>());
-    });
 
-    test('Get the league entries for a given summoner ID', () async {
-      final leagueEntries = await TFTLeagueV1.getLeagueEntriesBySummonerId(
-          RegionValues.kr, summonerId);
-      expect(leagueEntries, isA<List<LeagueEntryDTO>>());
-    });
+  test('invalid match pagination fails before a request', () async {
+    RiotApi.init(
+      apiKey: 'test-key',
+      client: MockClient((_) => fail('network should not be called')),
+    );
 
-    test('Get the all league entries.', () async {
-      final leagueEntries = await TFTLeagueV1.getAllLeagueEntries(
-          RegionValues.kr,
-          tier: Tier.diamond,
-          division: Division.one);
-
-      expect(leagueEntries, isA<List<LeagueEntryDTO>>());
-    });
-
-    test('Get the grandmaster league.', () async {
-      final league = await TFTLeagueV1.getGrandmasterLeague(RegionValues.kr);
-      expect(league, isA<LeagueListDTO>());
-    });
-
-    test('Get the master league.', () async {
-      final league = await TFTLeagueV1.getMasterLeague(RegionValues.kr);
-      expect(league, isA<LeagueListDTO>());
-    });
-
-    test('Get the master league.', () async {
-      final league = await TFTLeagueV1.getTopRatedLadderByQueue(
-          RegionValues.kr, "RANKED_TFT_TURBO");
-      expect(league, isA<List<TopRatedLadderEntryDTO>>());
-    });
-
-    test('Get the master league queue exception.', () async {
-      try {
-        await TFTLeagueV1.getTopRatedLadderByQueue(
-            RegionValues.kr, "RANKED_TFT");
-      } catch (e) {
-        expect(e, isA<AssertionError>());
-      }
-    });
-  });
-  group('TFT-STATUS-V1', () {
-    test('Get Teamfight Tactics status for the given platform.', () async {
-      final platformData = await TFTStatusV1.getPlatformData(RegionValues.kr);
-      expect(platformData, isA<PlatformDataDTO>());
-    });
-  });
-  group('TFT-SUMMONER-V1', () {
-    test('Get a summoner by account ID.', () async {
-      final summoner = await TFTSummonerV1.getSummonerByAccountId(
-          RegionValues.kr, accountId);
-      expect(summoner, isA<SummonerDTO>());
-    });
-    test('Get a summoner by summoner name.', () async {
-      final summoner = await TFTSummonerV1.getSummonerBySummonerName(
-          RegionValues.kr, summonerName);
-      expect(summoner, isA<SummonerDTO>());
-    });
-    test('Get a summoner by puuid.', () async {
-      final summoner =
-          await TFTSummonerV1.getSummonerByPuuid(RegionValues.kr, puuid);
-      expect(summoner, isA<SummonerDTO>());
-    });
-    test('Get a summoner by summoner ID.', () async {
-      final summoner = await TFTSummonerV1.getSummonerBySummonerId(
-          RegionValues.kr, summonerId);
-      expect(summoner, isA<SummonerDTO>());
-    });
-
-    /// Not tested yet 😭.
-    test('Get a summoner by access token.', () async {
-      final summoner = await TFTSummonerV1.getSummonerByAccountId(
-          RegionValues.kr, accountId);
-      expect(summoner, isA<SummonerDTO>());
-    });
+    await expectLater(
+      TFTMatchV1.getMatchListByPuuid(PlatformValues.asia, 'player', count: 0),
+      throwsArgumentError,
+    );
   });
 }

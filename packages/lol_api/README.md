@@ -13,16 +13,16 @@ You need your own [Riot api key](https://developer.riotgames.com/).
     - LOL-CHALLENGES-V1
     - LOL-STATUS-V4
     - MATCH-V5
-    - SPECTATOR-V4
+    - SPECTATOR-V5
     - SUMMONER-V4
-    - TOURNAMENT-V4 (Not yet supported)
-    - TOURNAMENT-STUB-V4 (Not yet supported)
+    - TOURNAMENT-V5 (Not yet supported)
+    - TOURNAMENT-STUB-V5 (Not yet supported)
 
 ## Requirements
 
 Here is what you need to use the Dart SDK:
 
-- Dart 2.19.0 or higher
+- Dart 3.9.0 or higher
 
 ## Example
 
@@ -30,18 +30,17 @@ First, generate [riot api key](https://developer.riotgames.com/).
 
 Initialize `RiotApi` with your api key.
 ```dart
-RiotApi.init(apiKey: 'your-api-key'))
+RiotApi.init(apiKey: 'your-api-key');
 ```
 
 And use `APIname.queryFunction` form to call query function.
 
 You can check [available api](https://developer.riotgames.com/apis).
 ```dart
-const accountId = 'your-account-id';
+const puuid = 'your-puuid';
 
-// Get Summoner by accountId
-final summoner =
-    await SummonerV4.getSummonerByAccountId(RegionValues.kr, accountId);
+// Get Summoner by PUUID.
+final summoner = await SummonerV4.getSummonerByPuuid(RegionValues.kr, puuid);
 
 // Get Match IDs by puuid
 final matchIds = await MatchV5.getMatchIdsByPuuid(

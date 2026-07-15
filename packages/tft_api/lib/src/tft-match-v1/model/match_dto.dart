@@ -6,10 +6,7 @@ part 'match_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MatchDTO {
-  const MatchDTO({
-    required this.metadata,
-    required this.info,
-  });
+  const MatchDTO({required this.metadata, required this.info});
   final MetadataDTO metadata;
   final InfoDTO info;
   factory MatchDTO.fromJson(Map<String, dynamic> json) =>

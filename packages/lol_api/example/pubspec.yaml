@@ -3,7 +3,8 @@ description: Demonstrates how to use the lol_api plugin.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
+  sdk: ^3.9.0
+resolution: workspace
 dependencies:
 
   lol_api:

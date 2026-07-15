@@ -7,6 +7,6 @@ part of 'objective_dto.dart';
 // **************************************************************************
 
 ObjectiveDTO _$ObjectiveDTOFromJson(Map<String, dynamic> json) => ObjectiveDTO(
-      first: json['first'] as bool,
-      kills: json['kills'] as int,
-    );
+  first: json['first'] as bool,
+  kills: (json['kills'] as num).toInt(),
+);

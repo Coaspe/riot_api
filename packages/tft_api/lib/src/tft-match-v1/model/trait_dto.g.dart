@@ -7,9 +7,9 @@ part of 'trait_dto.dart';
 // **************************************************************************
 
 TraitDTO _$TraitDTOFromJson(Map<String, dynamic> json) => TraitDTO(
-      name: json['name'] as String,
-      numUnits: json['num_units'] as int,
-      style: json['style'] as int?,
-      tierCurrent: json['tier_current'] as int,
-      tierTotal: json['tier_total'] as int?,
-    );
+  name: json['name'] as String,
+  numUnits: (json['num_units'] as num).toInt(),
+  style: (json['style'] as num?)?.toInt(),
+  tierCurrent: (json['tier_current'] as num).toInt(),
+  tierTotal: (json['tier_total'] as num?)?.toInt(),
+);

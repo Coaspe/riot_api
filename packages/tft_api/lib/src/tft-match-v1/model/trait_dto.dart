@@ -4,12 +4,13 @@ part 'trait_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class TraitDTO {
-  const TraitDTO(
-      {required this.name,
-      required this.numUnits,
-      this.style,
-      required this.tierCurrent,
-      this.tierTotal});
+  const TraitDTO({
+    required this.name,
+    required this.numUnits,
+    this.style,
+    required this.tierCurrent,
+    this.tierTotal,
+  });
 
   /// Trait name.
   final String name;

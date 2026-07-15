@@ -7,9 +7,9 @@ part of 'damage_dto.dart';
 // **************************************************************************
 
 DamageDTO _$DamageDTOFromJson(Map<String, dynamic> json) => DamageDTO(
-      receiver: json['receiver'] as String,
-      damage: json['damage'] as int,
-      legshots: json['legshots'] as int,
-      bodyshots: json['bodyshots'] as int,
-      headshots: json['headshots'] as int,
-    );
+  receiver: json['receiver'] as String,
+  damage: (json['damage'] as num).toInt(),
+  legshots: (json['legshots'] as num).toInt(),
+  bodyshots: (json['bodyshots'] as num).toInt(),
+  headshots: (json['headshots'] as num).toInt(),
+);

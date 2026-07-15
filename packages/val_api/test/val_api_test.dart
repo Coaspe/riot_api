@@ -1,50 +1,87 @@
-import 'package:riot_api/riot_api.dart';
-import 'package:val_api/src/val-content-v1/model/content_dto.dart';
-import 'package:val_api/src/val-content-v1/val_content_v1.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:http/testing.dart';
 import 'package:test/test.dart';
-import 'package:val_api/src/val-match-v1/model/matchlist_dto.dart';
-import 'package:val_api/src/val-match-v1/val_match_v1.dart';
-import 'package:val_api/src/val-ranked-v1/model/leaderboard_dto.dart';
-import 'package:val_api/src/val-ranked-v1/val_ranked_v1.dart';
-import 'package:val_api/src/val-status-v1/model/platform_data_dto.dart';
-import 'package:val_api/src/val-status-v1/val_status_v1.dart';
+import 'package:val_api/val_api.dart';
 
 void main() {
-  group('Val-Content-V1', () {
-    setUp(() {
-      RiotApi.init(apiKey: "your-api-key");
-    });
+  test(
+    'match list uses VAL regional routing and the Matchlist parser',
+    () async {
+      final client = MockClient((request) async {
+        expect(request.url.host, 'ap.api.riotgames.com');
+        expect(request.url.path, '/val/match/v1/matchlists/by-puuid/player');
+        return http.Response(
+          jsonEncode({
+            'puuid': 'player',
+            'history': [
+              {
+                'matchId': 'match-1',
+                'gameStartTimeMillis': 1,
+                'teamId': 'Blue',
+              },
+            ],
+          }),
+          200,
+        );
+      });
+      RiotApi.init(apiKey: 'test-key', client: client);
 
-    test('Get content optionally filtered by locale', () async {
-      final content = await ValContentV1.getContentByLocale(RegionValues.kr);
-      expect(content, isA<ContentDTO>());
+      final matches = await ValMatchV1.getMatchByPuuid(
+        ValRegionValues.ap,
+        'player',
+      );
+
+      expect(matches.history.single.matchId, 'match-1');
+    },
+  );
+
+  test('content locale is sent with the locale query key', () async {
+    final client = MockClient((request) async {
+      expect(request.url.host, 'kr.api.riotgames.com');
+      expect(request.url.queryParameters, {'locale': 'ko-KR'});
+      return http.Response(
+        jsonEncode({
+          'version': '1',
+          'characters': [],
+          'maps': [],
+          'chromas': [],
+          'skins': [],
+          'skinLevels': [],
+          'equips': [],
+          'gameModes': [],
+          'sprays': [],
+          'sprayLevels': [],
+          'charms': [],
+          'charmLevels': [],
+          'playerCards': [],
+          'playerTitles': [],
+          'acts': [],
+          'ceremonies': [],
+        }),
+        200,
+      );
     });
+    RiotApi.init(apiKey: 'test-key', client: client);
+
+    final content = await ValContentV1.getContentByLocale(
+      ValRegionValues.kr,
+      locale: Locale.koKR,
+    );
+
+    expect(content.version, '1');
   });
 
-  /// Only who has production key can call this query.
-  ///
-  // /// I can't test this api yet. 😭
-  group("Val-Match-V1", () {
-    test('Get matches by puuid', () async {
-      final content =
-          await ValMatchV1.getMatchByPuuid(RegionValues.kr, 'your-puuid');
-      expect(content, isA<MatchlistDTO>());
-    });
-  });
+  test('leaderboard validates the documented size range', () async {
+    RiotApi.init(
+      apiKey: 'test-key',
+      client: MockClient((_) => fail('network should not be called')),
+    );
 
-  group('Val-Ranked-V1', () {
-    test('Get leaderboard', () async {
-      var actId = 'your-actId';
-      final board =
-          await ValRankedV1.getLeaderboard(RegionValues.kr, actId, size: 100);
-      expect(board, isA<LeaderboardDTO>());
-    });
-  });
-
-  group('Val-Status-V1', () {
-    test('Get platform status.', () async {
-      final status = await ValStatusV1.getPlatformStatus(RegionValues.kr);
-      expect(status, isA<PlatformDataDTO>());
-    });
+    await expectLater(
+      ValRankedV1.getLeaderboard(ValRegionValues.kr, 'act', size: 0),
+      throwsArgumentError,
+    );
   });
 }

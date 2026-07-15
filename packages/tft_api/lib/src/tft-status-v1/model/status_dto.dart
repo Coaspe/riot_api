@@ -10,7 +10,7 @@ enum MaintenanceStatus {
   scheduled,
   @JsonValue("in_progress")
   inProgress,
-  complete
+  complete,
 }
 
 enum Platforms {
@@ -21,7 +21,7 @@ enum Platforms {
   ps4,
   xbone,
   @JsonValue("switch")
-  nintendoSwitch
+  nintendoSwitch,
 }
 
 @JsonSerializable(createToJson: false)

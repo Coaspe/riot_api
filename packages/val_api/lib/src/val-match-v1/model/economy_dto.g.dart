@@ -7,9 +7,9 @@ part of 'economy_dto.dart';
 // **************************************************************************
 
 EconomyDTO _$EconomyDTOFromJson(Map<String, dynamic> json) => EconomyDTO(
-      loadoutValue: json['loadoutValue'] as int,
-      weapon: json['weapon'] as String,
-      armor: json['armor'] as String,
-      remaining: json['remaining'] as int,
-      spent: json['spent'] as int,
-    );
+  loadoutValue: (json['loadoutValue'] as num).toInt(),
+  weapon: json['weapon'] as String,
+  armor: json['armor'] as String,
+  remaining: (json['remaining'] as num).toInt(),
+  spent: (json['spent'] as num).toInt(),
+);

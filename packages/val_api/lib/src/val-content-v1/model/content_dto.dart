@@ -6,23 +6,24 @@ part 'content_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class ContentDTO {
-  const ContentDTO(
-      {required this.version,
-      required this.characters,
-      required this.maps,
-      required this.chromas,
-      required this.skins,
-      required this.skinLevels,
-      required this.equips,
-      required this.gameModes,
-      required this.sprays,
-      required this.sprayLevels,
-      required this.charms,
-      required this.charmLevels,
-      required this.playerCards,
-      required this.playerTitles,
-      required this.acts,
-      this.ceremonies});
+  const ContentDTO({
+    required this.version,
+    required this.characters,
+    required this.maps,
+    required this.chromas,
+    required this.skins,
+    required this.skinLevels,
+    required this.equips,
+    required this.gameModes,
+    required this.sprays,
+    required this.sprayLevels,
+    required this.charms,
+    required this.charmLevels,
+    required this.playerCards,
+    required this.playerTitles,
+    required this.acts,
+    this.ceremonies,
+  });
   final String version;
   final List<ContentItemDTO> characters;
   final List<ContentItemDTO> maps;

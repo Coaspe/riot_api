@@ -7,9 +7,9 @@ part of 'team_dto.dart';
 // **************************************************************************
 
 TeamDTO _$TeamDTOFromJson(Map<String, dynamic> json) => TeamDTO(
-      teamId: json['teamId'] as String,
-      won: json['won'] as bool,
-      roundsPlayed: json['roundsPlayed'] as int,
-      roundsWon: json['roundsWon'] as int,
-      numPoints: json['numPoints'] as int,
-    );
+  teamId: json['teamId'] as String,
+  won: json['won'] as bool,
+  roundsPlayed: (json['roundsPlayed'] as num).toInt(),
+  roundsWon: (json['roundsWon'] as num).toInt(),
+  numPoints: (json['numPoints'] as num).toInt(),
+);

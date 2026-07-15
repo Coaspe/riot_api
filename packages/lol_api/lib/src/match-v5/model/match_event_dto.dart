@@ -48,43 +48,44 @@ enum TimlineEventType {
 
 @JsonSerializable(createToJson: false)
 class MatchEventDTO {
-  const MatchEventDTO(
-      {this.realTimestamp,
-      required this.timestamp,
-      required this.eventType,
-      this.itemId,
-      this.participantId,
-      this.levelUpType,
-      this.skillSlot,
-      this.creatorId,
-      this.wardType,
-      this.level,
-      this.assistingParticipantIds,
-      this.bounty,
-      this.killStreakLength,
-      this.killerId,
-      this.position,
-      this.victimDamageReceived,
-      this.victimDamageDealt,
-      this.victimId,
-      this.killType,
-      this.laneType,
-      this.teamId,
-      this.multiKillLength,
-      this.killerTeamId,
-      this.monsterType,
-      this.monsterSubType,
-      this.buildingType,
-      this.towerType,
-      this.afterId,
-      this.beforeId,
-      this.goldGain,
-      this.gameId,
-      this.winningTeam,
-      this.transformType,
-      this.name,
-      this.shutdownBounty,
-      this.actualStartTime});
+  const MatchEventDTO({
+    this.realTimestamp,
+    required this.timestamp,
+    required this.eventType,
+    this.itemId,
+    this.participantId,
+    this.levelUpType,
+    this.skillSlot,
+    this.creatorId,
+    this.wardType,
+    this.level,
+    this.assistingParticipantIds,
+    this.bounty,
+    this.killStreakLength,
+    this.killerId,
+    this.position,
+    this.victimDamageReceived,
+    this.victimDamageDealt,
+    this.victimId,
+    this.killType,
+    this.laneType,
+    this.teamId,
+    this.multiKillLength,
+    this.killerTeamId,
+    this.monsterType,
+    this.monsterSubType,
+    this.buildingType,
+    this.towerType,
+    this.afterId,
+    this.beforeId,
+    this.goldGain,
+    this.gameId,
+    this.winningTeam,
+    this.transformType,
+    this.name,
+    this.shutdownBounty,
+    this.actualStartTime,
+  });
   final int? realTimestamp;
   final int timestamp;
   final TimlineEventType eventType;
@@ -101,9 +102,9 @@ class MatchEventDTO {
   final int? killerId;
   final MatchPositionDTO? position;
   final List<MatchTimelineInfoFrameEventVictimDamageReceivedDTO>?
-      victimDamageDealt;
+  victimDamageDealt;
   final List<MatchTimelineInfoFrameEventVictimDamageReceivedDTO>?
-      victimDamageReceived;
+  victimDamageReceived;
   final int? victimId;
   final String? killType;
   final String? laneType;

@@ -7,9 +7,9 @@ part of 'meta_data_dto.dart';
 // **************************************************************************
 
 MetaDataDTO _$MetaDataDTOFromJson(Map<String, dynamic> json) => MetaDataDTO(
-      dataVersion: json['dataVersion'] as String?,
-      matchId: json['matchId'] as String?,
-      participants: (json['participants'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-    );
+  dataVersion: json['dataVersion'] as String?,
+  matchId: json['matchId'] as String?,
+  participants: (json['participants'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);

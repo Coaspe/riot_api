@@ -8,7 +8,7 @@ class ActiveShardDTO {
   final String game;
   final String activeShard;
 
-  ActiveShardDTO({
+  const ActiveShardDTO({
     required this.puuid,
     required this.game,
     required this.activeShard,

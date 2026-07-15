@@ -4,11 +4,12 @@ part 'tournament_phase_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class TournamentPhaseDTO {
-  const TournamentPhaseDTO(
-      {required this.id,
-      required this.registrationTime,
-      required this.startTime,
-      required this.cancelled});
+  const TournamentPhaseDTO({
+    required this.id,
+    required this.registrationTime,
+    required this.startTime,
+    required this.cancelled,
+  });
   final int id;
   final int registrationTime;
   final int startTime;

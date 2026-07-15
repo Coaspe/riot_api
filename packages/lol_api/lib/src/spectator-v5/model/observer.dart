@@ -6,7 +6,7 @@ part 'observer.g.dart';
 class Observer {
   const Observer({required this.encryptionKey});
 
-  /// Key used to decrypt the spectator grid game data for playback
+  /// Key used to decrypt the spectator grid game data for playback.
   final String encryptionKey;
 
   factory Observer.fromJson(Map<String, dynamic> json) =>

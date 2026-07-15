@@ -6,11 +6,12 @@ part 'match_team_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MatchTeamDTO {
-  const MatchTeamDTO(
-      {required this.bans,
-      required this.objectives,
-      required this.teamId,
-      required this.win});
+  const MatchTeamDTO({
+    required this.bans,
+    required this.objectives,
+    required this.teamId,
+    required this.win,
+  });
   final List<BanDTO> bans;
   final ObjectivesDTO objectives;
   final int teamId;

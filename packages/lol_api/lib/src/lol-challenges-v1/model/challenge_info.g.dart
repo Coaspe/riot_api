@@ -8,11 +8,11 @@ part of 'challenge_info.dart';
 
 ChallengeInfo _$ChallengeInfoFromJson(Map<String, dynamic> json) =>
     ChallengeInfo(
-      challengeId: json['challengeId'] as int,
+      challengeId: (json['challengeId'] as num).toInt(),
       percentile: (json['percentile'] as num).toDouble(),
       value: (json['value'] as num).toDouble(),
       level: $enumDecode(_$LevelEnumMap, json['level']),
-      achievedTime: json['achievedTime'] as int?,
+      achievedTime: (json['achievedTime'] as num?)?.toInt(),
     );
 
 const _$LevelEnumMap = {

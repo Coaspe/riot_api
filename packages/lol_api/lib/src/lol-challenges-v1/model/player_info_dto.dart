@@ -15,16 +15,17 @@ enum Category {
   @JsonValue("COLLECTION")
   collection,
   @JsonValue("VETERANCY")
-  veterancy
+  veterancy,
 }
 
 @JsonSerializable(createToJson: false)
 class PlayerInfoDTO {
-  const PlayerInfoDTO(
-      {required this.challenges,
-      required this.preferences,
-      required this.totalPoints,
-      required this.categoryPoints});
+  const PlayerInfoDTO({
+    required this.challenges,
+    required this.preferences,
+    required this.totalPoints,
+    required this.categoryPoints,
+  });
 
   final List<ChallengeInfo> challenges;
   final PlayerCilentPreferences preferences;

@@ -10,5 +10,5 @@ ApexPlayerInfoDTO _$ApexPlayerInfoDTOFromJson(Map<String, dynamic> json) =>
     ApexPlayerInfoDTO(
       puuid: json['puuid'] as String,
       value: (json['value'] as num).toDouble(),
-      position: json['position'] as int,
+      position: (json['position'] as num).toInt(),
     );

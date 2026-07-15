@@ -7,12 +7,12 @@ part of 'champion_info.dart';
 // **************************************************************************
 
 ChampionInfo _$ChampionInfoFromJson(Map<String, dynamic> json) => ChampionInfo(
-      maxNewPlayerLevel: json['maxNewPlayerLevel'] as int,
-      freeChampionIdsForNewPlayers:
-          (json['freeChampionIdsForNewPlayers'] as List<dynamic>)
-              .map((e) => e as int)
-              .toList(),
-      freeChampionIds: (json['freeChampionIds'] as List<dynamic>)
-          .map((e) => e as int)
+  maxNewPlayerLevel: (json['maxNewPlayerLevel'] as num).toInt(),
+  freeChampionIdsForNewPlayers:
+      (json['freeChampionIdsForNewPlayers'] as List<dynamic>)
+          .map((e) => (e as num).toInt())
           .toList(),
-    );
+  freeChampionIds: (json['freeChampionIds'] as List<dynamic>)
+      .map((e) => (e as num).toInt())
+      .toList(),
+);

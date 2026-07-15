@@ -7,6 +7,6 @@ part of 'match_dto.dart';
 // **************************************************************************
 
 MatchDTO _$MatchDTOFromJson(Map<String, dynamic> json) => MatchDTO(
-      metadata: MetadataDTO.fromJson(json['metadata'] as Map<String, dynamic>),
-      info: InfoDTO.fromJson(json['info'] as Map<String, dynamic>),
-    );
+  metadata: MetadataDTO.fromJson(json['metadata'] as Map<String, dynamic>),
+  info: InfoDTO.fromJson(json['info'] as Map<String, dynamic>),
+);

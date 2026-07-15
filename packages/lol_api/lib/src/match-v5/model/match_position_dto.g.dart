@@ -8,6 +8,6 @@ part of 'match_position_dto.dart';
 
 MatchPositionDTO _$MatchPositionDTOFromJson(Map<String, dynamic> json) =>
     MatchPositionDTO(
-      x: json['x'] as int,
-      y: json['y'] as int,
+      x: (json['x'] as num).toInt(),
+      y: (json['y'] as num).toInt(),
     );

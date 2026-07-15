@@ -15,7 +15,7 @@ PlayerRoundStatsDTO _$PlayerRoundStatsDTOFromJson(Map<String, dynamic> json) =>
       damage: (json['damage'] as List<dynamic>)
           .map((e) => DamageDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
-      score: json['score'] as int,
+      score: (json['score'] as num).toInt(),
       economy: EconomyDTO.fromJson(json['economy'] as Map<String, dynamic>),
       ability: AbilityDTO.fromJson(json['ability'] as Map<String, dynamic>),
     );

@@ -7,16 +7,17 @@ part of 'serializable_map_of_percentile.dart';
 // **************************************************************************
 
 SerializableMapOfPercentile _$SerializableMapOfPercentileFromJson(
-        Map<String, dynamic> json) =>
-    SerializableMapOfPercentile(
-      percentile: (json['percentile'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(
-            k,
-            (e as Map<String, dynamic>).map(
-              (k, e) => MapEntry($enumDecode(_$TierEnumMap, k), e as num),
-            )),
+  Map<String, dynamic> json,
+) => SerializableMapOfPercentile(
+  percentile: (json['percentile'] as Map<String, dynamic>).map(
+    (k, e) => MapEntry(
+      k,
+      (e as Map<String, dynamic>).map(
+        (k, e) => MapEntry($enumDecode(_$TierEnumMap, k), e as num),
       ),
-    );
+    ),
+  ),
+);
 
 const _$TierEnumMap = {
   Tier.challenger: 'CHALLENGER',

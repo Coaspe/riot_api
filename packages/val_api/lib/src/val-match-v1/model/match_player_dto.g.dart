@@ -15,7 +15,7 @@ MatchPlayerDTO _$MatchPlayerDTOFromJson(Map<String, dynamic> json) =>
       partyId: json['partyId'] as String,
       characterId: json['characterId'] as String,
       stats: PlayerStatsDTO.fromJson(json['stats'] as Map<String, dynamic>),
-      competitiveTier: json['competitiveTier'] as int,
+      competitiveTier: (json['competitiveTier'] as num).toInt(),
       playerCard: json['playerCard'] as String,
       playerTitle: json['playerTitle'] as String,
     );

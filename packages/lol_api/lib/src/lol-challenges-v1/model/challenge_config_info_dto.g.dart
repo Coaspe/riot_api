@@ -7,21 +7,21 @@ part of 'challenge_config_info_dto.dart';
 // **************************************************************************
 
 ChallengeConfigInfoDTO _$ChallengeConfigInfoDTOFromJson(
-        Map<String, dynamic> json) =>
-    ChallengeConfigInfoDTO(
-      id: json['id'] as int,
-      localizedNames: (json['localizedNames'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, Map<String, String>.from(e as Map)),
-      ),
-      state: $enumDecodeNullable(_$StateEnumMap, json['state']),
-      tracking: $enumDecodeNullable(_$TrackingEnumMap, json['tracking']),
-      startTimestamp: json['startTimestamp'] as int?,
-      endTimestamp: json['endTimestamp'] as int?,
-      leaderboard: json['leaderboard'] as bool?,
-      thresholds: (json['thresholds'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, (e as num).toDouble()),
-      ),
-    );
+  Map<String, dynamic> json,
+) => ChallengeConfigInfoDTO(
+  id: (json['id'] as num).toInt(),
+  localizedNames: (json['localizedNames'] as Map<String, dynamic>).map(
+    (k, e) => MapEntry(k, Map<String, String>.from(e as Map)),
+  ),
+  state: $enumDecodeNullable(_$StateEnumMap, json['state']),
+  tracking: $enumDecodeNullable(_$TrackingEnumMap, json['tracking']),
+  startTimestamp: (json['startTimestamp'] as num?)?.toInt(),
+  endTimestamp: (json['endTimestamp'] as num?)?.toInt(),
+  leaderboard: json['leaderboard'] as bool?,
+  thresholds: (json['thresholds'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, (e as num).toDouble()),
+  ),
+);
 
 const _$StateEnumMap = {
   State.enabled: 'ENABLED',

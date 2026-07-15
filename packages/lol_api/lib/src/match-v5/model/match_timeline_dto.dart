@@ -7,8 +7,8 @@ part 'match_timeline_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MatchTimelineDTO {
-  const MatchTimelineDTO({required this.metaData, required this.info});
-  final MetaDataDTO metaData;
+  const MatchTimelineDTO({required this.metadata, required this.info});
+  final MetaDataDTO metadata;
   final MatchTimelineInfoDTO info;
   factory MatchTimelineDTO.fromJson(Map<String, dynamic> json) =>
       _$MatchTimelineDTOFromJson(json);

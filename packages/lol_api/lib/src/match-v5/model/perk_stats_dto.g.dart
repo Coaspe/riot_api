@@ -7,7 +7,7 @@ part of 'perk_stats_dto.dart';
 // **************************************************************************
 
 PerkStatsDTO _$PerkStatsDTOFromJson(Map<String, dynamic> json) => PerkStatsDTO(
-      defense: json['defense'] as int,
-      flex: json['flex'] as int,
-      offense: json['offense'] as int,
-    );
+  defense: (json['defense'] as num).toInt(),
+  flex: (json['flex'] as num).toInt(),
+  offense: (json['offense'] as num).toInt(),
+);

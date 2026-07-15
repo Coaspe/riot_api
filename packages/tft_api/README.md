@@ -14,7 +14,7 @@ You need your own [Riot api key](https://developer.riotgames.com/).
 
 Here is what you need to use the Dart SDK:
 
-- Dart 2.19.0 or higher
+- Dart 3.9.0 or higher
 
 ## Example
 
@@ -22,7 +22,7 @@ First, generate [Riot api key](https://developer.riotgames.com/).
 
 Initialize `RiotApi` with your api key.
 ```dart
-RiotApi.init(apiKey: 'your-api-key'))
+RiotApi.init(apiKey: 'your-api-key');
 ```
 
 And use `APIname.queryFunction` form to call query function.

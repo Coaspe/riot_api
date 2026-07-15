@@ -7,15 +7,16 @@ part of 'top_rated_ladder_entry_dto.dart';
 // **************************************************************************
 
 TopRatedLadderEntryDTO _$TopRatedLadderEntryDTOFromJson(
-        Map<String, dynamic> json) =>
-    TopRatedLadderEntryDTO(
-      summonerId: json['summonerId'] as String,
-      summonerName: json['summonerName'] as String,
-      ratedTier: $enumDecode(_$RatedTierEnumMap, json['ratedTier']),
-      ratedRating: json['ratedRating'] as int,
-      wins: json['wins'] as int,
-      previousUpdateLadderPosition: json['previousUpdateLadderPosition'] as int,
-    );
+  Map<String, dynamic> json,
+) => TopRatedLadderEntryDTO(
+  summonerId: json['summonerId'] as String,
+  summonerName: json['summonerName'] as String,
+  ratedTier: $enumDecode(_$RatedTierEnumMap, json['ratedTier']),
+  ratedRating: (json['ratedRating'] as num).toInt(),
+  wins: (json['wins'] as num).toInt(),
+  previousUpdateLadderPosition: (json['previousUpdateLadderPosition'] as num)
+      .toInt(),
+);
 
 const _$RatedTierEnumMap = {
   RatedTier.oreange: 'ORANGE',

@@ -8,13 +8,14 @@ part 'player_round_stats_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class PlayerRoundStatsDTO {
-  const PlayerRoundStatsDTO(
-      {required this.puuid,
-      required this.kills,
-      required this.damage,
-      required this.score,
-      required this.economy,
-      required this.ability});
+  const PlayerRoundStatsDTO({
+    required this.puuid,
+    required this.kills,
+    required this.damage,
+    required this.score,
+    required this.economy,
+    required this.ability,
+  });
   final String puuid;
   final List<KillDTO> kills;
   final List<DamageDTO> damage;

@@ -8,7 +8,7 @@ enum MaintenanceStatus {
   scheduled,
   @JsonValue("in_progress")
   inProgress,
-  complete
+  complete,
 }
 
 enum IncidentSeverity { info, warning, critical }
@@ -21,7 +21,7 @@ enum Platforms {
   ps4,
   xbone,
   @JsonValue("switch")
-  nintendoSwitch
+  nintendoSwitch,
 }
 
 @JsonSerializable(createToJson: false)

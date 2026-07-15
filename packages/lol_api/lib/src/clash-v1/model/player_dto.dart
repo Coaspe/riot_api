@@ -4,11 +4,12 @@ part 'player_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class PlayerDTO {
-  const PlayerDTO(
-      {required this.summonerId,
-      required this.teamId,
-      required this.position,
-      required this.role});
+  const PlayerDTO({
+    required this.summonerId,
+    required this.teamId,
+    required this.position,
+    required this.role,
+  });
   final String summonerId;
   final String teamId;
   final String position;

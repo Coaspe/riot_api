@@ -7,11 +7,12 @@ part of 'match_team_dto.dart';
 // **************************************************************************
 
 MatchTeamDTO _$MatchTeamDTOFromJson(Map<String, dynamic> json) => MatchTeamDTO(
-      bans: (json['bans'] as List<dynamic>)
-          .map((e) => BanDTO.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      objectives:
-          ObjectivesDTO.fromJson(json['objectives'] as Map<String, dynamic>),
-      teamId: json['teamId'] as int,
-      win: json['win'] as bool,
-    );
+  bans: (json['bans'] as List<dynamic>)
+      .map((e) => BanDTO.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  objectives: ObjectivesDTO.fromJson(
+    json['objectives'] as Map<String, dynamic>,
+  ),
+  teamId: (json['teamId'] as num).toInt(),
+  win: json['win'] as bool,
+);

@@ -4,10 +4,11 @@ part 'meta_data_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MetaDataDTO {
-  const MetaDataDTO(
-      {required this.dataVersion,
-      required this.matchId,
-      required this.participants});
+  const MetaDataDTO({
+    required this.dataVersion,
+    required this.matchId,
+    required this.participants,
+  });
 
   /// Match data version.
   final String? dataVersion;

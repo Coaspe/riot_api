@@ -4,8 +4,11 @@ part 'companion_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class CompanionDTO {
-  const CompanionDTO(
-      {required this.skinId, required this.contentId, required this.species});
+  const CompanionDTO({
+    required this.skinId,
+    required this.contentId,
+    required this.species,
+  });
   @JsonKey(name: "skin_ID")
   final int skinId;
   @JsonKey(name: "content_ID")

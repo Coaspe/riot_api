@@ -7,24 +7,28 @@ part of 'status_dto.dart';
 // **************************************************************************
 
 StatusDTO _$StatusDTOFromJson(Map<String, dynamic> json) => StatusDTO(
-      id: json['id'] as int,
-      maintenanceStatus:
-          $enumDecode(_$MaintenanceStatusEnumMap, json['maintenance_status']),
-      incidentSeverity:
-          $enumDecode(_$IncidentSeverityEnumMap, json['incident_severity']),
-      titles: (json['titles'] as List<dynamic>)
-          .map((e) => ContentDTO.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      updates: (json['updates'] as List<dynamic>)
-          .map((e) => UpdateDTO.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      createdAt: json['created_at'] as String,
-      archiveAt: json['archive_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      platforms: (json['platforms'] as List<dynamic>)
-          .map((e) => $enumDecode(_$PlatformsEnumMap, e))
-          .toList(),
-    );
+  id: (json['id'] as num).toInt(),
+  maintenanceStatus: $enumDecode(
+    _$MaintenanceStatusEnumMap,
+    json['maintenance_status'],
+  ),
+  incidentSeverity: $enumDecode(
+    _$IncidentSeverityEnumMap,
+    json['incident_severity'],
+  ),
+  titles: (json['titles'] as List<dynamic>)
+      .map((e) => ContentDTO.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  updates: (json['updates'] as List<dynamic>)
+      .map((e) => UpdateDTO.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  createdAt: json['created_at'] as String,
+  archiveAt: json['archive_at'] as String,
+  updatedAt: json['updated_at'] as String,
+  platforms: (json['platforms'] as List<dynamic>)
+      .map((e) => $enumDecode(_$PlatformsEnumMap, e))
+      .toList(),
+);
 
 const _$MaintenanceStatusEnumMap = {
   MaintenanceStatus.scheduled: 'scheduled',

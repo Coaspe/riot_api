@@ -57,6 +57,6 @@ class MatchTimelineInfoFrameParticipantFrameChampionStatsDTO {
   final int powerRegen;
   final int spellVamp;
   factory MatchTimelineInfoFrameParticipantFrameChampionStatsDTO.fromJson(
-          Map<String, dynamic> json) =>
-      _$MatchTimelineInfoFrameParticipantFrameChampionStatsDTOFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$MatchTimelineInfoFrameParticipantFrameChampionStatsDTOFromJson(json);
 }

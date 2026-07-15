@@ -4,13 +4,14 @@ part 'unit_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class UnitDTO {
-  const UnitDTO(
-      {required this.items,
-      required this.characterId,
-      this.chosen,
-      required this.name,
-      required this.rarity,
-      required this.tier});
+  const UnitDTO({
+    required this.items,
+    required this.characterId,
+    this.chosen,
+    required this.name,
+    required this.rarity,
+    required this.tier,
+  });
 
   /// A list of the unit's items.
   ///

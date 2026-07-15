@@ -8,12 +8,13 @@ part of 'player_stats_dto.dart';
 
 PlayerStatsDTO _$PlayerStatsDTOFromJson(Map<String, dynamic> json) =>
     PlayerStatsDTO(
-      score: json['score'] as int,
-      roundsPlayed: json['roundsPlayed'] as int,
-      kills: json['kills'] as int,
-      deaths: json['deaths'] as int,
-      assists: json['assists'] as int,
-      playtimeMillis: json['playtimeMillis'] as int,
+      score: (json['score'] as num).toInt(),
+      roundsPlayed: (json['roundsPlayed'] as num).toInt(),
+      kills: (json['kills'] as num).toInt(),
+      deaths: (json['deaths'] as num).toInt(),
+      assists: (json['assists'] as num).toInt(),
+      playtimeMillis: (json['playtimeMillis'] as num).toInt(),
       abilityCasts: AbilityCastsDTO.fromJson(
-          json['abilityCasts'] as Map<String, dynamic>),
+        json['abilityCasts'] as Map<String, dynamic>,
+      ),
     );

@@ -11,7 +11,7 @@ RankedPlayerDTO _$RankedPlayerDTOFromJson(Map<String, dynamic> json) =>
       puuid: json['puuid'] as String?,
       gameName: json['gameName'] as String?,
       tagLine: json['tagLine'] as String?,
-      leaderboardRank: json['leaderboardRank'] as int,
-      rankedRating: json['rankedRating'] as int,
-      numberOfWins: json['numberOfWins'] as int,
+      leaderboardRank: (json['leaderboardRank'] as num).toInt(),
+      rankedRating: (json['rankedRating'] as num).toInt(),
+      numberOfWins: (json['numberOfWins'] as num).toInt(),
     );

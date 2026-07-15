@@ -7,11 +7,8 @@ part of 'summoner_dto.dart';
 // **************************************************************************
 
 SummonerDTO _$SummonerDTOFromJson(Map<String, dynamic> json) => SummonerDTO(
-      id: json['id'] as String,
-      accountId: json['accountId'] as String,
-      puuid: json['puuid'] as String,
-      name: json['name'] as String,
-      profileIconId: json['profileIconId'] as int,
-      revisionDate: json['revisionDate'] as int,
-      summonerLevel: json['summonerLevel'] as int,
-    );
+  puuid: json['puuid'] as String,
+  profileIconId: (json['profileIconId'] as num).toInt(),
+  revisionDate: (json['revisionDate'] as num).toInt(),
+  summonerLevel: (json['summonerLevel'] as num).toInt(),
+);

@@ -10,8 +10,9 @@ PlatformDataDTO _$PlatformDataDTOFromJson(Map<String, dynamic> json) =>
     PlatformDataDTO(
       id: json['id'] as String,
       name: json['name'] as String,
-      locales:
-          (json['locales'] as List<dynamic>).map((e) => e as String).toList(),
+      locales: (json['locales'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       maintenances: (json['maintenances'] as List<dynamic>)
           .map((e) => StatusDTO.fromJson(e as Map<String, dynamic>))
           .toList(),

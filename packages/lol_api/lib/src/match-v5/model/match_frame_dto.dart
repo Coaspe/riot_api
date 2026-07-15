@@ -6,10 +6,11 @@ part 'match_frame_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class MatchFrameDTO {
-  const MatchFrameDTO(
-      {required this.events,
-      required this.timestamp,
-      required this.participantFrames});
+  const MatchFrameDTO({
+    required this.events,
+    required this.timestamp,
+    required this.participantFrames,
+  });
   final List<MatchEventDTO> events;
   final int timestamp;
   final MatchTimelineInfoFrameParticipantFramesDTO participantFrames;
