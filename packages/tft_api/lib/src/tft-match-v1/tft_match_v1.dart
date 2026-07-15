@@ -59,7 +59,7 @@ class TFTMatchV1 {
     Map<String, String>? headers,
   }) async {
     String url =
-        '${platform.platformToUrl}/${Qtype.tft.name}/match/v1/matches/$matchId';
+        '${platform.platformToUrl}/${Qtype.tft.name}/match/v1/matches/${Uri.encodeComponent(matchId)}';
     MatchDTO match = await ApiUtil.requestApi(url, MatchDTO.fromJson, headers);
     return match;
   }

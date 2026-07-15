@@ -14,8 +14,10 @@ class MatchPlayerDTO {
     required this.characterId,
     required this.stats,
     required this.competitiveTier,
+    this.isObserver,
     required this.playerCard,
     required this.playerTitle,
+    this.accountLevel,
   });
   final String puuid;
   final String gameName;
@@ -25,8 +27,10 @@ class MatchPlayerDTO {
   final String characterId;
   final PlayerStatsDTO stats;
   final int competitiveTier;
+  final bool? isObserver;
   final String playerCard;
   final String playerTitle;
+  final int? accountLevel;
   factory MatchPlayerDTO.fromJson(Map<String, dynamic> json) =>
       _$MatchPlayerDTOFromJson(json);
 }

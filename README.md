@@ -11,9 +11,9 @@
 
 ---
 
-Unofficial packages provide easy ways to use the Riot API in Dart language.
+Unofficial packages provide easy ways to use the Riot API from Dart.
 
-These pacakages aren't endorsed by Riot Games and don't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+These packages aren't endorsed by Riot Games and don't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
 
 - League of Legends api
   - CHAMPION-MASTERY-V4
@@ -22,20 +22,24 @@ These pacakages aren't endorsed by Riot Games and don't reflect the views or opi
   - LEAGUE-EXP-V4
   - LEAGUE-V4
   - LOL-CHALLENGES-V1
+  - LOL-RSO-MATCH-V1
   - LOL-STATUS-V4
   - MATCH-V5
   - SPECTATOR-V5
   - SUMMONER-V4
-  - TOURNAMENT-V5 (Not yet supported)
-  - TOURNAMENT-STUB-V5 (Not yet supported)
+  - TOURNAMENT-V5
+  - TOURNAMENT-STUB-V5
 - Riot account api
   - ACCOUNT-V1
-- Valrorant
+- Valorant
+  - VAL-CONSOLE-MATCH-V1
+  - VAL-CONSOLE-RANKED-V1
   - VAL-CONTENT-V1
   - VAL-MATCH-V1 (Because of policy issue, not tested yet 😭.)
   - VAL-RANKED-V1
   - VAL-STATUS-V1
 - Teamfight Tactics
+  - SPECTATOR-TFT-V5
   - TFT-LEAGUE-V1
   - TFT-MATCH-V1
   - TFT-STATUS-V1
@@ -48,7 +52,7 @@ Here is what you need to use the Dart SDK:
 
 - Dart 3.9.0 or higher
 
-## Exmaple
+## Example
 
 First, generate [Riot API key](https://developer.riotgames.com/).
 
@@ -91,6 +95,12 @@ final matchIds = await MatchV5.getMatchIdsByPuuid(
 final match =
     await MatchV5.getMatchByMatchId(PlatformValues.asia, matchIds[0]);
 
+// RSO endpoints use a player access token instead of the Riot API key.
+final rsoMatchIds = await LolRsoMatchV1.getMatchIds(
+  PlatformValues.asia,
+  'Bearer player-access-token',
+);
+
 ```
 
 ### tft_api
@@ -102,8 +112,17 @@ final match = await TFTMatchV1.getMatchListByPuuid(PlatformValues.asia, puuid, c
 /// Get the challenger league.
 final league = await TFTLeagueV1.getChallengerLeague(RegionValues.kr);
 
+// Get a currently observed TFT game by PUUID.
+final game = await TFTSpectatorV5.getCurrentGameInfoByPuuid(
+  RegionValues.kr,
+  puuid,
+);
+
 // // Get the top rated ladder.
-final topLadder = await TFTLeagueV1.getTopRatedLadderByQueue(RegionValues.kr, "RANKED_TFT");
+final topLadder = await TFTLeagueV1.getTopRatedLadderByQueue(
+  RegionValues.kr,
+  'RANKED_TFT_TURBO',
+);
 ```
 
 ### val_api
@@ -119,6 +138,13 @@ final status = await ValStatusV1.getPlatformStatus(ValRegionValues.kr);
 
 // Get leaderboard
 final board = await ValRankedV1.getLeaderboard(ValRegionValues.kr, actId, size: 100);
+
+// Get a console match list.
+final consoleMatches = await ValConsoleMatchV1.getMatchlistByPuuid(
+  ValRegionValues.ap,
+  puuid,
+  ValConsolePlatformType.playstation,
+);
 ```
 
 ## pub.dev

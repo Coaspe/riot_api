@@ -10,7 +10,11 @@ MatchEventDTO _$MatchEventDTOFromJson(Map<String, dynamic> json) =>
     MatchEventDTO(
       realTimestamp: (json['realTimestamp'] as num?)?.toInt(),
       timestamp: (json['timestamp'] as num).toInt(),
-      eventType: $enumDecode(_$TimlineEventTypeEnumMap, json['eventType']),
+      eventType: $enumDecode(
+        _$TimlineEventTypeEnumMap,
+        json['type'],
+        unknownValue: TimlineEventType.unknown,
+      ),
       itemId: (json['itemId'] as num?)?.toInt(),
       participantId: (json['participantId'] as num?)?.toInt(),
       levelUpType: json['levelUpType'] as String?,
@@ -64,6 +68,7 @@ MatchEventDTO _$MatchEventDTOFromJson(Map<String, dynamic> json) =>
     );
 
 const _$TimlineEventTypeEnumMap = {
+  TimlineEventType.unknown: 'UNKNOWN',
   TimlineEventType.ascendedEvent: 'ASCENDED_EVENT',
   TimlineEventType.buildingKill: 'BUILDING_KILL',
   TimlineEventType.capturePoint: 'CAPTURE_POINT',

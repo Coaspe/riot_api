@@ -12,6 +12,9 @@ ObjectivesDTO _$ObjectivesDTOFromJson(
   baron: ObjectiveDTO.fromJson(json['baron'] as Map<String, dynamic>),
   champion: ObjectiveDTO.fromJson(json['champion'] as Map<String, dynamic>),
   dragon: ObjectiveDTO.fromJson(json['dragon'] as Map<String, dynamic>),
+  horde: json['horde'] == null
+      ? null
+      : ObjectiveDTO.fromJson(json['horde'] as Map<String, dynamic>),
   inhibitor: ObjectiveDTO.fromJson(json['inhibitor'] as Map<String, dynamic>),
   riftHerald: ObjectiveDTO.fromJson(json['riftHerald'] as Map<String, dynamic>),
   tower: ObjectiveDTO.fromJson(json['tower'] as Map<String, dynamic>),

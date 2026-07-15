@@ -7,12 +7,15 @@ class CompanionDTO {
   const CompanionDTO({
     required this.skinId,
     required this.contentId,
+    this.itemId,
     required this.species,
   });
   @JsonKey(name: "skin_ID")
   final int skinId;
   @JsonKey(name: "content_ID")
   final String contentId;
+  @JsonKey(name: 'item_ID')
+  final int? itemId;
   final String species;
   factory CompanionDTO.fromJson(Map<String, dynamic> json) =>
       _$CompanionDTOFromJson(json);

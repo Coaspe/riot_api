@@ -9,6 +9,7 @@ part of 'match_timeline_info_dto.dart';
 MatchTimelineInfoDTO _$MatchTimelineInfoDTOFromJson(
   Map<String, dynamic> json,
 ) => MatchTimelineInfoDTO(
+  endOfGameResult: json['endOfGameResult'] as String?,
   frameInterval: (json['frameInterval'] as num).toInt(),
   frames: (json['frames'] as List<dynamic>)
       .map((e) => MatchFrameDTO.fromJson(e as Map<String, dynamic>))

@@ -12,6 +12,7 @@ class RoundResultDTO {
     required this.roundResult,
     required this.roundCeremony,
     required this.winningTeam,
+    this.winningTeamRole,
     required this.bombPlanter,
     required this.bombDefuser,
     required this.plantRoundTime,
@@ -29,6 +30,7 @@ class RoundResultDTO {
   final String roundResult;
   final String roundCeremony;
   final String winningTeam;
+  final String? winningTeamRole;
   final String bombPlanter;
   final String bombDefuser;
   final int plantRoundTime;

@@ -71,4 +71,74 @@ void main() {
       throwsArgumentError,
     );
   });
+
+  test('TFT league includes the current Double Up queue filter', () async {
+    final client = MockClient((request) async {
+      expect(request.url.path, '/tft/league/v1/challenger');
+      expect(request.url.queryParameters, {'queue': 'RANKED_TFT_DOUBLE_UP'});
+      return http.Response(
+        jsonEncode({
+          'leagueId': 'league',
+          'entries': <Object>[],
+          'tier': 'CHALLENGER',
+          'name': 'Double Up',
+          'queue': 'RANKED_TFT_DOUBLE_UP',
+        }),
+        200,
+      );
+    });
+    RiotApi.init(apiKey: 'test-key', client: client);
+
+    final league = await TFTLeagueV1.getChallengerLeague(
+      RegionValues.kr,
+      queue: TFTLeagueQueue.rankedTftDoubleUp,
+    );
+
+    expect(league.queue, 'RANKED_TFT_DOUBLE_UP');
+  });
+
+  test('TFT Spectator V5 uses its dedicated PUUID route', () async {
+    final client = MockClient((request) async {
+      expect(
+        request.url.path,
+        '/lol/spectator/tft/v5/active-games/by-puuid/player%2Fone',
+      );
+      return http.Response(
+        jsonEncode({
+          'gameId': 1,
+          'gameType': 'MATCHED_GAME',
+          'gameStartTime': 1,
+          'mapId': 22,
+          'gameLength': 10,
+          'platformId': 'KR',
+          'gameMode': 'TFT',
+          'gameQueueConfigId': 1100,
+          'participants': [
+            {
+              'championId': 1,
+              'perks': {
+                'perkIds': [1],
+                'perkStyle': 2,
+                'perkSubStyle': 3,
+              },
+              'profileIconId': 1,
+              'teamId': 100,
+              'puuid': null,
+              'spell1Id': 4,
+              'spell2Id': 14,
+            },
+          ],
+        }),
+        200,
+      );
+    });
+    RiotApi.init(apiKey: 'test-key', client: client);
+
+    final game = await TFTSpectatorV5.getCurrentGameInfoByPuuid(
+      RegionValues.kr,
+      'player/one',
+    );
+
+    expect(game.participants.single.puuid, isNull);
+  });
 }

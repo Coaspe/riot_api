@@ -4,6 +4,8 @@ import 'match_timeline_info_frame_event_victim_damage_received_dto.dart';
 part 'match_event_dto.g.dart';
 
 enum TimlineEventType {
+  @JsonValue('UNKNOWN')
+  unknown,
   @JsonValue('ASCENDED_EVENT')
   ascendedEvent,
   @JsonValue('BUILDING_KILL')
@@ -88,6 +90,7 @@ class MatchEventDTO {
   });
   final int? realTimestamp;
   final int timestamp;
+  @JsonKey(name: 'type', unknownEnumValue: TimlineEventType.unknown)
   final TimlineEventType eventType;
   final int? itemId;
   final int? participantId;
@@ -127,3 +130,5 @@ class MatchEventDTO {
   factory MatchEventDTO.fromJson(Map<String, dynamic> json) =>
       _$MatchEventDTOFromJson(json);
 }
+
+typedef TimelineEventType = TimlineEventType;

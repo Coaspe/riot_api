@@ -5,6 +5,8 @@ This package provides an easy way to use the Riot games Valorant api in Dart lan
 You need your own [Riot api key](https://developer.riotgames.com/).
 
 - Valorant api
+    - VAL-CONSOLE-MATCH-V1
+    - VAL-CONSOLE-RANKED-V1
     - VAL-CONTENT-V1
     - VAL-MATCH-V1 (Because of policy issue, not tested yet 😭.)
     - VAL-RANKED-V1
@@ -40,6 +42,13 @@ const actId = 'your-act-id';
 
 // Get leaderboard
 final board = await ValRankedV1.getLeaderboard(ValRegionValues.kr, actId, size: 100);
+
+// Get a PlayStation match list.
+final consoleMatches = await ValConsoleMatchV1.getMatchlistByPuuid(
+  ValRegionValues.ap,
+  puuid,
+  ValConsolePlatformType.playstation,
+);
 ```
 
 ## Additional packages

@@ -3,15 +3,28 @@ import 'model/league_list_dto.dart';
 import 'model/top_rated_ladder_entry_dto.dart';
 import 'package:riot_api/riot_api.dart';
 
+enum TFTLeagueQueue { rankedTft, rankedTftDoubleUp }
+
+extension TFTLeagueQueueEx on TFTLeagueQueue {
+  String get value => switch (this) {
+    TFTLeagueQueue.rankedTft => 'RANKED_TFT',
+    TFTLeagueQueue.rankedTftDoubleUp => 'RANKED_TFT_DOUBLE_UP',
+  };
+}
+
 class TFTLeagueV1 {
   static const tft = "tft";
 
   /// Get the challenger league
   static Future<LeagueListDTO> getChallengerLeague(
     RegionValues region, {
+    TFTLeagueQueue? queue,
     Map<String, String>? headers,
   }) async {
-    String url = '${region.regionToUrl}/${Qtype.tft.name}/league/v1/challenger';
+    final url = _withQueue(
+      '${region.regionToUrl}/${Qtype.tft.name}/league/v1/challenger',
+      queue,
+    );
     LeagueListDTO league = await ApiUtil.requestApi(
       url,
       LeagueListDTO.fromJson,
@@ -44,12 +57,21 @@ class TFTLeagueV1 {
     RegionValues region, {
     required Tier tier,
     required Division division,
+    TFTLeagueQueue? queue,
     int? page,
     Map<String, String>? headers,
   }) async {
-    String url =
-        '${region.regionToUrl}/${Qtype.tft.name}/league/v1/entries/${tier.name.toUpperCase()}/${division.valueToString}';
-    if (page != null) url += '?page=$page';
+    final url =
+        Uri.parse(
+              '${region.regionToUrl}/${Qtype.tft.name}/league/v1/entries/${tier.name.toUpperCase()}/${division.valueToString}',
+            )
+            .replace(
+              queryParameters: {
+                if (queue != null) 'queue': queue.value,
+                if (page != null) 'page': '$page',
+              },
+            )
+            .toString();
     final leagueEntries =
         await ApiUtil.requestApi<List<LeagueEntryDTO>, List<dynamic>>(
           url,
@@ -64,10 +86,13 @@ class TFTLeagueV1 {
   /// Get the grandmaster league
   static Future<LeagueListDTO> getGrandmasterLeague(
     RegionValues region, {
+    TFTLeagueQueue? queue,
     Map<String, String>? headers,
   }) async {
-    String url =
-        '${region.regionToUrl}/${Qtype.tft.name}/league/v1/grandmaster';
+    final url = _withQueue(
+      '${region.regionToUrl}/${Qtype.tft.name}/league/v1/grandmaster',
+      queue,
+    );
     LeagueListDTO league = await ApiUtil.requestApi(
       url,
       LeagueListDTO.fromJson,
@@ -79,9 +104,13 @@ class TFTLeagueV1 {
   /// Get the master league
   static Future<LeagueListDTO> getMasterLeague(
     RegionValues region, {
+    TFTLeagueQueue? queue,
     Map<String, String>? headers,
   }) async {
-    String url = '${region.regionToUrl}/${Qtype.tft.name}/league/v1/master';
+    final url = _withQueue(
+      '${region.regionToUrl}/${Qtype.tft.name}/league/v1/master',
+      queue,
+    );
     LeagueListDTO league = await ApiUtil.requestApi(
       url,
       LeagueListDTO.fromJson,
@@ -115,3 +144,9 @@ class TFTLeagueV1 {
     return entry;
   }
 }
+
+String _withQueue(String url, TFTLeagueQueue? queue) => queue == null
+    ? url
+    : Uri.parse(
+        url,
+      ).replace(queryParameters: {'queue': queue.value}).toString();

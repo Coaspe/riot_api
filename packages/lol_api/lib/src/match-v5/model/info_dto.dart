@@ -7,6 +7,7 @@ part 'info_dto.g.dart';
 @JsonSerializable(createToJson: false)
 class InfoDTO {
   const InfoDTO({
+    this.endOfGameResult,
     required this.gameCreation,
     required this.gameDuration,
     required this.gameEndTimestamp,
@@ -23,6 +24,8 @@ class InfoDTO {
     required this.teams,
     required this.tournamentCode,
   });
+
+  final String? endOfGameResult;
 
   /// Unix timestamp for when the game is created on the game server (i.e., the loading screen).
   final int gameCreation;

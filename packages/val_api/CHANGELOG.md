@@ -1,3 +1,11 @@
+## 0.2.0
+
+- Add every VAL-CONSOLE-MATCH-V1 operation.
+- Add VAL-CONSOLE-RANKED-V1 with PlayStation and Xbox filtering.
+- Update VAL match models with current game, Premier, observer, account-level,
+  round-role, and queue fields.
+- Allow arbitrary locale strings through `ValContentV1.getContent`.
+
 ## 0.1.0
 
 - Require Dart 3.9 and update dependencies to their current releases.

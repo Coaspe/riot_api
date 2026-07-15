@@ -28,7 +28,7 @@ LeagueEntryDTO _$LeagueEntryDTOFromJson(Map<String, dynamic> json) =>
     );
 
 const _$RatedTierEnumMap = {
-  RatedTier.oreange: 'ORANGE',
+  RatedTier.orange: 'ORANGE',
   RatedTier.purple: 'PURPLE',
   RatedTier.blue: 'BLUE',
   RatedTier.green: 'GREEN',

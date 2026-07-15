@@ -12,6 +12,7 @@ RoundResultDTO _$RoundResultDTOFromJson(Map<String, dynamic> json) =>
       roundResult: json['roundResult'] as String,
       roundCeremony: json['roundCeremony'] as String,
       winningTeam: json['winningTeam'] as String,
+      winningTeamRole: json['winningTeamRole'] as String?,
       bombPlanter: json['bombPlanter'] as String,
       bombDefuser: json['bombDefuser'] as String,
       plantRoundTime: (json['plantRoundTime'] as num).toInt(),

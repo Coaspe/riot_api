@@ -9,6 +9,7 @@ class ObjectivesDTO {
     required this.baron,
     required this.champion,
     required this.dragon,
+    this.horde,
     required this.inhibitor,
     required this.riftHerald,
     required this.tower,
@@ -16,6 +17,7 @@ class ObjectivesDTO {
   final ObjectiveDTO baron;
   final ObjectiveDTO champion;
   final ObjectiveDTO dragon;
+  final ObjectiveDTO? horde;
   final ObjectiveDTO inhibitor;
   final ObjectiveDTO riftHerald;
   final ObjectiveDTO tower;

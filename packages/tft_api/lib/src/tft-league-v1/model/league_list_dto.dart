@@ -35,9 +35,7 @@ class LeagueListDTO {
   final String tier;
   final String name;
 
-  /// Now only support "RANKED_TFT_TURBO"
-  ///
-  /// [queues] should be typed with enum, but there is no spec.
+  /// Queue represented by this league list.
   final String queue;
   factory LeagueListDTO.fromJson(Map<String, dynamic> json) =>
       _$LeagueListDTOFromJson(json);

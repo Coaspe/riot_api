@@ -1,44 +1,58 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'match_timeline_info_frame_participant_frame_dto.dart';
 
-part 'match_timeline_info_frame_participant_frames_dto.g.dart';
-
-@JsonSerializable(createToJson: false)
 class MatchTimelineInfoFrameParticipantFramesDTO {
   const MatchTimelineInfoFrameParticipantFramesDTO({
-    required this.p1,
-    required this.p2,
-    required this.p3,
-    required this.p4,
-    required this.p5,
-    required this.p6,
-    required this.p7,
-    required this.p8,
-    required this.p9,
-    required this.p10,
+    this.p1,
+    this.p2,
+    this.p3,
+    this.p4,
+    this.p5,
+    this.p6,
+    this.p7,
+    this.p8,
+    this.p9,
+    this.p10,
+    this.additionalParticipants = const {},
   });
 
-  @JsonKey(name: "1")
-  final MatchTimelineInfoFrameParticipantFrameDTO p1;
-  @JsonKey(name: "2")
-  final MatchTimelineInfoFrameParticipantFrameDTO p2;
-  @JsonKey(name: "3")
-  final MatchTimelineInfoFrameParticipantFrameDTO p3;
-  @JsonKey(name: "4")
-  final MatchTimelineInfoFrameParticipantFrameDTO p4;
-  @JsonKey(name: "5")
-  final MatchTimelineInfoFrameParticipantFrameDTO p5;
-  @JsonKey(name: "6")
-  final MatchTimelineInfoFrameParticipantFrameDTO p6;
-  @JsonKey(name: "7")
-  final MatchTimelineInfoFrameParticipantFrameDTO p7;
-  @JsonKey(name: "8")
-  final MatchTimelineInfoFrameParticipantFrameDTO p8;
-  @JsonKey(name: "9")
-  final MatchTimelineInfoFrameParticipantFrameDTO p9;
-  @JsonKey(name: "10")
-  final MatchTimelineInfoFrameParticipantFrameDTO p10;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p1;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p2;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p3;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p4;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p5;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p6;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p7;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p8;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p9;
+  final MatchTimelineInfoFrameParticipantFrameDTO? p10;
+  final Map<int, MatchTimelineInfoFrameParticipantFrameDTO>
+  additionalParticipants;
+
   factory MatchTimelineInfoFrameParticipantFramesDTO.fromJson(
     Map<String, dynamic> json,
-  ) => _$MatchTimelineInfoFrameParticipantFramesDTOFromJson(json);
+  ) {
+    final frames = json.map(
+      (key, value) => MapEntry(
+        int.parse(key),
+        MatchTimelineInfoFrameParticipantFrameDTO.fromJson(
+          value as Map<String, dynamic>,
+        ),
+      ),
+    );
+    return MatchTimelineInfoFrameParticipantFramesDTO(
+      p1: frames[1],
+      p2: frames[2],
+      p3: frames[3],
+      p4: frames[4],
+      p5: frames[5],
+      p6: frames[6],
+      p7: frames[7],
+      p8: frames[8],
+      p9: frames[9],
+      p10: frames[10],
+      additionalParticipants: Map.fromEntries(
+        frames.entries.where((entry) => entry.key > 10),
+      ),
+    );
+  }
 }

@@ -7,6 +7,7 @@ class UnitDTO {
   const UnitDTO({
     required this.items,
     required this.characterId,
+    this.itemNames = const [],
     this.chosen,
     required this.name,
     required this.rarity,
@@ -21,6 +22,8 @@ class UnitDTO {
   /// This field was introduced in patch 9.22 with data_version 2.
   @JsonKey(name: "character_id")
   final String characterId;
+
+  final List<String> itemNames;
 
   /// If a unit is chosen as part of the Fates set mechanic,
   /// the chosen trait will be indicated by this field.

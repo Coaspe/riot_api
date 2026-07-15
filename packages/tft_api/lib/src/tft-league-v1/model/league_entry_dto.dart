@@ -6,7 +6,7 @@ part 'league_entry_dto.g.dart';
 
 enum RatedTier {
   @JsonValue("ORANGE")
-  oreange,
+  orange,
   @JsonValue("PURPLE")
   purple,
   @JsonValue("BLUE")
@@ -26,6 +26,8 @@ enum Tier {
   master,
   @JsonValue("DIAMOND")
   diamond,
+  @JsonValue("EMERALD")
+  emerald,
   @JsonValue("PLATINUM")
   platinum,
   @JsonValue("GOLD")

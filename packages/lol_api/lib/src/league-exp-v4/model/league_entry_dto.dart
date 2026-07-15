@@ -38,6 +38,8 @@ enum Tier {
   master,
   @JsonValue("DIAMOND")
   diamond,
+  @JsonValue("EMERALD")
+  emerald,
   @JsonValue("PLATINUM")
   platinum,
   @JsonValue("GOLD")
@@ -81,6 +83,7 @@ extension DivisionEx on Division {
 class LeagueEntryDTO {
   const LeagueEntryDTO({
     required this.leagueId,
+    this.summonerId,
     required this.puuid,
     required this.queueType,
     required this.tier,
@@ -96,6 +99,7 @@ class LeagueEntryDTO {
   });
 
   final String leagueId;
+  final String? summonerId;
   final String puuid;
   final QueueType queueType;
   final Tier tier;

@@ -7,11 +7,13 @@ part 'match_timeline_info_dto.g.dart';
 @JsonSerializable(createToJson: false)
 class MatchTimelineInfoDTO {
   const MatchTimelineInfoDTO({
+    this.endOfGameResult,
     required this.frameInterval,
     required this.frames,
     required this.gameId,
     required this.participants,
   });
+  final String? endOfGameResult;
   final int frameInterval;
   final List<MatchFrameDTO> frames;
   final int gameId;

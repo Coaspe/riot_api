@@ -68,7 +68,7 @@ class ParticipantDTO {
     required this.profileIcon,
     required this.puuid,
     required this.quadraKills,
-    required this.riotIdName,
+    this.riotIdName,
     required this.riotIdTagline,
     required this.role,
     required this.sightWardsBoughtInGame,
@@ -111,7 +111,44 @@ class ParticipantDTO {
     required this.wardsKilled,
     required this.wardsPlaced,
     required this.win,
+    this.allInPings,
+    this.assistMePings,
+    this.commandPings,
+    this.challenges,
+    this.eligibleForProgression,
+    this.enemyMissingPings,
+    this.enemyVisionPings,
+    this.holdPings,
+    this.getBackPings,
+    this.missions,
+    this.needVisionPings,
+    this.onMyWayPings,
+    this.placement,
+    this.playerAugment1,
+    this.playerAugment2,
+    this.playerAugment3,
+    this.playerAugment4,
+    this.playerScore0,
+    this.playerScore1,
+    this.playerScore2,
+    this.playerScore3,
+    this.playerScore4,
+    this.playerScore5,
+    this.playerScore6,
+    this.playerScore7,
+    this.playerScore8,
+    this.playerScore9,
+    this.playerScore10,
+    this.playerScore11,
+    this.playerSubteamId,
+    this.pushPings,
+    this.subteamPlacement,
+    this.totalAllyJungleMinionsKilled,
+    this.totalEnemyJungleMinionsKilled,
+    this.visionClearedPings,
   });
+  final int? allInPings;
+  final int? assistMePings;
   final int assists;
   final int baronKills;
   final int bountyLevel;
@@ -123,6 +160,8 @@ class ParticipantDTO {
   /// We recommend determining the champion based on the championName field for matches played prior to patch 11.4.
   final int championId;
   final String? championName;
+  final int? commandPings;
+  final Map<String, dynamic>? challenges;
 
   /// This field is currently only utilized for Kayn's transformations.
   ///
@@ -137,6 +176,9 @@ class ParticipantDTO {
   final int detectorWardsPlaced;
   final int doubleKills;
   final int dragonKills;
+  final bool? eligibleForProgression;
+  final int? enemyMissingPings;
+  final int? enemyVisionPings;
   final bool firstBloodAssist;
   final bool firstBloodKill;
   final bool firstTowerAssist;
@@ -145,6 +187,8 @@ class ParticipantDTO {
   final bool gameEndedInSurrender;
   final int goldEarned;
   final int goldSpent;
+  final int? holdPings;
+  final int? getBackPings;
 
   /// The individualPosition is the best guess for which position the player actually played in isolation of anything else.
   ///
@@ -174,22 +218,46 @@ class ParticipantDTO {
   final int magicDamageDealt;
   final int magicDamageDealtToChampions;
   final int magicDamageTaken;
+  final Map<String, dynamic>? missions;
   final int neutralMinionsKilled;
+  final int? needVisionPings;
   final int nexusKills;
   final int nexusTakedowns;
   final int nexusLost;
   final int objectivesStolen;
   final int objectivesStolenAssists;
+  final int? onMyWayPings;
   final int participantId;
   final int pentaKills;
   final PerksDTO perks;
   final int physicalDamageDealt;
   final int physicalDamageDealtToChampions;
   final int physicalDamageTaken;
+  final int? placement;
+  final int? playerAugment1;
+  final int? playerAugment2;
+  final int? playerAugment3;
+  final int? playerAugment4;
+  final int? playerScore0;
+  final int? playerScore1;
+  final int? playerScore2;
+  final int? playerScore3;
+  final int? playerScore4;
+  final int? playerScore5;
+  final int? playerScore6;
+  final int? playerScore7;
+  final int? playerScore8;
+  final int? playerScore9;
+  final int? playerScore10;
+  final int? playerScore11;
+  final int? playerSubteamId;
+  final int? pushPings;
   final int profileIcon;
   final String? puuid;
   final int quadraKills;
+  @JsonKey(name: 'riotIdGameName')
   final String? riotIdName;
+  String? get riotIdGameName => riotIdName;
   final String? riotIdTagline;
   final String? role;
   final int sightWardsBoughtInGame;
@@ -206,6 +274,7 @@ class ParticipantDTO {
   final String? summonerName;
   final bool teamEarlySurrendered;
   final int teamId;
+  final int? subteamPlacement;
 
   /// The teamPosition is the best guess for which position the player actually played if we add the constraint that each team must have one top player, one jungle, one middle, etc.
   ///
@@ -215,10 +284,12 @@ class ParticipantDTO {
   final String? teamPosition;
   final int timeCCingOthers;
   final int timePlayed;
+  final int? totalAllyJungleMinionsKilled;
   final int totalDamageDealt;
   final int totalDamageDealtToChampions;
   final int totalDamageShieldedOnTeammates;
   final int totalDamageTaken;
+  final int? totalEnemyJungleMinionsKilled;
   final int totalHeal;
   final int totalHealsOnTeammates;
   final int totalMinionsKilled;
@@ -234,6 +305,7 @@ class ParticipantDTO {
   final int turretsLost;
   final int unrealKills;
   final int visionScore;
+  final int? visionClearedPings;
   final int visionWardsBoughtInGame;
   final int wardsKilled;
   final int wardsPlaced;

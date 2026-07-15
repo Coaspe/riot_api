@@ -24,6 +24,7 @@ const _$TierEnumMap = {
   Tier.grandmaster: 'GRANDMASTER',
   Tier.master: 'MASTER',
   Tier.diamond: 'DIAMOND',
+  Tier.emerald: 'EMERALD',
   Tier.platinum: 'PLATINUM',
   Tier.gold: 'GOLD',
   Tier.silver: 'SILVER',

@@ -6,7 +6,9 @@ class MatchInfoDTO {
   const MatchInfoDTO({
     required this.matchId,
     required this.mapId,
+    this.gameVersion,
     required this.gameLengthMillis,
+    this.region,
     required this.gameStartMillis,
     required this.provisioningFlowId,
     required this.isCompleted,
@@ -15,10 +17,13 @@ class MatchInfoDTO {
     required this.gameMode,
     required this.isRanked,
     required this.seasonId,
+    this.premierMatchInfo = const [],
   });
   final String matchId;
   final String mapId;
+  final String? gameVersion;
   final int gameLengthMillis;
+  final String? region;
   final int gameStartMillis;
   final String provisioningFlowId;
   final bool isCompleted;
@@ -27,6 +32,7 @@ class MatchInfoDTO {
   final String gameMode;
   final bool isRanked;
   final String seasonId;
+  final List<Map<String, dynamic>> premierMatchInfo;
   factory MatchInfoDTO.fromJson(Map<String, dynamic> json) =>
       _$MatchInfoDTOFromJson(json);
 }

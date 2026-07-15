@@ -6,11 +6,14 @@ class MatchlistEntryDTO {
   const MatchlistEntryDTO({
     required this.matchId,
     required this.gameStartTimeMillis,
-    required this.teamId,
+    required this.queueId,
   });
   final String matchId;
   final int gameStartTimeMillis;
-  final String teamId;
+  final String queueId;
+
+  @Deprecated('Use queueId')
+  String get teamId => queueId;
   factory MatchlistEntryDTO.fromJson(Map<String, dynamic> json) =>
       _$MatchlistEntryDTOFromJson(json);
 }

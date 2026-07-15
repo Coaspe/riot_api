@@ -109,12 +109,15 @@ class LOLChallengesV1 {
     int? limit,
     Map<String, String>? headers,
   }) async {
-    assert(
-      level == Level.challenger ||
-          level == Level.grandmaster ||
-          level == Level.master,
-      "Level must be MASTER, GRANDMASTER or CHALLENGER",
-    );
+    if (level != Level.challenger &&
+        level != Level.grandmaster &&
+        level != Level.master) {
+      throw ArgumentError.value(
+        level,
+        'level',
+        'must be master, grandmaster, or challenger',
+      );
+    }
     String url =
         '${region.regionToUrl}/${Qtype.lol.name}/challenges/v1/challenges/$challengeId/leaderboards/by-level/${level.valueToString}';
     if (limit != null) url += '?limit=$limit';
@@ -152,7 +155,7 @@ class LOLChallengesV1 {
     Map<String, String>? headers,
   }) async {
     final url =
-        '${region.regionToUrl}/${Qtype.lol.name}/challenges/v1/player-data/$puuid';
+        '${region.regionToUrl}/${Qtype.lol.name}/challenges/v1/player-data/${Uri.encodeComponent(puuid)}';
     PlayerInfoDTO mapVal = await ApiUtil.requestApi(
       url,
       PlayerInfoDTO.fromJson,

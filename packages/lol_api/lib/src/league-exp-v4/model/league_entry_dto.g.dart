@@ -9,6 +9,7 @@ part of 'league_entry_dto.dart';
 LeagueEntryDTO _$LeagueEntryDTOFromJson(Map<String, dynamic> json) =>
     LeagueEntryDTO(
       leagueId: json['leagueId'] as String,
+      summonerId: json['summonerId'] as String?,
       puuid: json['puuid'] as String,
       queueType: $enumDecode(_$QueueTypeEnumMap, json['queueType']),
       tier: $enumDecode(_$TierEnumMap, json['tier']),
@@ -37,6 +38,7 @@ const _$TierEnumMap = {
   Tier.grandmaster: 'GRANDMASTER',
   Tier.master: 'MASTER',
   Tier.diamond: 'DIAMOND',
+  Tier.emerald: 'EMERALD',
   Tier.platinum: 'PLATINUM',
   Tier.gold: 'GOLD',
   Tier.silver: 'SILVER',

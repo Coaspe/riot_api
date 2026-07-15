@@ -10,5 +10,5 @@ MatchlistEntryDTO _$MatchlistEntryDTOFromJson(Map<String, dynamic> json) =>
     MatchlistEntryDTO(
       matchId: json['matchId'] as String,
       gameStartTimeMillis: (json['gameStartTimeMillis'] as num).toInt(),
-      teamId: json['teamId'] as String,
+      queueId: json['queueId'] as String,
     );

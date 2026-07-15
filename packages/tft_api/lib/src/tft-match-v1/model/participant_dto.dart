@@ -15,10 +15,13 @@ class ParticipantDTO {
     required this.placement,
     required this.playersEliminated,
     required this.puuid,
+    this.riotIdGameName,
+    this.riotIdTagline,
     required this.timeEliminated,
     required this.totalDamageToPlayers,
     required this.traits,
     required this.units,
+    this.win,
   });
   final CompanionDTO companion;
 
@@ -45,6 +48,8 @@ class ParticipantDTO {
   final int playersEliminated;
 
   final String puuid;
+  final String? riotIdGameName;
+  final String? riotIdTagline;
 
   /// The number of seconds before the participant was eliminated.
   @JsonKey(name: "time_eliminated")
@@ -59,6 +64,7 @@ class ParticipantDTO {
 
   /// A list of active units for the participant.
   final List<UnitDTO> units;
+  final bool? win;
 
   factory ParticipantDTO.fromJson(Map<String, dynamic> json) =>
       _$ParticipantDTOFromJson(json);

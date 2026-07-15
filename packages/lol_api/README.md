@@ -11,12 +11,13 @@ You need your own [Riot api key](https://developer.riotgames.com/).
     - LEAGUE-EXP-V4
     - LEAGUE-V4
     - LOL-CHALLENGES-V1
+    - LOL-RSO-MATCH-V1
     - LOL-STATUS-V4
     - MATCH-V5
     - SPECTATOR-V5
     - SUMMONER-V4
-    - TOURNAMENT-V5 (Not yet supported)
-    - TOURNAMENT-STUB-V5 (Not yet supported)
+    - TOURNAMENT-V5
+    - TOURNAMENT-STUB-V5
 
 ## Requirements
 
@@ -50,6 +51,12 @@ final matchIds = await MatchV5.getMatchIdsByPuuid(
 // Get Match information by match ID from query above.
 final match =
     await MatchV5.getMatchByMatchId(PlatformValues.asia, matchIds[0]);
+
+// RSO match history uses an OAuth player access token.
+final rsoMatchIds = await LolRsoMatchV1.getMatchIds(
+  PlatformValues.asia,
+  'Bearer player-access-token',
+);
 ```
 
 ## Additional packages

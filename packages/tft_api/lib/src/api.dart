@@ -1,3 +1,4 @@
+export 'spectator-tft-v5/spectator_tft_v5.dart';
 export 'tft-league-v1/tft_league_v1.dart';
 export 'tft-match-v1/tft_match_v1.dart';
 export 'tft-status-v1/tft_status_v1.dart';

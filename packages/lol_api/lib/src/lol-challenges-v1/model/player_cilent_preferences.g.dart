@@ -12,6 +12,8 @@ PlayerCilentPreferences _$PlayerCilentPreferencesFromJson(
   bannerAccent: json['bannerAccent'] as String,
   title: json['title'] as String,
   challengeIds: (json['challengeIds'] as List<dynamic>)
-      .map((e) => (e as num).toInt())
+      .map((e) => e as String)
       .toList(),
+  crestBorder: json['crestBorder'] as String?,
+  prestigeCrestBorderLevel: (json['prestigeCrestBorderLevel'] as num?)?.toInt(),
 );

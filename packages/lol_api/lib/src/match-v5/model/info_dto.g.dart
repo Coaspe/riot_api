@@ -7,6 +7,7 @@ part of 'info_dto.dart';
 // **************************************************************************
 
 InfoDTO _$InfoDTOFromJson(Map<String, dynamic> json) => InfoDTO(
+  endOfGameResult: json['endOfGameResult'] as String?,
   gameCreation: (json['gameCreation'] as num).toInt(),
   gameDuration: (json['gameDuration'] as num).toInt(),
   gameEndTimestamp: (json['gameEndTimestamp'] as num).toInt(),
