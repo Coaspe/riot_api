@@ -27,9 +27,7 @@ class ValConsoleMatchV1 {
     _validateRegion(region);
     final url = Uri.parse(
       '${region.regionToUrl}/val/match/console/v1/matchlists/by-puuid/${Uri.encodeComponent(puuid)}',
-    ).replace(
-      queryParameters: {'platformType': platformType.name},
-    ).toString();
+    ).replace(queryParameters: {'platformType': platformType.name}).toString();
     return ApiUtil.requestApi(url, MatchlistDTO.fromJson, headers);
   }
 

@@ -24,21 +24,13 @@ class TournamentStubV5 {
     PlatformValues platform,
     String tournamentCode, {
     Map<String, String>? headers,
-  }) => _api.getTournamentCode(
-    platform,
-    tournamentCode,
-    headers: headers,
-  );
+  }) => _api.getTournamentCode(platform, tournamentCode, headers: headers);
 
   static Future<LobbyEventV5DTOWrapper> getLobbyEventsByCode(
     PlatformValues platform,
     String tournamentCode, {
     Map<String, String>? headers,
-  }) => _api.getLobbyEventsByCode(
-    platform,
-    tournamentCode,
-    headers: headers,
-  );
+  }) => _api.getLobbyEventsByCode(platform, tournamentCode, headers: headers);
 
   static Future<int> registerProviderData(
     PlatformValues platform,

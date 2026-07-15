@@ -15,7 +15,11 @@ class TournamentApiClient {
     Map<String, String>? headers,
   }) {
     if (tournamentId <= 0) {
-      throw ArgumentError.value(tournamentId, 'tournamentId', 'must be positive');
+      throw ArgumentError.value(
+        tournamentId,
+        'tournamentId',
+        'must be positive',
+      );
     }
     if (count != null && (count < 1 || count > 1000)) {
       throw ArgumentError.value(count, 'count', 'must be between 1 and 1000');
@@ -27,14 +31,14 @@ class TournamentApiClient {
         'must be between 1 and 5',
       );
     }
-    final url = Uri.parse(
-      '${platform.platformToUrl}/lol/$apiName/v5/codes',
-    ).replace(
-      queryParameters: {
-        'tournamentId': '$tournamentId',
-        if (count != null) 'count': '$count',
-      },
-    ).toString();
+    final url = Uri.parse('${platform.platformToUrl}/lol/$apiName/v5/codes')
+        .replace(
+          queryParameters: {
+            'tournamentId': '$tournamentId',
+            if (count != null) 'count': '$count',
+          },
+        )
+        .toString();
     return ApiUtil.sendApi<List<String>, List<dynamic>>(
       url,
       (json) => json.cast<String>(),

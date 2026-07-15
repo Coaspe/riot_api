@@ -24,11 +24,7 @@ class TournamentV5 {
     PlatformValues platform,
     String tournamentCode, {
     Map<String, String>? headers,
-  }) => _api.getTournamentCode(
-    platform,
-    tournamentCode,
-    headers: headers,
-  );
+  }) => _api.getTournamentCode(platform, tournamentCode, headers: headers);
 
   static Future<Set<TournamentGamesV5>> updateCode(
     PlatformValues platform,
@@ -42,9 +38,7 @@ class TournamentV5 {
       url,
       (json) => json
           .map(
-            (game) => TournamentGamesV5.fromJson(
-              game as Map<String, dynamic>,
-            ),
+            (game) => TournamentGamesV5.fromJson(game as Map<String, dynamic>),
           )
           .toSet(),
       method: ApiRequestMethod.put,
@@ -64,9 +58,7 @@ class TournamentV5 {
       url,
       (json) => json
           .map(
-            (game) => TournamentGamesV5.fromJson(
-              game as Map<String, dynamic>,
-            ),
+            (game) => TournamentGamesV5.fromJson(game as Map<String, dynamic>),
           )
           .toSet(),
       headers,
@@ -77,11 +69,7 @@ class TournamentV5 {
     PlatformValues platform,
     String tournamentCode, {
     Map<String, String>? headers,
-  }) => _api.getLobbyEventsByCode(
-    platform,
-    tournamentCode,
-    headers: headers,
-  );
+  }) => _api.getLobbyEventsByCode(platform, tournamentCode, headers: headers);
 
   static Future<int> registerProviderData(
     PlatformValues platform,

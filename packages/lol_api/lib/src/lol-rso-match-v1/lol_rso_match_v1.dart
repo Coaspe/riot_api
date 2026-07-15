@@ -29,18 +29,19 @@ class LolRsoMatchV1 {
     if (count < 0 || count > 100) {
       throw ArgumentError.value(count, 'count', 'must be between 0 and 100');
     }
-    final url = Uri.parse(
-      '${platform.platformToUrl}/lol/rso-match/v1/matches/ids',
-    ).replace(
-      queryParameters: {
-        if (startTime != null) 'startTime': '$startTime',
-        if (endTime != null) 'endTime': '$endTime',
-        if (queue != null) 'queue': '$queue',
-        if (type != null) 'type': type.name,
-        'start': '$start',
-        'count': '$count',
-      },
-    ).toString();
+    final url =
+        Uri.parse('${platform.platformToUrl}/lol/rso-match/v1/matches/ids')
+            .replace(
+              queryParameters: {
+                if (startTime != null) 'startTime': '$startTime',
+                if (endTime != null) 'endTime': '$endTime',
+                if (queue != null) 'queue': '$queue',
+                if (type != null) 'type': type.name,
+                'start': '$start',
+                'count': '$count',
+              },
+            )
+            .toString();
     return ApiUtil.requestApi<List<String>, List<dynamic>>(
       url,
       (json) => json.cast<String>(),

@@ -31,15 +31,18 @@ class ValConsoleRankedV1 {
         'must be non-negative',
       );
     }
-    final url = Uri.parse(
-      '${region.regionToUrl}/val/console/ranked/v1/leaderboards/by-act/${Uri.encodeComponent(actId)}',
-    ).replace(
-      queryParameters: {
-        'platformType': platformType.name,
-        'size': '$size',
-        'startIndex': '$startIndex',
-      },
-    ).toString();
+    final url =
+        Uri.parse(
+              '${region.regionToUrl}/val/console/ranked/v1/leaderboards/by-act/${Uri.encodeComponent(actId)}',
+            )
+            .replace(
+              queryParameters: {
+                'platformType': platformType.name,
+                'size': '$size',
+                'startIndex': '$startIndex',
+              },
+            )
+            .toString();
     return ApiUtil.requestApi(url, ConsoleLeaderboardDTO.fromJson, headers);
   }
 }
